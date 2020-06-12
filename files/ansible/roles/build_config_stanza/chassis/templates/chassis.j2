@@ -1,0 +1,94 @@
+#jinja2: lstrip_blocks: "True (or False)", trim_blocks: "True (or False)"
+{#- ---------------------------------------------------------------------------------- #}
+{# configuration.chassis                                                                             #}
+{# ------------------------------------------------------------------------------------#}
+{% if configuration.chassis is defined %}
+chassis {
+    {% if configuration.chassis.redundancy is defined %}
+    {% if configuration.chassis.redundancy['@inactive'] is defined %}
+    inactive: redundancy {
+    {% else %}
+    redundancy {
+    {% endif %}
+        {% if configuration.chassis.redundancy.graceful_switchover is defined %}
+        graceful-switchover;
+        {% endif %}
+    }
+    {% endif %}
+    {% if configuration.chassis.aggregated_devices is defined %}
+    aggregated-devices {
+        {% if configuration.chassis.aggregated_devices.ethernet is defined %}
+        ethernet {
+            {% if configuration.chassis.aggregated_devices.ethernet.device_count is defined %}
+            device-count {{ configuration.chassis.aggregated_devices.ethernet.device_count }};
+            {% endif %}
+            {% if configuration.chassis.aggregated_devices.ethernet.lacp is defined %}
+            lacp {
+                {% if configuration.chassis.aggregated_devices.ethernet.lacp.system_priority is defined %}
+                system-priority {{ configuration.chassis.aggregated_devices.ethernet.lacp.system_priority }};
+                {% endif %}
+            }
+            {% endif %}
+        }
+        {% endif %}
+    }
+    {% endif %}
+    {% if configuration.chassis.fpc is defined %}
+    {% for each in configuration.chassis.fpc %}
+    fpc {{ each.name }} {
+        {% if each.pic is defined %}
+        pic {{ each.pic.name }} {
+            {% if each.pic.tunnel_services is defined %}
+            tunnel-services {
+                bandwidth {{ each.pic.tunnel_services.bandwidth }};
+            }
+            {% endif %}
+            {% if each.pic.interface_type is defined %}
+            interface-type {{ each.pic.interface_type }};
+            {% endif %}
+        }
+        {% endif %}
+        {% if each.sampling_instance is defined %}
+        sampling-instance {{ each.sampling_instance.name }};
+        {% endif %}
+        {% if each.inline_services is defined %}
+        inline-services {
+            {% if each.inline_services.flow_table_size is defined %}
+            flow-table-size {
+                {% if each.inline_services.flow_table_size.ipv4_flow_table_size is defined %}
+                ipv4-flow-table-size {{ each.inline_services.flow_table_size.ipv4_flow_table_size }};
+                {% endif %}
+            }
+            {% endif %}
+        }
+        {% endif %}
+    }
+    {% endfor %}
+    {% endif %}
+    {% if configuration.chassis.fpc.network_services is defined %}
+    network-services enhanced-ip;
+    {% endif %}
+    {% if configuration.chassis.disk_partition is defined %}
+    disk-partition {{ configuration.chassis.disk_partition.name }} {
+        {% if configuration.chassis.disk_partition.level is defined %}
+        {% for each in configuration.chassis.disk_partition.level %}
+        level {{ each.name }} {
+            free-space {{ each.free_space.thres_free }} percent;
+        }
+        {% endfor %}
+        {% endif %}
+    }
+    {% endif %}
+    {% if configuration.chassis.alarm is defined %}
+    alarm {
+        {% if configuration.chassis.alarm.management_ethernet is defined %}
+        management-ethernet {
+            {% if configuration.chassis.alarm.management_ethernet.link_down is defined %}
+            link-down ignore;
+            {% endif %}
+        }
+        {% endif %}
+    }
+    {% endif %}
+}
+{% endif %}

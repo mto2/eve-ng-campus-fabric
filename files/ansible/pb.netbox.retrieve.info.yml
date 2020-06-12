@@ -1,0 +1,17 @@
+---
+  ### ---------------------------------------------------------------------------
+  ### Grab data from NETBOX
+  ### ---------------------------------------------------------------------------
+  - hosts: localhost
+    connection: local
+    gather_facts: False
+    become: False
+    any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
+    roles:
+      ### ---------------------------------------------------------------------------
+      ### Grab data from NETBOX
+      ### ---------------------------------------------------------------------------
+      - { role: netbox/retrieve_device_data }
+      - { role: netbox/retrieve_site_data }
+      - { role: netbox/retrieve_device_interfaces }
+      # - { role: netbox/debug_data }

@@ -1,0 +1,5 @@
+---
+- name: building policy_options configuration
+  template:
+    src: "policy_options.j2"
+    dest: "{{ build_directory }}/12_policy_options.part"

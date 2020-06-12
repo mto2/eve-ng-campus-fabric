@@ -1,0 +1,11 @@
+#jinja2: lstrip_blocks: "True (or False)", trim_blocks: "True (or False)"
+{#- ---------------------------------------------------------------------------------- #}
+{# services                                                                            #}
+{# ---------------------------------------------------------------------------------- -#}
+{% if configuration.services is defined %}
+services {
+    {% if configuration.services.application_identification is defined %}
+    application-identification;
+    {% endif %}
+}
+{% endif %}

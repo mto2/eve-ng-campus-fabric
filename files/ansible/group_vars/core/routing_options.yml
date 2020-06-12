@@ -1,0 +1,10 @@
+configuration:
+  routing_options:
+    forwarding_table:
+      export: 
+        - "ecmp_policy"
+      ecmp_fast_reroute: 
+        - null
+    router_id: "{{ device.lo0.ipv4 }}"
+    autonomous_system:
+      as_number: "65100"

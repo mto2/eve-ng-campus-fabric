@@ -1,0 +1,28 @@
+### ---------------------------------------------------------------------------
+### FIND PREFIXES AT THE SITE
+### ---------------------------------------------------------------------------
+- name: "Run cleanup function on site_name variable"
+  set_fact:
+    cleaned_site_name: "{{ site_name | snow_cleanup_site_name }}"
+  run_once: True
+
+- name: "Site prefixes from Netbox"
+  uri:
+    url: "{{ netbox.base_url }}/ipam/prefixes/?site={{ cleaned_site_name }}"
+    method: GET
+    return_content: yes
+    status_code: "200"
+    headers:
+      Content-Type: "application/json"
+      Authorization: "Token {{ netbox.api_token }}"
+    force_basic_auth: yes
+    validate_certs: false
+  register: site_prefixes
+
+- name: "setting site_prefixes variable"
+  set_fact:
+    site_prefixes: "{{ site_prefixes.json.results }}"
+
+- name: "cleaning up prefixes into dictionary values"
+  set_fact:
+    site_prefixes: "{{ site_prefixes | cleanup_site_prefixes }}"

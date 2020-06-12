@@ -1,0 +1,28 @@
+### ---------------------------------------------------------------------------
+### FIND PREFIXES ON THE DEVICE
+### ---------------------------------------------------------------------------
+- name: "Device interfaces from Netbox"
+  uri:
+    url: "{{ netbox.base_url }}/dcim/interfaces/?device={{ item.name }}"
+    method: GET
+    return_content: yes
+    status_code: "200"
+    headers:
+      Content-Type: "application/json"
+      Authorization: "Token {{ netbox.api_token }}"
+    force_basic_auth: yes
+    validate_certs: false
+  with_items: "{{ site_devices }}"
+  register: device_interfaces
+
+- name: "setting device_interfaces variable"
+  set_fact:
+    device_interfaces: "{{ device_interfaces }}"
+
+- name: "print device_interfaces variable"
+  debug:
+    msg: "{{ device_interfaces }}"
+  
+# - name: "cleaning up prefixes into dictionary values"
+#   set_fact:
+#     device_interfaces: "{{ device_interfaces | cleanup_device_prefixes }}"

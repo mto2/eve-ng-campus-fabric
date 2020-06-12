@@ -1,0 +1,7 @@
+#jinja2: lstrip_blocks: "True (or False)", trim_blocks: "True (or False)"
+{#- ---------------------------------------------------------------------------------- #}
+{# configuration.version                                                                             #}
+{# ---------------------------------------------------------------------------------- -#}
+{% if configuration.version is defined %}
+version {{ configuration.version }};
+{% endif %}

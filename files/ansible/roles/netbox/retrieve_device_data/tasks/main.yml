@@ -1,0 +1,37 @@
+### ---------------------------------------------------------------------------
+### FIND DEVICES AT THE SITE
+### ---------------------------------------------------------------------------
+- name: "Run cleanup function on site_name variable"
+  set_fact:
+    cleaned_site_name: "{{ site_name | snow_cleanup_site_name }}"
+  run_once: True
+
+- name: "Device data from Netbox"
+  uri:
+    url: "{{ netbox.base_url }}/dcim/devices/?site={{ cleaned_site_name }}"
+    method: GET
+    return_content: yes
+    status_code: "200"
+    headers:
+      Content-Type: "application/json"
+      Authorization: "Token {{ netbox.api_token }}"
+    force_basic_auth: yes
+    validate_certs: false
+  register: site_devices
+
+- debug:
+    msg: "{{ site_devices }}"
+
+- name: "setting site_devices variable"
+  set_fact:
+    site_devices: "{{ site_devices.json.results }}"
+
+- debug:
+    msg: "{{ site_devices }}"
+
+- name: "cleaning up site data into dictionary values"
+  set_fact:
+    site_devices: "{{ site_devices | cleanup_devices }}"
+
+- debug:
+    msg: "{{ site_devices }}"

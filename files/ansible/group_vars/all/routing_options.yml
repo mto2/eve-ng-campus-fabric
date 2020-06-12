@@ -1,0 +1,8 @@
+configuration:
+  routing_options:
+    static:
+      route:
+        - name: 10.255.0.0/17
+          next_hop:
+            - 10.6.6.1
+          no_readvertise: null

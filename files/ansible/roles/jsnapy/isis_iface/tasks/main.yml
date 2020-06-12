@@ -1,0 +1,19 @@
+---
+- name: Check ISIS Status
+  ignore_errors: true
+  juniper_junos_jsnapy:
+    test_files: jsnapy/test_files/{{ inventory_hostname }}/test_isis_neighbor.yml
+    action: snapcheck
+    user: "{{ provider_info.user }}"
+    passwd: "{{ provider_info.passwd }}"
+  register: test_isis
+  tags: [isis]
+
+- debug:
+    msg: "{{ test_isis }}"
+
+- name: Check Tests results
+  assert:
+    that:
+      - "test_isis.passPercentage == 100"
+  tags: [isis]

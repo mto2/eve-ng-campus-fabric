@@ -1,0 +1,30 @@
+configuration:
+  groups:
+    - name: IRB_OPTIONS
+      interfaces:
+        interface:
+          name: irb
+          unit:
+            family:
+              inet:
+                address:
+                  name: <*>
+                  preferred: null
+                  primary: null
+            name: <*>
+            proxy_macip_advertisement: null
+            virtual_gateway_accept_data: null
+            virtual_gateway_v4_mac: 00:5e:5e:5e:00:01
+    - name: AE_MTU_JUMBO
+      interfaces:
+        interface:
+          mtu: "9192"
+          name: <*>
+    - name: AE_LACP_BOND
+      interfaces:
+        interface:
+          aggregated_ether_options:
+            lacp:
+              active: null
+              periodic: fast
+          name: <*>

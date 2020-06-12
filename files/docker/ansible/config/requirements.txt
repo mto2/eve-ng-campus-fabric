@@ -1,0 +1,12 @@
+ansible==2.8.9
+ansible-tower-cli
+jsnapy
+junos-eznc
+jxmlease
+lxml
+ncclient
+PyYAML
+regex
+requests
+urllib3
+xmltodict

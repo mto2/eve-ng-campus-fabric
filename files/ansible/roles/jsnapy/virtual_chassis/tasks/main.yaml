@@ -1,0 +1,23 @@
+---
+- name: "### VALIDATE VIRTUAL CHASSIS ENVIRONMENT ###"
+  ignore_errors: true
+  juniper_junos_jsnapy:
+    test_files: jsnapy/test_files/{{ inventory_hostname }}/virtual_chassis.yml
+    action: snapcheck
+    # user: "{{ provider_info.user }}"
+    # ssh_private_key_file: "{{ provider_info.ssh_private_key_file }}"
+  register: test_virtual_chassis
+  tags: [vc]
+  when:
+    - "'virtual_chassis' in device.role"
+
+# - debug:
+#     msg: "{{ test_virtual_chassis }}"
+
+- name: "### PRINT RESULTS OF THE TEST ###"
+  assert:
+    that:
+      - "test_virtual_chassis.passPercentage == 100"
+  tags: [vc]
+  when:
+    - "'virtual_chassis' in device.role"

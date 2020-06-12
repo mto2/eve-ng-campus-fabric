@@ -1,0 +1,5 @@
+---
+- name: building routing_options configuration
+  template:
+    src: "routing_options.j2"
+    dest: "{{ build_directory }}/10_routing_options.part"

@@ -1,0 +1,5 @@
+---
+- name: building forwarding_options configuration
+  template:
+    src: "forwarding_options.j2"
+    dest: "{{ build_directory }}/09_forwarding_options.part"

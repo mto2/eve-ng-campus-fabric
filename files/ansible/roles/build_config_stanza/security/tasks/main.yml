@@ -1,0 +1,5 @@
+---
+- name: building security configuration
+  template:
+    src: "security.j2"
+    dest: "{{ build_directory }}/06_security.part"

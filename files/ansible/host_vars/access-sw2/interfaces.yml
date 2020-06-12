@@ -1,0 +1,92 @@
+configuration:
+  interfaces:
+    interface:
+      # ### PHYSICAL INTERFACES
+      - name: xe-0/0/0
+        mtu: 9100
+        unit:
+          name: "0"
+          description: "Connected to employee-pc-2"
+          family:
+            ethernet_switching:
+              interface_mode: access
+              vlan:
+                members: "VLAN-101"
+
+      - name: xe-0/0/1
+        mtu: 9100
+        unit:
+          name: "0"
+          description: "Connected to guest-pc-1"
+          family:
+            ethernet_switching:
+              interface_mode: access
+              vlan:
+                members: "VLAN-201"
+
+      - name: xe-0/0/9
+        description: "Connected to core-sw2 (member of ae12)"
+        ether_options:
+          ieee_802.3ad:
+            bundle: ae12
+
+      - name: xe-0/0/10
+        description: "Connected to core-sw1 (member of ae12)"
+        ether_options:
+          ieee_802.3ad:
+            bundle: ae12
+
+      # ### AE INTERFACES
+      - name: ae12
+        description: "To-Core-1-and-2 (members: xe-0/0/9 / xe-0/0/10)"
+        apply_groups:
+          - AE_MTU_JUMBO
+          - AE_LACP_BOND
+        aggregated_ether_options:
+          lacp:
+            active: null
+        unit:
+          - name: "0"
+            family:
+              ethernet_switching:
+                interface_mode: trunk
+                vlan:
+                  members:
+                    - VLAN-101
+                    - VLAN-102
+                    - VLAN-201
+                    - VLAN-202
+                    - VLAN-301
+                    - VLAN-302
+
+      # ### LOOPBACK INTERFACES
+      - name: lo0
+        unit:
+          - name: "0"
+            description: loopback
+            family:
+              inet:
+                address:
+                  name: "{{ device.lo0.ipv4 }}/32"
+
+      # ### MGMT INTERFACE
+      - name: em0
+        unit:
+          name: "0"
+          description: "out of band interface"
+          family:
+            inet:
+              address:
+                name: "{{ ansible_host }}/24"
+                arp:
+                  - name: "10.6.6.1"
+                    mac: "f4:a7:39:1b:d4:9b"
+
+      # ### vQFX PFE INTERFACE
+      - name: em1
+        unit:
+          name: "0"
+          family:
+            inet:
+              address:
+                name: "169.254.0.2/24"

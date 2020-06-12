@@ -1,0 +1,5 @@
+---
+- name: building poe configuration
+  template:
+    src: "poe.j2"
+    dest: "{{ build_directory }}/16_poe.part"

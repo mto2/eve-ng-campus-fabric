@@ -1,0 +1,13 @@
+#jinja2: lstrip_blocks: "True (or False)", trim_blocks: "True (or False)"
+{#- ---------------------------------------------------------------------------------- #}
+{# configuration.poe                                                                                 #}
+{# ---------------------------------------------------------------------------------- -#}
+{% if configuration.poe is defined %}
+poe {
+    {% if configuration.poe.interface is defined %}
+    {% for each in configuration.poe.interface %}
+    interface {{ each.name }};
+    {% endfor %}
+    {% endif %}
+}
+{% endif %}

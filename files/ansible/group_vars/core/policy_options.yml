@@ -1,0 +1,33 @@
+configuration:
+  policy_options:
+    policy_statement:
+      - name: UNDERLAY-EXPORT
+        term:
+          - name: LOOPBACK
+            from:
+              route_filter: 
+                - address: 192.168.255.0/24
+                  orlonger: null
+            then:
+              accept: null
+          - name: DEFAULT
+            then:
+              reject: null
+      - name: UNDERLAY-IMPORT
+        term:
+          - name: LOOPBACK
+            from:
+              route_filter: 
+                - address: 192.168.255.0/24
+                  orlonger: null
+            then:
+              accept: null
+          - name: DEFAULT
+            then:
+              reject: null
+      - name: ecmp_policy
+        term:
+          - name: 10
+            then:
+              load_balance: per-packet
+              accept: null

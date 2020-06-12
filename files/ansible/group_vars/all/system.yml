@@ -1,0 +1,60 @@
+configuration:
+  system:
+    host_name: "{{ inventory_hostname }}"
+    login:
+      user:
+        - name: automation
+          authentication:
+            encrypted_password: $6$po1LNlij$s7XhHlhUWX.3t3AMepFvfC5BLuxKManQmTbGHwQ8inei5If8aMiP8J4V8qPEu8L9VZkJbT.1Wm8h02d8nnb6e.
+          class: super-user
+          uid: "3001"
+    name_server:
+      - name: 10.255.127.250
+      - name: 10.255.127.251
+    root_authentication:
+      encrypted_password: $6$eG4FXiQW$J4/a.5GZlXlrKcvJTpbaMl.qIelPqjR5lFk.POmxo5O3Vp5OdjHFFJ97PMqvABuZZOGXrdvSE6YF3f33wilgO.
+    services:
+      netconf:
+        ssh: null
+      rest:
+        enable_explorer: null
+        http:
+          port: "8080"
+      ssh:
+        root_login: allow
+    syslog:
+      file:
+        # ### SYSLOG MESSAGES FILE "show log messages"
+        - name: messages
+          contents:
+            - name: any
+              notice: null
+            - name: authorization
+              info: null
+        # ### SYSLOG COMMAND HISTORY FILE "show log interactive-commands"
+        - name: interactive-commands
+          contents:
+            any: null
+            name: interactive-commands
+        # ### SYSLOG LOG DEFAULT MESSAGES (structured data format) "show log default-log-messages"
+        - name: default-log-messages
+          match: "(requested 'commit' operation)|(requested 'commit synchronize' operation)|(copying configuration to juniper.save)|(commit complete)|ifAdminStatus|(FRU power)|(FRU removal)|(FRU insertion)|(link UP)|transitioned|Transferred|transfer-file|(license add)|(license delete)|(package -X update)|(package -X delete)|(FRU Online)|(FRU Offline)|(plugged in)|(unplugged)|GRES"
+          contents:
+            info: null
+            name: any
+          structured_data: null
+      # ### SYSLOG SERVERS
+      host:
+        - name: 10.255.127.15
+          contents:
+            any: null
+            name: any
+          source_address: "{{ ansible_host }}"
+
+      user:
+        contents:
+          emergency: null
+          name: any
+        name: "*"
+        # match: "!(.*Scheduler Oinker*.|.*Frame 0*.|.*ms without yielding*.)"
+    time_zone: America/Chicago

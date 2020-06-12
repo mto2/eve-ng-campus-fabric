@@ -1,0 +1,70 @@
+---
+### ---------------------------------------------------------------------------
+### VALIDATE THAT ANSIBLE CONTROL MACHINE IS RUNNING A RECENT ANSIBLE VERSION
+### ---------------------------------------------------------------------------
+- hosts: all
+  connection: local
+  gather_facts: False
+  become: False
+  tasks:
+    - name: "Check ansible version >=2.7.8"
+      assert:
+        msg: "Ansible must be v2.7.8 or higher"
+        that:
+          - ansible_version.string is version("2.7.8", ">=")
+      tags:
+        - check
+  run_once: True
+
+### ---------------------------------------------------------------------------
+### REMOVE AND RECREATE BUILD DIRECTORIES
+### ---------------------------------------------------------------------------
+- hosts: all
+  connection: local
+  gather_facts: False
+  roles:
+    - { role: localhost-build-dirs }
+
+### ---------------------------------------------------------------------------
+### BUILD CONFIGURATION IN PIECES AND ASSEMBLE INTO SINGLE CONFIG FILE
+### ---------------------------------------------------------------------------
+- hosts: all
+  connection: local
+  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
+  gather_facts: False
+  roles:
+    - { role: build_config_stanza/version }
+    - { role: build_config_stanza/apply_groups }
+    - { role: build_config_stanza/groups }
+    - { role: build_config_stanza/system }
+    - { role: build_config_stanza/event_options, when: "'switch' in device.role" }
+    - { role: build_config_stanza/chassis }
+    - { role: build_config_stanza/services, when: "'firewall' in device.role" }
+    - { role: build_config_stanza/security, when: "'firewall' in device.role" }
+    - { role: build_config_stanza/interfaces }
+    - { role: build_config_stanza/snmp }
+    - { role: build_config_stanza/forwarding_options }
+    - { role: build_config_stanza/routing_instances }
+    - { role: build_config_stanza/routing_options }
+    - { role: build_config_stanza/protocols }
+    - { role: build_config_stanza/policy_options }
+    - { role: build_config_stanza/class_of_service }
+    - { role: build_config_stanza/firewall }
+    - { role: build_config_stanza/switch_options }
+    - { role: build_config_stanza/poe }
+    - { role: build_config_stanza/virtual_chassis, when: "'virtual_chassis' in device.role" }
+    - { role: build_config_stanza/access }
+    - { role: build_config_stanza/vlans }
+    - { role: assemble_config }
+### ---------------------------------------------------------------------------
+### DEBUGGING A GENERATED CONFIGURATION
+### ---------------------------------------------------------------------------
+
+# - hosts: leaf1
+#   connection: local
+#   gather_facts: False
+#   tasks:
+#     - name: display multiple file contents
+#       debug: var=item
+#       with_file:
+#         - "{{ completed_config_file }}"

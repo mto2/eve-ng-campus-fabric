@@ -1,0 +1,5 @@
+---
+- name: building apply_groups configuration
+  template:
+    src: "apply_groups.j2"
+    dest: "{{ build_directory }}/02_apply_groups.part"

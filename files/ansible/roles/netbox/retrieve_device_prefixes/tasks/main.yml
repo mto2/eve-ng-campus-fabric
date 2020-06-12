@@ -1,0 +1,23 @@
+### ---------------------------------------------------------------------------
+### FIND PREFIXES ON THE DEVICE
+### ---------------------------------------------------------------------------
+- name: "Device prefixes from Netbox"
+  uri:
+    url: "{{ netbox.base_url }}/ipam/ip-addresses/?device={{ site_devices.cpe.name }}"
+    method: GET
+    return_content: yes
+    status_code: "200"
+    headers:
+      Content-Type: "application/json"
+      Authorization: "Token {{ netbox.api_token }}"
+    force_basic_auth: yes
+    validate_certs: false
+  register: device_prefixes
+
+- name: "setting device_prefixes variable"
+  set_fact:
+    device_prefixes: "{{ device_prefixes.json.results }}"
+
+- name: "cleaning up prefixes into dictionary values"
+  set_fact:
+    device_prefixes: "{{ device_prefixes | cleanup_device_prefixes }}"

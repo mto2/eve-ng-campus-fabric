@@ -1,0 +1,32 @@
+---
+### -------------------------------------------------
+### DIRECTORIES TO BE USED IN JUNIPER_STANZA ROLES
+### -------------------------------------------------
+# to be the root of all configuration building during the playbook run
+temporary_directory: "/tmp/ansible/"
+
+# hosts each configuration elementer per device
+build_directory: "{{ temporary_directory }}/{{ inventory_hostname }}/tmp"
+
+# local director to hold the final configuration product
+configuration_directory: "config"
+
+# name of the actual configuration file that's pushed to the remote device
+configuration_file: "{{ inventory_hostname }}.conf"
+
+# complete path of the completed configuration file
+completed_config_file: "{{ configuration_directory }}/{{ configuration_file }}"
+
+# configuration to store data that has been retreived from the boxes. brownfield only
+backup_directory: "./backup/{{ inventory_hostname }}"
+
+# backup configuration file that has been retreived from the boxes. brownfield only
+backup_file: "{{ backup_directory }}/{{ inventory_hostname }}.conf"
+
+# declared when you want to transfer a brownfield site to overwrite local yaml files
+host_vars_directory: "./host_vars/{{ inventory_hostname }}"
+
+# host facts retrieved from devices and saved offline
+facts_directory: "{{ backup_directory }}/facts"
+
+ansible_python_interpreter: "{{ ansible_playbook_python }}"

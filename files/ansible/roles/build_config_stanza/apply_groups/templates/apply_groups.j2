@@ -1,0 +1,7 @@
+#jinja2: lstrip_blocks: "True (or False)", trim_blocks: "True (or False)"
+{#- ---------------------------------------------------------------------------------- #}
+{# apply-groups                                                                        #}
+{# ---------------------------------------------------------------------------------- -#}
+{% if configuration.apply_groups is defined %}
+apply-groups {{ configuration.apply_groups }};
+{% endif %}

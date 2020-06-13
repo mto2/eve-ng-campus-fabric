@@ -1,5 +1,5 @@
-# configuration:
-#   protocols:
+configuration:
+  protocols:
 #     bgp:
 #       group:
 
@@ -29,3 +29,15 @@
 #         - name: "vlan_1"
 #           interface: "ae11.0"
 #           multicast_router_interface: null
+
+    ospf:
+      area:
+        - name: "0.0.0.0"
+          interface:
+            - name: "ae11.0"
+            - name: "ae12.0"
+            - name: "ae13.0"
+            - name: "ae14.0"
+            - name: "ae15.0"
+            - name: "lo0.0"
+              passive: null

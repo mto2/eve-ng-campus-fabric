@@ -606,11 +606,17 @@ protocols {
         area {{ each.name }} {
             {# Multiple interfaces #}
             {% for iface in each.interface %}
+            {% if iface.interface_type is defined %}
             interface {{ iface.name }} {
-                {% if iface.interface_type is defined %}
                 interface-type {{ iface.interface_type }};
-                {% endif %}
             }
+            {% elif iface.passive is defined %}
+            interface {{ iface.name }} {
+                passive;
+            }
+            {% else %}
+            interface {{ iface.name }};
+            {% endif %}
             {% endfor %}
         }
         {% endfor %}

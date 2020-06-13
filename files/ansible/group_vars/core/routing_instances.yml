@@ -2,44 +2,55 @@
 #   routing_instances:
 #     instance:
 
-#       # ### VRF VS__1: virtual-switch
-#       - name: "VS__1"
-#         description: "VRF for virtual-switch"
-#         instance_type: "virtual-switch"
-#         interface:
-#           # ### PHYSICAL INTERFACES
-#           - name: "ae16.0"
-#         protocols: 
-#           evpn:
-#             encapsulation:
-#             extended_vni_list:
-#             multicast_mode:
-#             default_gateway:
-#         route_distinguisher:
-#           rd_type: "{{ device.lo0.ipv4 }}:1"
-#         vlans:
-#           - name: vlan4_1
-#             vlan_id: 1
-#             l3_interface: irb.1
-#             vxlan:
-#               vni: 5001
-#               ingress_node_replication: null
-#           - name: vlan4_2
-#             vlan_id: 2
-#             l3_interface: irb.2
-#             vxlan:
-#               vni: 5002
-#               ingress_node_replication: null
-#           - name: vlan4_3
-#             vlan_id: 3
-#             l3_interface: irb.3
-#             vxlan:
-#               vni: 5003
-#               ingress_node_replication: null
-#         vrf_import:
-#           - imp-global
-#         vrf_table_label: null
-#         vrf_target: 
-#           community: "target:64511:1111"
-#           auto: null
+      # ### VRF VS__1: virtual-switch
+      # - name: "VS__1"
+      #   description: "VRF for virtual-switch"
+      #   instance_type: "virtual-switch"
+
+        # ### INTERFACES
+        # interface:
+        #   - name: "ae16.0"
+
+        # ### PROTOCOLS
+        # protocols: 
+        #   evpn:
+        #     encapsulation:
+        #     extended_vni_list:
+        #     multicast_mode:
+        #     default_gateway:
+
+        # ### ROUTE DISTINGUISHERS
+        # route_distinguisher:
+        #   rd_type: "{{ device.lo0.ipv4 }}:1"
+
+        # ### VRF configurations
+        # vrf_import:
+        #   - imp-global
+
+        # vrf_table_label: null
+
+        # vrf_target: 
+        #   community: "target:64511:1111"
+        #   auto: null
+
+        # ### VLANS
+        # vlans:
+        #   - name: vlan4_1
+        #     vlan_id: 1
+        #     l3_interface: irb.1
+        #     vxlan:
+        #       vni: 5001
+        #       ingress_node_replication: null
+        #   - name: vlan4_2
+        #     vlan_id: 2
+        #     l3_interface: irb.2
+        #     vxlan:
+        #       vni: 5002
+        #       ingress_node_replication: null
+        #   - name: vlan4_3
+        #     vlan_id: 3
+        #     l3_interface: irb.3
+        #     vxlan:
+        #       vni: 5003
+        #       ingress_node_replication: null
 

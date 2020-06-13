@@ -9,30 +9,42 @@ configuration:
             bundle: ae11
 
       - name: xe-0/0/1
+        description: "Connected to core-sw1 (member of ae11)"
+        ether_options:
+          ieee_802.3ad:
+            bundle: ae11
+
+      - name: xe-0/0/2
         description: "Connected to core-sw2 (member of ae12)"
         ether_options:
           ieee_802.3ad:
             bundle: ae12
 
-      - name: xe-0/0/2
+      - name: xe-0/0/3
+        description: "Connected to core-sw2 (member of ae12)"
+        ether_options:
+          ieee_802.3ad:
+            bundle: ae12
+
+      - name: xe-0/0/4
         description: "Connected to access-sw1 (member of ae21)"
         ether_options:
           ieee_802.3ad:
             bundle: ae21
 
-      - name: xe-0/0/3
+      - name: xe-0/0/5
         description: "Connected to access-sw2 (member of ae22)"
         ether_options:
           ieee_802.3ad:
             bundle: ae22
 
-      - name: xe-0/0/4
+      - name: xe-0/0/6
         description: "Connected to access-sw3 (member of ae23)"
         ether_options:
           ieee_802.3ad:
             bundle: ae23
 
-      - name: xe-0/0/5
+      - name: xe-0/0/7
         description: "Connected to access-sw4 (member of ae24)"
         ether_options:
           ieee_802.3ad:
@@ -40,23 +52,7 @@ configuration:
 
       # ### AE INTERFACES
       - name: ae11
-        description: "Connected to core-sw1 (members: xe-0/0/0)"
-        apply_groups:
-          - AE_MTU_JUMBO
-          - AE_LACP_BOND
-        aggregated_ether_options:
-          lacp:
-            active: null
-          minimum_links: 1
-        unit:
-          name: "0"
-          family:
-            inet:
-              address:
-                name: "172.16.0.1/31"
-
-      - name: ae12
-        description: "Connected to core-sw2 (members: xe-0/0/1)"
+        description: "Connected to core-sw1 (members: xe-0/0/0 / xe-0/0/1)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
@@ -71,8 +67,24 @@ configuration:
               address:
                 name: "172.16.1.1/31"
 
+      - name: ae12
+        description: "Connected to core-sw2 (members: xe-0/0/2 / xe-0/0/3)"
+        apply_groups:
+          - AE_MTU_JUMBO
+          - AE_LACP_BOND
+        aggregated_ether_options:
+          lacp:
+            active: null
+          minimum_links: 1
+        unit:
+          name: "0"
+          family:
+            inet:
+              address:
+                name: "172.16.2.1/31"
+
       - name: ae21
-        description: "Connected to access-sw1 (members: xe-0/0/2)"
+        description: "Connected to access-sw1 (members: xe-0/0/4)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
@@ -95,7 +107,7 @@ configuration:
                     - vlan_3
 
       - name: ae22
-        description: "Connected to access-sw2 (members: xe-0/0/3)"
+        description: "Connected to access-sw2 (members: xe-0/0/5)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
@@ -118,7 +130,7 @@ configuration:
                     - vlan_3
 
       - name: ae23
-        description: "Connected to access-sw3 (members: xe-0/0/4)"
+        description: "Connected to access-sw3 (members: xe-0/0/6)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
@@ -141,7 +153,7 @@ configuration:
                     - vlan_3
 
       - name: ae24
-        description: "Connected to access-sw4 (members: xe-0/0/5)"
+        description: "Connected to access-sw4 (members: xe-0/0/7)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND

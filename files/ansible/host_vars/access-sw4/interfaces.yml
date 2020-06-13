@@ -24,33 +24,33 @@ configuration:
               vlan:
                 members: "vlan_2"
 
-      - name: xe-0/0/2
+      - name: xe-0/0/3
+        description: "Connected to dist-sw4 (member of ae3)"
+        ether_options:
+          ieee_802.3ad:
+            bundle: ae3
+
+      - name: xe-0/0/7
         description: "Connected to dist-sw1 (member of ae3)"
         ether_options:
           ieee_802.3ad:
             bundle: ae3
 
-      - name: xe-0/0/3
+      - name: xe-0/0/9
         description: "Connected to dist-sw2 (member of ae3)"
         ether_options:
           ieee_802.3ad:
             bundle: ae3
 
-      - name: xe-0/0/4
+      - name: xe-0/0/11
         description: "Connected to dist-sw3 (member of ae3)"
-        ether_options:
-          ieee_802.3ad:
-            bundle: ae3
-
-      - name: xe-0/0/5
-        description: "Connected to dist-sw4 (member of ae3)"
         ether_options:
           ieee_802.3ad:
             bundle: ae3
 
       # ### AE INTERFACES
       - name: ae3
-        description: "To-Distribution-1-4 (members: xe-0/0/2 / xe-0/0/3 / xe-0/0/4 / xe-0/0/5)"
+        description: "To-Distribution-1-4 (members: xe-0/0/7 / xe-0/0/9 / xe-0/0/11 / xe-0/0/3)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND

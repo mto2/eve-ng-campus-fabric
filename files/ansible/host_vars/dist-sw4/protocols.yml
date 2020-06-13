@@ -1,33 +1,43 @@
-# configuration:
-#   protocols:
-#     bgp:
-#       group:
+configuration:
+  protocols:
 
-#         # ### OVERLAY
-#         - name: "EVPN_FABRIC"
-#           family:
-#             evpn:
-#               signaling: null
-#           local_address: "{{ device.lo0.ipv4 }}"
-#           multipath: null
-#           neighbor:
-#             - description: "core-sw2"
-#               name: 192.168.255.12
-#           type: internal
+    # bgp:
+    #   group:
 
-#     evpn:
-#       encapsulation: "vxlan"
-#       default_gateway: "no-gateway-community"
-#       extended_vni_list:
-#         - "5101"
-#         - "5102"
-#         - "5201"
-#         - "5202"
-#         - "5301"
-#         - "5302"
+    #     # ### OVERLAY
+    #     - name: "EVPN_FABRIC"
+    #       family:
+    #         evpn:
+    #           signaling: null
+    #       local_address: "{{ device.lo0.ipv4 }}"
+    #       multipath: null
+    #       neighbor:
+    #         - description: "core-sw2"
+    #           name: 192.168.255.12
+    #       type: internal
 
-#     igmp_snooping:
-#       vlan:
-#         - name: "VLAN-201"
-#           interface: "ae11.0"
-#           multicast_router_interface: null
+    # evpn:
+    #   encapsulation: "vxlan"
+    #   default_gateway: "no-gateway-community"
+    #   extended_vni_list:
+    #     - "5101"
+    #     - "5102"
+    #     - "5201"
+    #     - "5202"
+    #     - "5301"
+    #     - "5302"
+
+    # igmp_snooping:
+    #   vlan:
+    #     - name: "VLAN-201"
+    #       interface: "ae11.0"
+    #       multicast_router_interface: null
+
+    ospf:
+      area:
+        - name: "0.0.0.0"
+          interface:
+            - name: "ae11.0"
+            - name: "ae12.0"
+            - name: "lo0.0"
+              passive: null

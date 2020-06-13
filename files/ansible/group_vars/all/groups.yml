@@ -26,5 +26,5 @@ configuration:
           aggregated_ether_options:
             lacp:
               active: null
-              periodic: fast
+              periodic: slow
           name: <*>

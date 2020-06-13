@@ -3,229 +3,140 @@ configuration:
     interface:
       # ### PHYSICAL INTERFACES
       - name: xe-0/0/0
-        mtu: 9100
-        unit:
-          name: "0"
-          description: "Connected to campus-fw1"
-          family:
-            inet:
-              address:
-                name: "192.168.255.1/31"
-
-      - name: xe-0/0/1
-        mtu: 9100
-        unit:
-          name: "0"
-          description: "Connected to campus-fw2"
-          family:
-            inet:
-              address:
-                name: "192.168.255.3/31"
-
-      - name: xe-0/0/2
-        mtu: 9100
-        unit:
-          name: "0"
-          description: "Connected to core-sw2"
-          family:
-            inet:
-              address:
-                name: "192.168.100.0/31"
-
-      - name: xe-0/0/3
-        mtu: 9100
-        unit:
-          name: "0"
-          description: "Connected to core-sw2"
-          family:
-            inet:
-              address:
-                name: "192.168.100.2/31"
-
-      - name: xe-0/0/8
-        description: "Connected to access-sw4 (member of ae14)"
-        ether_options:
-          ieee_802.3ad:
-            bundle: ae14
-
-      - name: xe-0/0/9
-        description: "Connected to access-sw3 (member of ae13)"
-        ether_options:
-          ieee_802.3ad:
-            bundle: ae13
-
-      - name: xe-0/0/10
-        description: "Connected to access-sw2 (member of ae12)"
-        ether_options:
-          ieee_802.3ad:
-            bundle: ae12
-
-      - name: xe-0/0/11
-        description: "Connected to access-sw1 (member of ae11)"
+        description: "Connected to dist-sw1 (member of ae11)"
         ether_options:
           ieee_802.3ad:
             bundle: ae11
 
+      - name: xe-0/0/1
+        description: "Connected to dist-sw2 (member of ae12)"
+        ether_options:
+          ieee_802.3ad:
+            bundle: ae12
+
+      - name: xe-0/0/2
+        description: "Connected to dist-sw3 (member of ae13)"
+        ether_options:
+          ieee_802.3ad:
+            bundle: ae13
+
+      - name: xe-0/0/3
+        description: "Connected to dist-sw4 (member of ae14)"
+        ether_options:
+          ieee_802.3ad:
+            bundle: ae14
+
+      - name: xe-0/0/10
+        description: "Connected to campus-fw2 (member of ae15)"
+        ether_options:
+          ieee_802.3ad:
+            bundle: ae15
+
+      - name: xe-0/0/11
+        description: "Connected to campus-fw2 (member of ae16)"
+        ether_options:
+          ieee_802.3ad:
+            bundle: ae16
+
       # ### AE INTERFACES
       - name: ae11
-        description: "Connected to access-sw1 (members: xe-0/0/11)"
+        description: "Connected to dist-sw1 (members: xe-0/0/0)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
         aggregated_ether_options:
           lacp:
             active: null
-            system_id: 00:40:00:00:00:01
-        esi:
-          all_active: null
-          identifier: 00:11:11:11:11:11:11:11:11:01
+          minimum_links: 1
         unit:
-          - name: "0"
-            family:
-              ethernet_switching:
-                interface_mode: trunk
-                vlan:
-                  members:
-                    - VLAN-101 
-                    - VLAN-102 
-                    - VLAN-201 
-                    - VLAN-202 
-                    - VLAN-301 
-                    - VLAN-302
+          name: "0"
+          family:
+            inet:
+              address:
+                name: "172.16.1.0/31"
 
       - name: ae12
-        description: "Connected to access-sw2 (members: xe-0/0/10)"
+        description: "Connected to dist-sw2 (members: xe-0/0/1)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
         aggregated_ether_options:
           lacp:
             active: null
-            system_id: 00:40:00:00:00:02
-        esi:
-          all_active: null
-          identifier: 00:11:11:11:11:11:11:11:11:02
+          minimum_links: 1
         unit:
-          - name: "0"
-            family:
-              ethernet_switching:
-                interface_mode: trunk
-                vlan:
-                  members:
-                    - VLAN-101 
-                    - VLAN-102 
-                    - VLAN-201 
-                    - VLAN-202 
-                    - VLAN-301 
-                    - VLAN-302
+          name: "0"
+          family:
+            inet:
+              address:
+                name: "172.16.1.2/31"
 
       - name: ae13
-        description: "Connected to access-sw3 (members: xe-0/0/3)"
+        description: "Connected to dist-sw3 (members: xe-0/0/2)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
         aggregated_ether_options:
           lacp:
             active: null
-            system_id: 00:40:00:00:00:03
-        esi:
-          all_active: null
-          identifier: 00:11:11:11:11:11:11:11:11:03
+          minimum_links: 1
         unit:
-          - name: "0"
-            family:
-              ethernet_switching:
-                interface_mode: trunk
-                vlan:
-                  members:
-                    - VLAN-101 
-                    - VLAN-102 
-                    - VLAN-201 
-                    - VLAN-202 
-                    - VLAN-301 
-                    - VLAN-302
+          name: "0"
+          family:
+            inet:
+              address:
+                name: "172.16.1.4/31"
 
       - name: ae14
-        description: "Connected to access-sw4 (members: xe-0/0/4)"
+        description: "Connected to dist-sw4 (members: xe-0/0/3)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
         aggregated_ether_options:
           lacp:
             active: null
-            system_id: 00:40:00:00:00:04
-        esi:
-          all_active: null
-          identifier: 00:11:11:11:11:11:11:11:11:04
+          minimum_links: 1
         unit:
-          - name: "0"
-            family:
-              ethernet_switching:
-                interface_mode: trunk
-                vlan:
-                  members:
-                    - VLAN-101 
-                    - VLAN-102 
-                    - VLAN-201 
-                    - VLAN-202 
-                    - VLAN-301 
-                    - VLAN-302
+          name: "0"
+          family:
+            inet:
+              address:
+                name: "172.16.1.6/31"
 
-      # ### IRB INTERFACES
-      - name: irb
+      - name: ae15
+        description: "Connected to campus-rt1 (members: xe-0/0/10)"
         apply_groups:
-          - IRB_OPTIONS
+          - AE_MTU_JUMBO
+          - AE_LACP_BOND
+        aggregated_ether_options:
+          lacp:
+            active: null
+          minimum_links: 1
         unit:
-          # ### EMPLOYEE NETWORKS
-          - name: "101"
-            description: "Wired-Employee"
-            family:
-              inet:
-                address:
-                  name: "192.168.101.3/24"
-                  virtual_gateway_address: 192.168.101.1
+          name: "0"
+          family:
+            inet:
+              address:
+                name: "172.16.10.1/31"
 
-          - name: "102"
-            description: "Wireless-Employee"
-            family:
-              inet:
-                address:
-                  name: "192.168.102.3/24"
-                  virtual_gateway_address: 192.168.102.1
-
-          # ### GUEST NETWORKS
-          - name: "201"
-            description: "Guest-Wired-Subnet"
-            family:
-              inet:
-                address:
-                  name: "192.168.201.3/24"
-                  virtual_gateway_address: 192.168.201.1
-
-          - name: "202"
-            description: "Guest-Wireless-Subnet"
-            family:
-              inet:
-                address:
-                  name: "192.168.202.3/24"
-                  virtual_gateway_address: 192.168.202.1
-
-          # ### IOT NETWORKS
-          - name: "301"
-            description: "Wired-IOT"
-            family:
-              inet:
-                address:
-                  name: "192.168.210.3/24"
-                  virtual_gateway_address: 192.168.210.1
-
-          - name: "302"
-            description: "Wireless-IOT"
-            family:
-              inet:
-                address:
-                  name: "192.168.212.3/24"
-                  virtual_gateway_address: 192.168.212.1
+      # - name: ae16
+      #   description: "Connected to campus-fw2 (members: xe-0/0/11)"
+      #   apply_groups:
+      #     - AE_MTU_JUMBO
+      #     - AE_LACP_BOND
+      #   aggregated_ether_options:
+      #     lacp:
+      #       active: null
+      #     minimum_links: 1
+      #   unit:
+      #     - name: "0"
+      #       family:
+      #         ethernet_switching:
+      #           interface_mode: trunk
+      #           vlan:
+      #             members:
+      #               - vlan4_61
+      #               - vlan4_65
 
       # ### LOOPBACK INTERFACES
       - name: lo0

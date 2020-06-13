@@ -3,12 +3,21 @@ configuration:
     vlan:
       - name: vlan_1
         description: "vlan_1"
+        l3_interface: irb.1
         vlan_id: "1"
+        # vxlan:
+        #   vni: 5001
 
       - name: vlan_2
         description: "vlan_2"
+        l3_interface: irb.2
         vlan_id: "2"
+        # vxlan:
+        #   vni: 5002
 
       - name: vlan_3
         description: "vlan_3"
+        l3_interface: irb.3
         vlan_id: "3"
+        # vxlan:
+        #   vni: 5003

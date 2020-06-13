@@ -54,6 +54,9 @@ interfaces {
                 {% endif %}
             }
             {% endif %}
+            {% if each.aggregated_ether_options.minimum_links is defined %}
+            minimum-links {{ each.aggregated_ether_options.minimum_links }};
+            {% endif %}
         }
         {% endif %}
         {#- ---------------------------------------------------------------------------------- #}

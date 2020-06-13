@@ -6,16 +6,26 @@ all:
         core:
           hosts:
             core-sw1:
-              ansible_host: "10.6.6.101"
+              ansible_host: "10.6.6.201"
             core-sw2:
-              ansible_host: "10.6.6.102"
+              ansible_host: "10.6.6.202"
+        distribution:
+          hosts:
+            dist-sw1:
+              ansible_host: "10.6.6.211"
+            dist-sw2:
+              ansible_host: "10.6.6.212"
+            dist-sw3:
+              ansible_host: "10.6.6.213"
+            dist-sw4:
+              ansible_host: "10.6.6.214"
         access:
           hosts:
             access-sw1:
-              ansible_host: "10.6.6.111"
+              ansible_host: "10.6.6.221"
             access-sw2:
-              ansible_host: "10.6.6.112"
+              ansible_host: "10.6.6.222"
             access-sw3:
-              ansible_host: "10.6.6.113"
+              ansible_host: "10.6.6.223"
             access-sw4:
-              ansible_host: "10.6.6.114"
+              ansible_host: "10.6.6.224"

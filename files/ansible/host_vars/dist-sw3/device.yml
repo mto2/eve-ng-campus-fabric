@@ -1,0 +1,5 @@
+device:
+  role:
+    - distribution
+  lo0: 
+    ipv4: 192.168.255.13

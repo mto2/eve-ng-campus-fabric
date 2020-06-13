@@ -1,56 +1,31 @@
-configuration:
-  protocols:
-    bgp:
-      group:
+# configuration:
+#   protocols:
+#     bgp:
+#       group:
 
-        # ### UNDERLAY
-        - name: "UNDERLAY"
-          description: "Connection to EBGP UNDERLAY"
-          type: external
-          local_as: 
-            as_number: 65011
-          peer_as: 65012
-          neighbor:
-            - description: "core-sw2"
-              name: 192.168.100.1
-            - description: "core-sw2"
-              name: 192.168.100.3
-          family:
-            inet:
-              unicast: null
-          import: UNDERLAY-IMPORT
-          export: UNDERLAY-EXPORT
-          authentication_key: "SecretKeyPhrase"
-          multipath: null
-          bfd_liveness_detection:
-            minimum_interval: 350
-            multiplier: 3
+#         # ### OVERLAY
+#         - name: "EVPN_FABRIC"
+#           family:
+#             evpn:
+#               signaling: null
+#           local_address: "{{ device.lo0.ipv4 }}"
+#           multipath: null
+#           neighbor:
+#             - description: "core-sw2"
+#               name: 192.168.255.12
+#           type: internal
 
-        # ### OVERLAY
-        - name: "EVPN_FABRIC"
-          family:
-            evpn:
-              signaling: null
-          local_address: "{{ device.lo0.ipv4 }}"
-          multipath: null
-          neighbor:
-            - description: "core-sw2"
-              name: 192.168.255.12
-          type: internal
+#     evpn:
+#       encapsulation: "vxlan"
+#       default_gateway: "no-gateway-community"
+#       extended_vni_list:
+#         - "5001"
+#         - "5002"
+#         - "5003"
+#         - "5004"
 
-    evpn:
-      encapsulation: "vxlan"
-      default_gateway: "no-gateway-community"
-      extended_vni_list:
-        - "5101"
-        - "5102"
-        - "5201"
-        - "5202"
-        - "5301"
-        - "5302"
-
-    igmp_snooping:
-      vlan:
-        - name: "VLAN-201"
-          interface: "ae11.0"
-          multicast_router_interface: null
+#     igmp_snooping:
+#       vlan:
+#         - name: "vlan_1"
+#           interface: "ae11.0"
+#           multicast_router_interface: null

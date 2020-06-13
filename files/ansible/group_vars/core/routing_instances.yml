@@ -1,88 +1,45 @@
-configuration:
-  routing_instances:
-    instance:
+# configuration:
+#   routing_instances:
+#     instance:
 
-      # ### VRF 1: Guest Access
-      - name: "JNPR_1_VRF"
-        description: "VRF for Guest Access"
-        instance_type: "vrf"
-        interface:
-          # ### PHYSICAL INTERFACES
-          - name: "ge-0/0/20.0"
-          # ### LOOPBACK INTERFACES
-          - name: "lo0.101"
-          # ### VLAN GATEWAY INTERFACES
-          - name: "irb.201"
-          - name: "irb.202"
-        route_distinguisher:
-          rd_type: "{{ device.lo0.ipv4 }}:101"
-        routing_options:
-          auto_export:
-            family:
-              inet:
-                unicast:
-                  - null
-          static:
-            route:
-              - name: "0.0.0.0/0"
-                next_hop:
-                  - "192.168.191.1"
-        vrf_table_label: null
-        vrf_target: 
-          community: "target:1:65001"
+#       # ### VRF VS__1: virtual-switch
+#       - name: "VS__1"
+#         description: "VRF for virtual-switch"
+#         instance_type: "virtual-switch"
+#         interface:
+#           # ### PHYSICAL INTERFACES
+#           - name: "ae16.0"
+#         protocols: 
+#           evpn:
+#             encapsulation:
+#             extended_vni_list:
+#             multicast_mode:
+#             default_gateway:
+#         route_distinguisher:
+#           rd_type: "{{ device.lo0.ipv4 }}:1"
+#         vlans:
+#           - name: vlan4_1
+#             vlan_id: 1
+#             l3_interface: irb.1
+#             vxlan:
+#               vni: 5001
+#               ingress_node_replication: null
+#           - name: vlan4_2
+#             vlan_id: 2
+#             l3_interface: irb.2
+#             vxlan:
+#               vni: 5002
+#               ingress_node_replication: null
+#           - name: vlan4_3
+#             vlan_id: 3
+#             l3_interface: irb.3
+#             vxlan:
+#               vni: 5003
+#               ingress_node_replication: null
+#         vrf_import:
+#           - imp-global
+#         vrf_table_label: null
+#         vrf_target: 
+#           community: "target:64511:1111"
+#           auto: null
 
-      # ### VRF 2: Employee Access
-      - name: "JNPR_2_VRF"
-        description: "VRF for Employee Access"
-        instance_type: "vrf"
-        interface:
-          # ### PHYSICAL INTERFACES
-          # ### LOOPBACK INTERFACES
-          - name: "lo0.102"
-          # ### VLAN GATEWAY INTERFACES
-          - name: "irb.101"
-          - name: "irb.102"
-        route_distinguisher:
-          rd_type: "{{ device.lo0.ipv4 }}:102"
-        routing_options:
-          auto_export:
-            family:
-              inet:
-                unicast:
-                  - null
-          static:
-            route:
-              - name: "0.0.0.0/0"
-                next_hop:
-                  - "192.168.192.1"
-        vrf_table_label: null
-        vrf_target: 
-          community: "target:2:65001"
-
-      # ### VRF 3: IOT Access
-      - name: "JNPR_3_VRF"
-        description: "VRF for IOT Access"
-        instance_type: "vrf"
-        interface:
-          # ### PHYSICAL INTERFACES
-          # ### LOOPBACK INTERFACES
-          - name: "lo0.103"
-          # ### VLAN GATEWAY INTERFACES
-          - name: "irb.301"
-          - name: "irb.302"
-        route_distinguisher:
-          rd_type: "{{ device.lo0.ipv4 }}:103"
-        routing_options:
-          auto_export:
-            family:
-              inet:
-                unicast:
-                  - null
-          static:
-            route:
-              - name: "0.0.0.0/0"
-                next_hop:
-                  - "192.168.193.1"
-        vrf_table_label: null
-        vrf_target: 
-          community: "target:3:65001"

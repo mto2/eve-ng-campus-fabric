@@ -193,6 +193,9 @@ protocols {
             {% endif %}
             {% endif %}
             {% endif %}
+            {% if each.vpn_apply_export is defined %}
+            vpn-apply-export;
+            {% endif %}
         }
         {% endfor %}
         {# ----------------------------------------------------------------------------------- #}
@@ -277,6 +280,9 @@ protocols {
             {% endif %}
             {% endif %}
         }
+        {% endif %}
+        {% if configuration.protocols.bgp.group.vpn_apply_export is defined %}
+        vpn-apply-export;
         {% endif %}
         {% endif %}
     }

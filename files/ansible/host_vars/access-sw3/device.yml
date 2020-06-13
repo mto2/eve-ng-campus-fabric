@@ -2,4 +2,4 @@ device:
   role:
     - access
   lo0: 
-    ipv4: 192.168.200.13
+    ipv4: 192.168.0.23

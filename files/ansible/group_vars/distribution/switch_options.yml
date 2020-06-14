@@ -1,0 +1,15 @@
+configuration:
+  switch_options:
+
+    vrf_import:
+      - IMPORT_GLOBAL
+
+    vtep_source_interface:
+      interface_name: "lo0.0"
+
+    route_distinguisher:
+      rd_type: "{{ device.lo0.ipv4 }}:1"
+
+    vrf_target:
+      community: target:65100:1111
+      auto: null

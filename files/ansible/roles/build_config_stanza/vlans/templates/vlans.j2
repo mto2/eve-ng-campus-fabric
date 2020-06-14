@@ -19,6 +19,9 @@ vlans {
         {% endif %}
         {% if each.vxlan is defined %}
         vxlan {
+            {% if each.vxlan.ingress_node_replication is defined %}
+            ingress-node-replication;
+            {% endif %}
             vni {{ each.vxlan.vni }};
         }
         {% endif %}

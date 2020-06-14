@@ -1,56 +1,84 @@
-# configuration:
-#   routing_instances:
-#     instance:
+configuration:
+  routing_instances:
+    instance:
 
-      # ### VRF VS__1: virtual-switch
-      # - name: "VS__1"
-      #   description: "VRF for virtual-switch"
-      #   instance_type: "virtual-switch"
+      # ### VRF VIRTUAL_SWITCH_1: virtual-switch
+      - name: "VIRTUAL_SWITCH_1"
+        description: "VRF for virtual-switch"
+        instance_type: "virtual-switch"
 
-        # ### INTERFACES
-        # interface:
-        #   - name: "ae16.0"
+        ### INTERFACES
+        interface:
+          - name: "ae15.0"
 
-        # ### PROTOCOLS
-        # protocols: 
-        #   evpn:
-        #     encapsulation:
-        #     extended_vni_list:
-        #     multicast_mode:
-        #     default_gateway:
+        ### PROTOCOLS
+        protocols: 
+          evpn:
+            encapsulation: vxlan
+            extended_vni_list:
+              - all
+            # multicast_mode: ingress-replication
+            default_gateway: no-gateway-community
 
-        # ### ROUTE DISTINGUISHERS
-        # route_distinguisher:
-        #   rd_type: "{{ device.lo0.ipv4 }}:1"
+        ### VXLAN
+        vtep_source_interface:
+          interface_name: "lo0.0"
 
-        # ### VRF configurations
+        ### ROUTE DISTINGUISHERS
+        route_distinguisher:
+          rd_type: "{{ device.lo0.ipv4 }}:1"
+
+        ### VRF configurations
         # vrf_import:
-        #   - imp-global
+        #   - IMPORT_GLOBAL
 
         # vrf_table_label: null
 
-        # vrf_target: 
-        #   community: "target:64511:1111"
-        #   auto: null
+        vrf_target: 
+          community: "target:65100:1111"
+          auto: null
 
-        # ### VLANS
-        # vlans:
-        #   - name: vlan4_1
-        #     vlan_id: 1
-        #     l3_interface: irb.1
-        #     vxlan:
-        #       vni: 5001
-        #       ingress_node_replication: null
-        #   - name: vlan4_2
-        #     vlan_id: 2
-        #     l3_interface: irb.2
-        #     vxlan:
-        #       vni: 5002
-        #       ingress_node_replication: null
-        #   - name: vlan4_3
-        #     vlan_id: 3
-        #     l3_interface: irb.3
-        #     vxlan:
-        #       vni: 5003
-        #       ingress_node_replication: null
+        ### VLANS
+        vlans:
+          - name: vlan_1
+            vlan_id: 1
+            l3_interface: irb.1
+            vxlan:
+              vni: 5001
+              ingress_node_replication: null
+          - name: vlan_2
+            vlan_id: 2
+            l3_interface: irb.2
+            vxlan:
+              vni: 5002
+              ingress_node_replication: null
+          - name: vlan_3
+            vlan_id: 3
+            l3_interface: irb.3
+            vxlan:
+              vni: 5003
+              ingress_node_replication: null
 
+      # ### VRF EVPN_VRF_1: vrf
+      - name: EVPN_VRF_1
+        instance_type: "vrf"
+
+        routing_options:
+          router_id: "{{ device.lo1.ipv4 }}"
+          autonomous_system: 
+            as_number: 64500
+
+        ### INTERFACES
+        interface:
+          - name: "lo0.1"
+          - name: "irb.1"
+          - name: "irb.2"
+          - name: "irb.3"
+
+        ### ROUTE DISTINGUISHERS
+        route_distinguisher:
+          rd_type: "{{ device.lo1.ipv4 }}:1"
+
+        ### VRF configurations
+        vrf_target: 
+          community: "target:64500:1"

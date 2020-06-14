@@ -5,7 +5,6 @@
 {% if configuration.routing_instances is defined %}
 routing-instances {
     {% if configuration.routing_instances.instance is defined %}
-    {% if configuration.routing_instances.instance is not mapping and configuration.routing_instances.instance is not string %}
     {% for each in configuration.routing_instances.instance %}
     {{ each.name }} {
         {# ----------------------------------------------------------------------------------- #}
@@ -46,6 +45,61 @@ routing-instances {
         {% endif %}
         {% if each.description is defined %}
         description "{{ each.description }}";
+        {% endif %}
+        {#- ---------------------------------------------------------------------------------- #}
+        {# protocols                                                                           #}
+        {# ---------------------------------------------------------------------------------- -#}
+        {% if each.protocols is defined %}
+        protocols {
+        {% if each.protocols.evpn is defined %}
+            evpn {
+                encapsulation {{ each.protocols.evpn.encapsulation }};
+                {% if each.protocols.evpn.extended_vni_list is defined %}
+                {% if each.protocols.evpn.extended_vni_list|length > 1 %}
+                {% for item in each.protocols.evpn.extended_vni_list %}
+                extended-vni-list [ {{ item|join(' ') }} ];
+                {% endfor %}
+                {% else %}
+                {% for item in each.protocols.evpn.extended_vni_list %}
+                extended-vni-list {{ item }};
+                {% endfor %}
+                {% endif %}
+                {% endif %}
+                {% if each.protocols.evpn.default_gateway is defined %}
+                default-gateway {{ each.protocols.evpn.default_gateway }};
+                {% endif %}
+            }
+        {% endif %}
+        }
+        {% endif %}
+        {#- ---------------------------------------------------------------------------------- #}
+        {# vlans                                                                               #}
+        {# ---------------------------------------------------------------------------------- -#}
+        {% if each.vlans is defined %}
+        vlans {
+            {% for vlan in each.vlans %}
+            {{ vlan.name }} {
+                vlan-id {{ vlan.vlan_id }};
+                {% if vlan.l3_interface is defined %}
+                l3-interface {{ vlan.l3_interface }};
+                {% endif %}
+                {% if vlan.vxlan is defined %}
+                vxlan {
+                    vni {{ vlan.vxlan.vni }};
+                    {% if vlan.vxlan.ingress_node_replication is defined %}
+                    ingress-node-replication;
+                    {% endif %}
+                }
+                {% endif %}
+            }
+            {% endfor %}
+        }
+        {% endif %}
+        {#- ---------------------------------------------------------------------------------- #}
+        {# vxlan vtep                                                                          #}
+        {# ---------------------------------------------------------------------------------- -#}
+        {% if each.vtep_source_interface is defined %}
+        vtep-source-interface {{ each.vtep_source_interface.interface_name }};
         {% endif %}
         {#- ---------------------------------------------------------------------------------- #}
         {# vrf instance type                                                                   #}
@@ -123,7 +177,14 @@ routing-instances {
         {# vrf target                                                                          #}
         {# ---------------------------------------------------------------------------------- -#}
         {% if each.vrf_target is defined %}
+        {% if each.vrf_target.auto is defined %}
+        vrf-target {
+            {{ each.vrf_target.community }};
+            auto;
+        }
+        {% else %}
         vrf-target {{ each.vrf_target.community }};
+        {% endif %}
         {% endif %}
         {#- ---------------------------------------------------------------------------------- #}
         {# vrf table label                                                             #}
@@ -139,6 +200,9 @@ routing-instances {
             static route {{ each.name }} next-hop {{ route }};
             {% endfor %}
             {% endfor %}
+            {% endif %}
+            {% if each.routing_options.router_id is defined %}
+            router-id {{ each.routing_options.router_id }};
             {% endif %}
             {% if each.routing_options.multipath is defined %}
             multipath;
@@ -165,117 +229,6 @@ routing-instances {
         {% endif %}
     }
     {% endfor %}
-    {% else %}
-    {#- ---------------------------------------------------------------------------------- #}
-    {# single routing instance                                                             #}
-    {# ---------------------------------------------------------------------------------- -#}
-    {{ configuration.routing_instances.instance.name }} {
-        {% if configuration.routing_instances.instance.description is defined %}
-        description "{{ configuration.routing_instances.instance.description }}";
-        {% endif %}
-        {#- ---------------------------------------------------------------------------------- #}
-        {# vrf instance type                                                                   #}
-        {# ---------------------------------------------------------------------------------- -#}
-        {% if configuration.routing_instances.instance.instance_type is defined %}
-        instance-type {{ configuration.routing_instances.instance.instance_type }};
-        {% endif %}
-        {% if configuration.routing_instances.instance.access is defined %}
-        access {
-            {% if configuration.routing_instances.instance.access.address_assignment is defined %}
-            address-assignment {
-                {% if configuration.routing_instances.instance.access.address_assignment.pool is defined %}
-                {% for pool in configuration.routing_instances.instance.access.address_assignment.pool %}
-                pool {{ pool.name }} {
-                    {% if pool.family.inet is defined %}
-                    family inet {
-                        network {{ pool.family.inet.network }};
-                        {% for item in pool.family.inet.range %}
-                        range {{ item.name }} {
-                            low {{ item.low }};
-                            high {{ item.high }};
-                        }
-                        {% endfor %}
-                        {% if pool.family.inet.dhcp_attributes is defined %}
-                        dhcp-attributes {
-                            {% if pool.family.inet.dhcp_attributes.router is defined %}
-                            router {
-                            {% for router in pool.family.inet.dhcp_attributes.router %}
-                                {{ router.name }};
-                            {% endfor %}
-                            }
-                            {% endif %}
-                            {% if pool.family.inet.dhcp_attributes.propagate_settings is defined %}
-                            propagate-settings {{ pool.family.inet.dhcp_attributes.propagate_settings }};
-                            {% endif %}
-                        }
-                        {% endif %}
-                    }
-                    {% endif %}
-                }
-                {% endfor %}
-                {% endif %}
-            }
-            {% endif %}
-        }
-        {% endif %}
-        {#- ---------------------------------------------------------------------------------- #}
-        {# vrf interface                                                                       #}
-        {# ---------------------------------------------------------------------------------- -#}
-        {% if configuration.routing_instances.instance.interface is defined %}
-        {% if configuration.routing_instances.instance.interface is not mapping and configuration.routing_instances.instance.interface is not string %}
-        {% for each in configuration.routing_instances.instance.interface %}
-        interface {{ each.name }};
-        {% endfor %}
-        {% else %}
-        interface {{ configuration.routing_instances.instance.interface.name }};
-        {% endif %}
-        {% endif %}
-        {#- ---------------------------------------------------------------------------------- #}
-        {# vrf route-distinguisher                                                             #}
-        {# ---------------------------------------------------------------------------------- -#}
-        {% if configuration.routing_instances.instance.route_distinguisher.rd_type is defined %}
-        route-distinguisher {{ configuration.routing_instances.instance.route_distinguisher.rd_type }};
-        {% endif %}
-        {#- ---------------------------------------------------------------------------------- #}
-        {# vrf import/export                                                                   #}
-        {# ---------------------------------------------------------------------------------- -#}
-        {% if configuration.routing_instances.instance.vrf_import is defined %}
-        vrf-import {{ configuration.routing_instances.instance.vrf_import }};
-        {% endif %}
-        {% if configuration.routing_instances.instance.vrf_export is defined %}
-        vrf-export {{ configuration.routing_instances.instance.vrf_export }};
-        {% endif %}
-        {#- ---------------------------------------------------------------------------------- #}
-        {# vrf vrf-table-label                                                                 #}
-        {# ---------------------------------------------------------------------------------- -#}
-        {% if configuration.routing_instances.instance.vrf_table_label is defined %}
-        vrf-table-label;
-        {% endif %}
-        {#- ---------------------------------------------------------------------------------- #}
-        {# vrf vrf-target                                                                      #}
-        {# ---------------------------------------------------------------------------------- -#}
-        {% if configuration.routing_instances.instance.vrf_target is defined %}
-        vrf-target {{ configuration.routing_instances.instance.vrf_target.community }};
-        {% endif %}
-        {#- ---------------------------------------------------------------------------------- #}
-        {# vrf routing-options                                                                 #}
-        {# ---------------------------------------------------------------------------------- -#}
-        {% if configuration.routing_instances.instance.routing_options is defined %}
-        routing-options {
-            {% if configuration.routing_instances.instance.routing_options.multipath is defined %}
-            multipath;
-            {% endif %}
-            {% if configuration.routing_instances.instance.routing_options.autonomous_system is defined %}
-            {% if configuration.routing_instances.instance.routing_options.autonomous_system.loops is defined %}
-            autonomous-system {{ configuration.routing_instances.instance.routing_options.autonomous_system.as_number }} loops {{ configuration.routing_instances.instance.routing_options.autonomous_system.loops }};
-            {% else %}
-            autonomous-system {{ configuration.routing_instances.instance.routing_options.autonomous_system.as_number }};
-            {% endif %}
-            {% endif %}
-        }
-        {% endif %}
-    }
-    {% endif %}
     {% endif %}
 }
 {% endif %}

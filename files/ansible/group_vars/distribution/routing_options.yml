@@ -1,0 +1,5 @@
+configuration:
+  routing_options:
+    router_id: "{{ device.lo0.ipv4 }}"
+    autonomous_system:
+      as_number: "65100"

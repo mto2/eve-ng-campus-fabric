@@ -1,0 +1,17 @@
+configuration:
+  policy_options:
+    policy_statement:
+      - name: IMPORT_GLOBAL
+        term:
+          - name: GLOBAL
+            from:
+              community: 
+                - COMMUNITY_GLOBAL
+            then:
+              accept: null
+          - name: other
+            then:
+              reject: null
+    community:
+      - name: COMMUNITY_GLOBAL
+        members: target:65100:1111

@@ -156,9 +156,15 @@ interfaces {
             {# ---------------------------------------------------------------------------------- -#}
             {% if each.family.inet6 is defined %}
             family inet6 {
-                {% if each.family.inet6.address is defined %}
-                address {{ each.family.inet6.address.name }};
+                {% for iface in each.family.inet6.address %}
+                {% if iface.virtual_gateway_address is defined %}
+                address {{ iface.name }} {
+                    virtual-gateway-address {{ iface.virtual_gateway_address }};
+                }
+                {% else %}
+                address {{ iface.name }};
                 {% endif %}
+                {% endfor %}
             }
             {% endif %}
             {#- ---------------------------------------------------------------------------------- #}

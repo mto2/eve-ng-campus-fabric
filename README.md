@@ -1,4 +1,4 @@
-# Ansible VXLAN-EVPN for Campus
+# Ansible Campus Fabric Core Distribution CRB
 
 [![N|Solid](https://upload.wikimedia.org/wikipedia/commons/3/31/Juniper_Networks_logo.svg)](https://www.juniper.net/documentation/solutions/en_US/campus)
 
@@ -6,7 +6,7 @@
 
 ## Overview
 
-`Ansible-VXLAN-EVPN-for-Campus` is an easier way to deploy a VXLAN / EVPN fabric with Juniper's campus solutions. 
+`Ansible-Campus-Fabric-Core-Distribution-CRB` is an easier way to deploy a CRB-based VXLAN / EVPN fabric with Juniper's campus solutions. 
 
 This project is based on *[Infrastructure-As-Code](https://dev.to/fedekau/infrastructure-as-code-a-beginners-perspective-2l8k)* concepts, where all elements of a device's configuration as stored in a format of `key:value` pairs and stored in a source-code management system such as Github or Gitlab. While not required for successful deployments, we at Juniper encourage network devops teams to *[leverage best practicies with git](https://dev.to/bholmesdev/git-github-best-practices-for-teams-opinionated-28h7)*.
 
@@ -34,7 +34,7 @@ Here is a high level perspective of what the playbook will build without any adj
 
 ### Campus Collapsed Core Diagram
 
-[![campus collapsed core](files/images/collapsed_core.png)](files/images/collapsed_core.png)
+[![campus collapsed core](files/images/Ansible-Campus-Fabric-Core-Distribution-CRB.jpg)](files/images/Ansible-Campus-Fabric-Core-Distribution-CRB.jpg)
 
 
 ## Execution

@@ -14,7 +14,7 @@ The network designs available for you here are based upon *[Juniper's Validated 
 
 ## How to use this project
 
-The crux of this project is to build the device configurations locally by executing the *[files/ansible/pb.configuration.build.yml](files/ansible/pb.configuration.build.yml)* playbook and applying the generated configurations with the *[files/ansible/pb.configuration.build.yml](files/ansible/pb.configuration.build.yml)* playbook; both playbooks are found in the `files/ansible` directory. Taking a peek at this relatively simple workflow, we can see that there are just five tasks executed:
+The crux of this project is to build the device configurations locally by executing the *[files/ansible/pb.configuration.build.yml](files/ansible/pb.configuration.build.yml)* playbook and applying the generated configurations with the *[files/ansible/pb.configuration.apply.yml](files/ansible/pb.configuration.apply.yml)* playbook; both playbooks are found in the `files/ansible` directory. Taking a peek at this relatively simple workflow, we can see that there are just five tasks executed:
 
 >1. validate that Ansible is running at least version 2.7.8
 >2. remove and rebuild local directories that hold our generated configurations

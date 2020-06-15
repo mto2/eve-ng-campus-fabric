@@ -1,0 +1,16 @@
+---
+sudo: required
+
+env:
+  - distribution: packetferret/ansible-vxlan-evpn-for-campus
+    version: 0.0.2
+
+services:
+  - docker
+
+before_install:
+  - 'sudo docker pull ${distribution}:${version}'
+
+script:
+  - 'make build'
+  - 'make config'

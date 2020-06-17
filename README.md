@@ -55,7 +55,7 @@ make build
 
 [![make build](files/images/make_build.gif)](files/images/make_build.gif)
 
-> *note: the `make build` command only needs to be ran once; subsequent executions of the command will not hurt anything, but will add a second or two of wasted time*
+> *note: the `make build` command only needs to be run once; subsequent executions of the command will not hurt anything, but will add a second or two of wasted time*
 
 #### Building the configuration and applying it to the devices
 

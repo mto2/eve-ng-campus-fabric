@@ -2,7 +2,7 @@
 
 [![N|Solid](https://upload.wikimedia.org/wikipedia/commons/3/31/Juniper_Networks_logo.svg)](https://www.juniper.net/documentation/solutions/en_US/campus)
 
-[![Build Status](https://travis-ci.org/packetferret/Ansible-VXLAN-EVPN-for-Campus.svg?branch=master)](https://travis-ci.org/packetferret/Ansible-VXLAN-EVPN-for-Campus)
+[![Build Status](https://travis-ci.org/packetferret/Ansible-Campus-Fabric-Core-Distribution-CRB.svg?branch=master)](https://travis-ci.org/packetferret/Ansible-Campus-Fabric-Core-Distribution-CRB)
 
 ## Overview
 

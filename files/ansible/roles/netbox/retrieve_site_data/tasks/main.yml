@@ -23,6 +23,9 @@
   set_fact:
     site_data: "{{ site_data.json.results }}"
 
+# - debug:
+#     msg: "{{ site_data }}"
+
 - name: "cleaning up device data into dictionary values"
   set_fact:
     site_data: "{{ site_data | cleanup_site_data }}"

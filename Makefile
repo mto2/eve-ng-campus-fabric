@@ -32,6 +32,13 @@ config:
 	-w /home/tmp/files/ansible/ \
 	$(DOCKER_IMG):$(DOCKER_TAG) ansible-playbook pb.configuration.build.yml
 
+shell:
+	docker run -it \
+	--rm \
+	-v $(PWD)/files/:/home/tmp/files \
+	-w /home/tmp/files/ansible/ \
+	$(DOCKER_IMG):$(DOCKER_TAG) /bin/sh
+
 # ### side note: simplifying by removing local ansible execution
 # ### until someone declares that they want it.
 # ### will push foward with only docker-based deployments for now

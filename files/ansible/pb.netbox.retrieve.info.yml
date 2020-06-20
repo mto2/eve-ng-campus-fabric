@@ -6,6 +6,8 @@
     connection: local
     gather_facts: False
     become: False
+    vars:
+      site_name: "crb-dc"
     any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
     roles:
       ### ---------------------------------------------------------------------------

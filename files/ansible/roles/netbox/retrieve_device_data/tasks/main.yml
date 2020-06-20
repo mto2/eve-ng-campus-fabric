@@ -19,19 +19,19 @@
     validate_certs: false
   register: site_devices
 
-- debug:
-    msg: "{{ site_devices }}"
+# - debug:
+#     msg: "{{ site_devices }}"
 
 - name: "setting site_devices variable"
   set_fact:
     site_devices: "{{ site_devices.json.results }}"
 
-- debug:
-    msg: "{{ site_devices }}"
+# - debug:
+#     msg: "{{ site_devices }}"
 
 - name: "cleaning up site data into dictionary values"
   set_fact:
     site_devices: "{{ site_devices | cleanup_devices }}"
 
-- debug:
-    msg: "{{ site_devices }}"
+# - debug:
+#     msg: "{{ site_devices }}"

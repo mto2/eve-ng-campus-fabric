@@ -1,0 +1,39 @@
+---
+### ---------------------------------------------------------------------------
+### VALIDATE THAT ANSIBLE CONTROL MACHINE IS RUNNING A RECENT ANSIBLE VERSION
+### ---------------------------------------------------------------------------
+- hosts: all
+  connection: local
+  gather_facts: False
+  become: False
+  tasks:
+    - name: "Check ansible version >=2.7.8"
+      assert:
+        msg: "Ansible must be v2.7.8 or higher"
+        that:
+          - ansible_version.string is version("2.7.8", ">=")
+      tags:
+        - check
+  run_once: True
+
+### ---------------------------------------------------------------------------
+### DEBUGGING A GENERATED CONFIGURATION
+### ---------------------------------------------------------------------------
+
+# - hosts: leaf1
+#   connection: local
+#   gather_facts: False
+#   tasks:
+#     - name: display multiple file contents
+#       debug: var=item
+#       with_file:
+#         - "{{ completed_config_file }}"
+
+### ---------------------------------------------------------------------------
+### VALIDATE, DIFF, AND APPLY CONFIGURATION TO DEVICES
+### ---------------------------------------------------------------------------
+- hosts: all
+  connection: local
+  gather_facts: False
+  roles:
+    - { role: push_config/diff }

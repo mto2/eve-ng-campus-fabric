@@ -145,11 +145,14 @@ class FilterModule(object):
                     if interface["count_ipaddresses"] > 0:
                         ipv4 = {}
                         ipv6 = {}
-                        #baseurl = https://netbox/api/ipam/ip-addresses/?device_id=23&interface=lo0.0
+                        ipv4_addresses = []
+                        ipv6_addresses = []
                         baseurl = "https://10.255.127.46/api/ipam/ip-addresses/"
                         device_id = each["device"]["id"]
                         iface = each["name"]
                         api_token = "ad34740e10bde714f96960addf42b36db6c28c0e"
+
+                        # let's make a rest api query to netbox's ipam for more info
                         try:
                             response = requests.get(
                                 url=baseurl,
@@ -164,16 +167,69 @@ class FilterModule(object):
                                 verify=False
                             )
                             content = json.loads(response.content)
+
+                            # assign IPv4 and IPv6 addresses
                             for each in content["results"]:
+
+                                # ipv4
                                 if each["family"]["label"] == "IPv4":
-                                    ipv4["address"] = each["address"]
-                                    interface["ipv4"] = ipv4
+                                    ipv4 = {}
+                                    
+                                    # append ipv4 address to list
+                                    address = each["address"]
+
+                                    # tags
+                                    tags = each["tags"]
+                                    
+                                    # find the role of the IPv4 address
+                                    if each["role"] is not None:
+                                        if each["role"]["value"] == "anycast":
+                                            role = "virtual_gateway_anycast"
+                                            address = address.split('/')
+                                            address = address[0]
+                                        elif each["role"]["value"] == "secondary":
+                                            role = "physical_address"
+                                    else:
+                                        role = 'undefined'
+                                    
+                                    ipv4["address"] = address
+                                    ipv4["tags"] = tags
+                                    ipv4["role"] = role
+                                    ipv4_addresses.append(ipv4)
+
+                                # ipv6
                                 else:
-                                    ipv6["address"] = each["address"]
-                                    interface["ipv6"] = ipv6
+                                    ipv6 = {}
+
+                                    # append ipv6 address to list
+                                    address = each["address"]
+
+                                    # assign tags
+                                    tags = each["tags"]
+
+                                    # find the role of the IPv6 address
+                                    if each["role"] is not None:
+                                        if each["role"]["value"] == "anycast":
+                                            role = "virtual_gateway_anycast"
+                                            address = address.split('/')
+                                            address = address[0]
+                                        elif each["role"]["value"] == "secondary":
+                                            role = "physical_address"
+                                    else:
+                                        role = 'undefined'
+                                    
+                                    ipv6["address"] = address
+                                    ipv6["tags"] = tags
+                                    ipv6["role"] = role
+                                    ipv6_addresses.append(ipv6)
+
+                            if len(ipv4_addresses) > 0:
+                                interface["ipv4"] = ipv4_addresses
+                            if len(ipv6_addresses) > 0:
+                                interface["ipv6"] = ipv6_addresses
                         except requests.exceptions.RequestException:
                             interface["ipv4"] = "failed"
-                        
+
                     else:
                         pass
                 except KeyError:

@@ -17,12 +17,16 @@
 
 - name: "setting device_interfaces variable"
   set_fact:
-    device_interfaces: "{{ device_interfaces }}"
+    device_interfaces: "{{ device_interfaces.results }}"
+
+# - name: "print device_interfaces variable"
+#   debug:
+#     msg: "{{ device_interfaces }}"
+  
+- name: "cleaning up interfaces into dictionary values"
+  set_fact:
+    device_interfaces: "{{ device_interfaces | cleanup_interfaces }}"
 
 - name: "print device_interfaces variable"
   debug:
     msg: "{{ device_interfaces }}"
-  
-# - name: "cleaning up prefixes into dictionary values"
-#   set_fact:
-#     device_interfaces: "{{ device_interfaces | cleanup_device_prefixes }}"

@@ -1,0 +1,2240 @@
+{
+  "count": 84,
+  "next": "https://netbox/api/ipam/ip-addresses/?limit=50&offset=50",
+  "previous": null,
+  "results": [
+    {
+      "id": 40,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "10.6.6.201/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 80,
+        "url": "https://netbox/api/dcim/interfaces/80/",
+        "device": {
+          "id": 17,
+          "url": "https://netbox/api/dcim/devices/17/",
+          "name": "core-sw1",
+          "display_name": "core-sw1"
+        },
+        "virtual_machine": null,
+        "name": "em0.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "Out of band network",
+      "tags": [
+        "ipv4",
+        "oob",
+        "mgmt"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-13",
+      "last_updated": "2020-06-21T13:55:55.991794Z"
+    },
+    {
+      "id": 41,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "10.6.6.202/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 81,
+        "url": "https://netbox/api/dcim/interfaces/81/",
+        "device": {
+          "id": 18,
+          "url": "https://netbox/api/dcim/devices/18/",
+          "name": "core-sw2",
+          "display_name": "core-sw2"
+        },
+        "virtual_machine": null,
+        "name": "em0.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "Out of band network",
+      "tags": [
+        "ipv4",
+        "oob",
+        "mgmt"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-13",
+      "last_updated": "2020-06-21T13:55:56.005220Z"
+    },
+    {
+      "id": 42,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "10.6.6.211/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 82,
+        "url": "https://netbox/api/dcim/interfaces/82/",
+        "device": {
+          "id": 19,
+          "url": "https://netbox/api/dcim/devices/19/",
+          "name": "dist-sw1",
+          "display_name": "dist-sw1"
+        },
+        "virtual_machine": null,
+        "name": "em0.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "Out of band network",
+      "tags": [
+        "ipv4",
+        "oob",
+        "mgmt"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-13",
+      "last_updated": "2020-06-21T13:55:56.017699Z"
+    },
+    {
+      "id": 43,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "10.6.6.212/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 83,
+        "url": "https://netbox/api/dcim/interfaces/83/",
+        "device": {
+          "id": 20,
+          "url": "https://netbox/api/dcim/devices/20/",
+          "name": "dist-sw2",
+          "display_name": "dist-sw2"
+        },
+        "virtual_machine": null,
+        "name": "em0.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "Out of band network",
+      "tags": [
+        "ipv4",
+        "oob",
+        "mgmt"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-13",
+      "last_updated": "2020-06-21T13:55:56.030651Z"
+    },
+    {
+      "id": 44,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "10.6.6.213/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 84,
+        "url": "https://netbox/api/dcim/interfaces/84/",
+        "device": {
+          "id": 21,
+          "url": "https://netbox/api/dcim/devices/21/",
+          "name": "dist-sw3",
+          "display_name": "dist-sw3"
+        },
+        "virtual_machine": null,
+        "name": "em0.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "Out of band network",
+      "tags": [
+        "ipv4",
+        "oob",
+        "mgmt"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-13",
+      "last_updated": "2020-06-21T13:55:56.043473Z"
+    },
+    {
+      "id": 45,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "10.6.6.214/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 85,
+        "url": "https://netbox/api/dcim/interfaces/85/",
+        "device": {
+          "id": 22,
+          "url": "https://netbox/api/dcim/devices/22/",
+          "name": "dist-sw4",
+          "display_name": "dist-sw4"
+        },
+        "virtual_machine": null,
+        "name": "em0.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "Out of band network",
+      "tags": [
+        "ipv4",
+        "oob",
+        "mgmt"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-13",
+      "last_updated": "2020-06-21T13:55:56.056022Z"
+    },
+    {
+      "id": 46,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "10.6.6.221/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 86,
+        "url": "https://netbox/api/dcim/interfaces/86/",
+        "device": {
+          "id": 23,
+          "url": "https://netbox/api/dcim/devices/23/",
+          "name": "access-sw1",
+          "display_name": "access-sw1"
+        },
+        "virtual_machine": null,
+        "name": "em0.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "Out of band network",
+      "tags": [
+        "ipv4",
+        "oob",
+        "mgmt"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-13",
+      "last_updated": "2020-06-21T13:55:56.068195Z"
+    },
+    {
+      "id": 47,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "10.6.6.222/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 87,
+        "url": "https://netbox/api/dcim/interfaces/87/",
+        "device": {
+          "id": 24,
+          "url": "https://netbox/api/dcim/devices/24/",
+          "name": "access-sw2",
+          "display_name": "access-sw2"
+        },
+        "virtual_machine": null,
+        "name": "em0.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "Out of band network",
+      "tags": [
+        "ipv4",
+        "oob",
+        "mgmt"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-13",
+      "last_updated": "2020-06-21T13:55:56.078671Z"
+    },
+    {
+      "id": 48,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "10.6.6.223/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 88,
+        "url": "https://netbox/api/dcim/interfaces/88/",
+        "device": {
+          "id": 25,
+          "url": "https://netbox/api/dcim/devices/25/",
+          "name": "access-sw3",
+          "display_name": "access-sw3"
+        },
+        "virtual_machine": null,
+        "name": "em0.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "Out of band network",
+      "tags": [
+        "ipv4",
+        "oob",
+        "mgmt"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-13",
+      "last_updated": "2020-06-21T13:55:56.090916Z"
+    },
+    {
+      "id": 49,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "10.6.6.224/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 89,
+        "url": "https://netbox/api/dcim/interfaces/89/",
+        "device": {
+          "id": 26,
+          "url": "https://netbox/api/dcim/devices/26/",
+          "name": "access-sw4",
+          "display_name": "access-sw4"
+        },
+        "virtual_machine": null,
+        "name": "em0.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "Out of band network",
+      "tags": [
+        "ipv4",
+        "oob",
+        "mgmt"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-13",
+      "last_updated": "2020-06-21T13:55:56.101751Z"
+    },
+    {
+      "id": 7,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "10.255.0.1/17",
+      "vrf": null,
+      "tenant": null,
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 7,
+        "url": "https://netbox/api/dcim/interfaces/7/",
+        "device": {
+          "id": 7,
+          "url": "https://netbox/api/dcim/devices/7/",
+          "name": "tatooine",
+          "display_name": "tatooine"
+        },
+        "virtual_machine": null,
+        "name": "irb.255"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "",
+      "tags": [],
+      "custom_fields": {},
+      "created": "2020-06-03",
+      "last_updated": "2020-06-03T16:45:14.689619Z"
+    },
+    {
+      "id": 5,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "10.255.0.12/17",
+      "vrf": null,
+      "tenant": null,
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 5,
+        "url": "https://netbox/api/dcim/interfaces/5/",
+        "device": {
+          "id": 5,
+          "url": "https://netbox/api/dcim/devices/5/",
+          "name": "kamino",
+          "display_name": "kamino"
+        },
+        "virtual_machine": null,
+        "name": "irb.255"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "",
+      "tags": [],
+      "custom_fields": {},
+      "created": "2020-06-03",
+      "last_updated": "2020-06-03T16:44:10.145993Z"
+    },
+    {
+      "id": 9,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "10.255.0.14/17",
+      "vrf": null,
+      "tenant": null,
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 9,
+        "url": "https://netbox/api/dcim/interfaces/9/",
+        "device": {
+          "id": 9,
+          "url": "https://netbox/api/dcim/devices/9/",
+          "name": "alderaan",
+          "display_name": "alderaan"
+        },
+        "virtual_machine": null,
+        "name": "irb.255"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "",
+      "tags": [],
+      "custom_fields": {},
+      "created": "2020-06-04",
+      "last_updated": "2020-06-04T21:54:25.328045Z"
+    },
+    {
+      "id": 8,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "10.255.0.15/17",
+      "vrf": null,
+      "tenant": null,
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 8,
+        "url": "https://netbox/api/dcim/interfaces/8/",
+        "device": {
+          "id": 8,
+          "url": "https://netbox/api/dcim/devices/8/",
+          "name": "coruscant",
+          "display_name": "coruscant"
+        },
+        "virtual_machine": null,
+        "name": "irb.255"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "",
+      "tags": [],
+      "custom_fields": {},
+      "created": "2020-06-03",
+      "last_updated": "2020-06-03T16:46:03.907601Z"
+    },
+    {
+      "id": 69,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "169.254.0.2/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 116,
+        "url": "https://netbox/api/dcim/interfaces/116/",
+        "device": {
+          "id": 18,
+          "url": "https://netbox/api/dcim/devices/18/",
+          "name": "core-sw2",
+          "display_name": "core-sw2"
+        },
+        "virtual_machine": null,
+        "name": "em1.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "vQFX PFE-RE",
+      "tags": [
+        "ipv4",
+        "qfx-re-pfe"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:54:15.518013Z"
+    },
+    {
+      "id": 68,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "169.254.0.2/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 115,
+        "url": "https://netbox/api/dcim/interfaces/115/",
+        "device": {
+          "id": 17,
+          "url": "https://netbox/api/dcim/devices/17/",
+          "name": "core-sw1",
+          "display_name": "core-sw1"
+        },
+        "virtual_machine": null,
+        "name": "em1.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "vQFX PFE-RE",
+      "tags": [
+        "ipv4",
+        "qfx-re-pfe"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:54:15.504330Z"
+    },
+    {
+      "id": 67,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "169.254.0.2/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 114,
+        "url": "https://netbox/api/dcim/interfaces/114/",
+        "device": {
+          "id": 22,
+          "url": "https://netbox/api/dcim/devices/22/",
+          "name": "dist-sw4",
+          "display_name": "dist-sw4"
+        },
+        "virtual_machine": null,
+        "name": "em1.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "vQFX PFE-RE",
+      "tags": [
+        "ipv4",
+        "qfx-re-pfe"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:54:15.490472Z"
+    },
+    {
+      "id": 66,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "169.254.0.2/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 113,
+        "url": "https://netbox/api/dcim/interfaces/113/",
+        "device": {
+          "id": 21,
+          "url": "https://netbox/api/dcim/devices/21/",
+          "name": "dist-sw3",
+          "display_name": "dist-sw3"
+        },
+        "virtual_machine": null,
+        "name": "em1.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "vQFX PFE-RE",
+      "tags": [
+        "ipv4",
+        "qfx-re-pfe"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:54:15.477618Z"
+    },
+    {
+      "id": 65,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "169.254.0.2/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 112,
+        "url": "https://netbox/api/dcim/interfaces/112/",
+        "device": {
+          "id": 20,
+          "url": "https://netbox/api/dcim/devices/20/",
+          "name": "dist-sw2",
+          "display_name": "dist-sw2"
+        },
+        "virtual_machine": null,
+        "name": "em1.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "vQFX PFE-RE",
+      "tags": [
+        "ipv4",
+        "qfx-re-pfe"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:54:15.464293Z"
+    },
+    {
+      "id": 64,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "169.254.0.2/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 111,
+        "url": "https://netbox/api/dcim/interfaces/111/",
+        "device": {
+          "id": 19,
+          "url": "https://netbox/api/dcim/devices/19/",
+          "name": "dist-sw1",
+          "display_name": "dist-sw1"
+        },
+        "virtual_machine": null,
+        "name": "em1.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "vQFX PFE-RE",
+      "tags": [
+        "ipv4",
+        "qfx-re-pfe"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:54:15.450903Z"
+    },
+    {
+      "id": 63,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "169.254.0.2/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 110,
+        "url": "https://netbox/api/dcim/interfaces/110/",
+        "device": {
+          "id": 26,
+          "url": "https://netbox/api/dcim/devices/26/",
+          "name": "access-sw4",
+          "display_name": "access-sw4"
+        },
+        "virtual_machine": null,
+        "name": "em1.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "vQFX PFE-RE",
+      "tags": [
+        "ipv4",
+        "qfx-re-pfe"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:54:15.437407Z"
+    },
+    {
+      "id": 62,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "169.254.0.2/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 109,
+        "url": "https://netbox/api/dcim/interfaces/109/",
+        "device": {
+          "id": 25,
+          "url": "https://netbox/api/dcim/devices/25/",
+          "name": "access-sw3",
+          "display_name": "access-sw3"
+        },
+        "virtual_machine": null,
+        "name": "em1.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "vQFX PFE-RE",
+      "tags": [
+        "ipv4",
+        "qfx-re-pfe"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:54:15.418332Z"
+    },
+    {
+      "id": 50,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "169.254.0.2/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 98,
+        "url": "https://netbox/api/dcim/interfaces/98/",
+        "device": {
+          "id": 23,
+          "url": "https://netbox/api/dcim/devices/23/",
+          "name": "access-sw1",
+          "display_name": "access-sw1"
+        },
+        "virtual_machine": null,
+        "name": "em1.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "",
+      "tags": [],
+      "custom_fields": {},
+      "created": "2020-06-19",
+      "last_updated": "2020-06-20T14:27:08.486381Z"
+    },
+    {
+      "id": 52,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "169.254.0.2/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 108,
+        "url": "https://netbox/api/dcim/interfaces/108/",
+        "device": {
+          "id": 24,
+          "url": "https://netbox/api/dcim/devices/24/",
+          "name": "access-sw2",
+          "display_name": "access-sw2"
+        },
+        "virtual_machine": null,
+        "name": "em1.0"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "vQFX PFE-RE",
+      "tags": [
+        "ipv4",
+        "qfx-re-pfe"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:55:30.298426Z"
+    },
+    {
+      "id": 70,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.1.0/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 139,
+        "url": "https://netbox/api/dcim/interfaces/139/",
+        "device": {
+          "id": 17,
+          "url": "https://netbox/api/dcim/devices/17/",
+          "name": "core-sw1",
+          "display_name": "core-sw1"
+        },
+        "virtual_machine": null,
+        "name": "ae11"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.332149Z"
+    },
+    {
+      "id": 112,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.1.1/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 181,
+        "url": "https://netbox/api/dcim/interfaces/181/",
+        "device": {
+          "id": 19,
+          "url": "https://netbox/api/dcim/devices/19/",
+          "name": "dist-sw1",
+          "display_name": "dist-sw1"
+        },
+        "virtual_machine": null,
+        "name": "ae11"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.356888Z"
+    },
+    {
+      "id": 71,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.1.2/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 140,
+        "url": "https://netbox/api/dcim/interfaces/140/",
+        "device": {
+          "id": 17,
+          "url": "https://netbox/api/dcim/devices/17/",
+          "name": "core-sw1",
+          "display_name": "core-sw1"
+        },
+        "virtual_machine": null,
+        "name": "ae12"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.374936Z"
+    },
+    {
+      "id": 114,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.1.3/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 196,
+        "url": "https://netbox/api/dcim/interfaces/196/",
+        "device": {
+          "id": 20,
+          "url": "https://netbox/api/dcim/devices/20/",
+          "name": "dist-sw2",
+          "display_name": "dist-sw2"
+        },
+        "virtual_machine": null,
+        "name": "ae11"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.392042Z"
+    },
+    {
+      "id": 72,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.1.4/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 141,
+        "url": "https://netbox/api/dcim/interfaces/141/",
+        "device": {
+          "id": 17,
+          "url": "https://netbox/api/dcim/devices/17/",
+          "name": "core-sw1",
+          "display_name": "core-sw1"
+        },
+        "virtual_machine": null,
+        "name": "ae13"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.408733Z"
+    },
+    {
+      "id": 116,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.1.5/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 198,
+        "url": "https://netbox/api/dcim/interfaces/198/",
+        "device": {
+          "id": 21,
+          "url": "https://netbox/api/dcim/devices/21/",
+          "name": "dist-sw3",
+          "display_name": "dist-sw3"
+        },
+        "virtual_machine": null,
+        "name": "ae11"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.424163Z"
+    },
+    {
+      "id": 73,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.1.6/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 142,
+        "url": "https://netbox/api/dcim/interfaces/142/",
+        "device": {
+          "id": 17,
+          "url": "https://netbox/api/dcim/devices/17/",
+          "name": "core-sw1",
+          "display_name": "core-sw1"
+        },
+        "virtual_machine": null,
+        "name": "ae14"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.440264Z"
+    },
+    {
+      "id": 118,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.1.7/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 201,
+        "url": "https://netbox/api/dcim/interfaces/201/",
+        "device": {
+          "id": 22,
+          "url": "https://netbox/api/dcim/devices/22/",
+          "name": "dist-sw4",
+          "display_name": "dist-sw4"
+        },
+        "virtual_machine": null,
+        "name": "ae11"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.455683Z"
+    },
+    {
+      "id": 90,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.2.0/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 164,
+        "url": "https://netbox/api/dcim/interfaces/164/",
+        "device": {
+          "id": 18,
+          "url": "https://netbox/api/dcim/devices/18/",
+          "name": "core-sw2",
+          "display_name": "core-sw2"
+        },
+        "virtual_machine": null,
+        "name": "ae11"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.470977Z"
+    },
+    {
+      "id": 113,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.2.1/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 182,
+        "url": "https://netbox/api/dcim/interfaces/182/",
+        "device": {
+          "id": 19,
+          "url": "https://netbox/api/dcim/devices/19/",
+          "name": "dist-sw1",
+          "display_name": "dist-sw1"
+        },
+        "virtual_machine": null,
+        "name": "ae12"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.486745Z"
+    },
+    {
+      "id": 91,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.2.2/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 163,
+        "url": "https://netbox/api/dcim/interfaces/163/",
+        "device": {
+          "id": 18,
+          "url": "https://netbox/api/dcim/devices/18/",
+          "name": "core-sw2",
+          "display_name": "core-sw2"
+        },
+        "virtual_machine": null,
+        "name": "ae12"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.501504Z"
+    },
+    {
+      "id": 115,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.2.3/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 197,
+        "url": "https://netbox/api/dcim/interfaces/197/",
+        "device": {
+          "id": 20,
+          "url": "https://netbox/api/dcim/devices/20/",
+          "name": "dist-sw2",
+          "display_name": "dist-sw2"
+        },
+        "virtual_machine": null,
+        "name": "ae12"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.516637Z"
+    },
+    {
+      "id": 92,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.2.4/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 162,
+        "url": "https://netbox/api/dcim/interfaces/162/",
+        "device": {
+          "id": 18,
+          "url": "https://netbox/api/dcim/devices/18/",
+          "name": "core-sw2",
+          "display_name": "core-sw2"
+        },
+        "virtual_machine": null,
+        "name": "ae13"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.531992Z"
+    },
+    {
+      "id": 117,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.2.5/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 199,
+        "url": "https://netbox/api/dcim/interfaces/199/",
+        "device": {
+          "id": 21,
+          "url": "https://netbox/api/dcim/devices/21/",
+          "name": "dist-sw3",
+          "display_name": "dist-sw3"
+        },
+        "virtual_machine": null,
+        "name": "ae12"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.547460Z"
+    },
+    {
+      "id": 93,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.2.6/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 161,
+        "url": "https://netbox/api/dcim/interfaces/161/",
+        "device": {
+          "id": 18,
+          "url": "https://netbox/api/dcim/devices/18/",
+          "name": "core-sw2",
+          "display_name": "core-sw2"
+        },
+        "virtual_machine": null,
+        "name": "ae14"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.562740Z"
+    },
+    {
+      "id": 119,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.2.7/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 200,
+        "url": "https://netbox/api/dcim/interfaces/200/",
+        "device": {
+          "id": 22,
+          "url": "https://netbox/api/dcim/devices/22/",
+          "name": "dist-sw4",
+          "display_name": "dist-sw4"
+        },
+        "virtual_machine": null,
+        "name": "ae12"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core dist",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:57:12.578958Z"
+    },
+    {
+      "id": 74,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.10.1/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 144,
+        "url": "https://netbox/api/dcim/interfaces/144/",
+        "device": {
+          "id": 17,
+          "url": "https://netbox/api/dcim/devices/17/",
+          "name": "core-sw1",
+          "display_name": "core-sw1"
+        },
+        "virtual_machine": null,
+        "name": "ae16"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core router",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:58:37.081778Z"
+    },
+    {
+      "id": 94,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.16.20.1/31",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": null,
+      "interface": {
+        "id": 175,
+        "url": "https://netbox/api/dcim/interfaces/175/",
+        "device": {
+          "id": 18,
+          "url": "https://netbox/api/dcim/devices/18/",
+          "name": "core-sw2",
+          "display_name": "core-sw2"
+        },
+        "virtual_machine": null,
+        "name": "ae16"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "p2p core router",
+      "tags": [
+        "ipv4",
+        "ospf",
+        "p2p"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T13:58:37.090686Z"
+    },
+    {
+      "id": 84,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.20.1.250/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": {
+        "value": "anycast",
+        "label": "Anycast",
+        "id": 30
+      },
+      "interface": {
+        "id": 157,
+        "url": "https://netbox/api/dcim/interfaces/157/",
+        "device": {
+          "id": 17,
+          "url": "https://netbox/api/dcim/devices/17/",
+          "name": "core-sw1",
+          "display_name": "core-sw1"
+        },
+        "virtual_machine": null,
+        "name": "irb.1"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "",
+      "tags": [
+        "irb",
+        "virtual-gateway-address",
+        "iprv4"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T14:00:53.652920Z"
+    },
+    {
+      "id": 96,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.20.1.250/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": {
+        "value": "anycast",
+        "label": "Anycast",
+        "id": 30
+      },
+      "interface": {
+        "id": 180,
+        "url": "https://netbox/api/dcim/interfaces/180/",
+        "device": {
+          "id": 18,
+          "url": "https://netbox/api/dcim/devices/18/",
+          "name": "core-sw2",
+          "display_name": "core-sw2"
+        },
+        "virtual_machine": null,
+        "name": "irb.1"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "",
+      "tags": [
+        "ipv4",
+        "irb",
+        "virtual-gateway-address"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T14:00:53.661988Z"
+    },
+    {
+      "id": 75,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.20.1.251/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": {
+        "value": "secondary",
+        "label": "Secondary",
+        "id": 20
+      },
+      "interface": {
+        "id": 157,
+        "url": "https://netbox/api/dcim/interfaces/157/",
+        "device": {
+          "id": 17,
+          "url": "https://netbox/api/dcim/devices/17/",
+          "name": "core-sw1",
+          "display_name": "core-sw1"
+        },
+        "virtual_machine": null,
+        "name": "irb.1"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "",
+      "tags": [
+        "ipv4",
+        "irb",
+        "physical-address"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T14:02:11.372029Z"
+    },
+    {
+      "id": 95,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.20.1.252/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": {
+        "value": "secondary",
+        "label": "Secondary",
+        "id": 20
+      },
+      "interface": {
+        "id": 180,
+        "url": "https://netbox/api/dcim/interfaces/180/",
+        "device": {
+          "id": 18,
+          "url": "https://netbox/api/dcim/devices/18/",
+          "name": "core-sw2",
+          "display_name": "core-sw2"
+        },
+        "virtual_machine": null,
+        "name": "irb.1"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "",
+      "tags": [
+        "ipv4",
+        "irb",
+        "physical-address"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T14:02:11.386413Z"
+    },
+    {
+      "id": 85,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.20.2.250/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": {
+        "value": "anycast",
+        "label": "Anycast",
+        "id": 30
+      },
+      "interface": {
+        "id": 158,
+        "url": "https://netbox/api/dcim/interfaces/158/",
+        "device": {
+          "id": 17,
+          "url": "https://netbox/api/dcim/devices/17/",
+          "name": "core-sw1",
+          "display_name": "core-sw1"
+        },
+        "virtual_machine": null,
+        "name": "irb.2"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "",
+      "tags": [
+        "ipv4",
+        "irb",
+        "virtual-gateway-address"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T14:00:53.669992Z"
+    },
+    {
+      "id": 103,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.20.2.250/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": {
+        "value": "anycast",
+        "label": "Anycast",
+        "id": 30
+      },
+      "interface": {
+        "id": 179,
+        "url": "https://netbox/api/dcim/interfaces/179/",
+        "device": {
+          "id": 18,
+          "url": "https://netbox/api/dcim/devices/18/",
+          "name": "core-sw2",
+          "display_name": "core-sw2"
+        },
+        "virtual_machine": null,
+        "name": "irb.2"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "",
+      "tags": [
+        "ipv4",
+        "irb",
+        "virtual-gateway-address"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T14:00:53.677759Z"
+    },
+    {
+      "id": 78,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.20.2.251/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": {
+        "value": "secondary",
+        "label": "Secondary",
+        "id": 20
+      },
+      "interface": {
+        "id": 158,
+        "url": "https://netbox/api/dcim/interfaces/158/",
+        "device": {
+          "id": 17,
+          "url": "https://netbox/api/dcim/devices/17/",
+          "name": "core-sw1",
+          "display_name": "core-sw1"
+        },
+        "virtual_machine": null,
+        "name": "irb.2"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "",
+      "tags": [
+        "ipv4",
+        "irb",
+        "physical-address"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T14:02:11.397065Z"
+    },
+    {
+      "id": 100,
+      "family": {
+        "value": 4,
+        "label": "IPv4"
+      },
+      "address": "172.20.2.252/24",
+      "vrf": null,
+      "tenant": {
+        "id": 4,
+        "url": "https://netbox/api/tenancy/tenants/4/",
+        "name": "crb",
+        "slug": "crb"
+      },
+      "status": {
+        "value": "active",
+        "label": "Active",
+        "id": 1
+      },
+      "role": {
+        "value": "secondary",
+        "label": "Secondary",
+        "id": 20
+      },
+      "interface": {
+        "id": 179,
+        "url": "https://netbox/api/dcim/interfaces/179/",
+        "device": {
+          "id": 18,
+          "url": "https://netbox/api/dcim/devices/18/",
+          "name": "core-sw2",
+          "display_name": "core-sw2"
+        },
+        "virtual_machine": null,
+        "name": "irb.2"
+      },
+      "nat_inside": null,
+      "nat_outside": null,
+      "dns_name": "",
+      "description": "",
+      "tags": [
+        "ipv4",
+        "irb",
+        "physical-address"
+      ],
+      "custom_fields": {},
+      "created": "2020-06-20",
+      "last_updated": "2020-06-21T14:02:11.407336Z"
+    }
+  ]
+}

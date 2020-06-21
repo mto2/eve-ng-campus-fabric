@@ -1,6 +1,6 @@
 SHELL := /usr/bin/env bash
 .DEFAULT_GOAL := help
-.PHONY: help ansible apply build config
+.PHONY: help ansible apply build config shell netbox-get
 
 DOCKER_IMG = packetferret/ansible-vxlan-evpn-for-campus
 DOCKER_TAG = 0.0.2
@@ -31,6 +31,20 @@ config:
 	-v $(PWD)/files/:/home/tmp/files \
 	-w /home/tmp/files/ansible/ \
 	$(DOCKER_IMG):$(DOCKER_TAG) ansible-playbook pb.configuration.build.yml
+
+netbox-get:
+	docker run -it \
+	--rm \
+	-v $(PWD)/files/:/home/tmp/files \
+	-w /home/tmp/files/ansible/ \
+	$(DOCKER_IMG):$(DOCKER_TAG) ansible-playbook pb.netbox.retrieve.info.yml
+
+shell:
+	docker run -it \
+	--rm \
+	-v $(PWD)/files/:/home/tmp/files \
+	-w /home/tmp/files/ansible/ \
+	$(DOCKER_IMG):$(DOCKER_TAG) /bin/sh
 
 # ### side note: simplifying by removing local ansible execution
 # ### until someone declares that they want it.

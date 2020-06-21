@@ -9,6 +9,12 @@ class FilterModule(object):
         import requests
         import json
         # ##########################################################
+        # ### Netbox information (to be used for IPAM lookups later)
+        # ########################################################## 
+        api_token = "ad34740e10bde714f96960addf42b36db6c28c0e"
+        baseurl = "https://10.255.127.46/api/ipam/ip-addresses/"
+
+        # ##########################################################
         # ### all devices
         # ########################################################## 
         devices = []
@@ -147,12 +153,11 @@ class FilterModule(object):
                         ipv6 = {}
                         ipv4_addresses = []
                         ipv6_addresses = []
-                        baseurl = "https://10.255.127.46/api/ipam/ip-addresses/"
                         device_id = each["device"]["id"]
                         iface = each["name"]
-                        api_token = "ad34740e10bde714f96960addf42b36db6c28c0e"
 
                         # let's make a rest api query to netbox's ipam for more info
+                        # pulls baseurl and api_token from very top of this script
                         try:
                             response = requests.get(
                                 url=baseurl,

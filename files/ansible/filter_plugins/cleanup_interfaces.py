@@ -23,7 +23,7 @@ class FilterModule(object):
             device = {}
 
             # device name
-            device["name"] = each_device["item"]["name"]
+            device["hostname"] = each_device["item"]["name"]
 
             # device platform
             try:

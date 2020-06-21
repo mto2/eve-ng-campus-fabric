@@ -16,4 +16,4 @@
       - { role: netbox/retrieve_device_data }
       - { role: netbox/retrieve_site_data }
       - { role: netbox/retrieve_device_interfaces }
-      # - { role: netbox/debug_data }
+      - { role: netbox/debug_data }

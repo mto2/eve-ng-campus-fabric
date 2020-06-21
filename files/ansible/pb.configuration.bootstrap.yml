@@ -6,6 +6,8 @@
   connection: local
   gather_facts: False
   become: False
+  roles: 
+    - juniper.junos
   tasks:
     - name: "Check ansible version >=2.7.8"
       assert:
@@ -14,28 +16,29 @@
           - ansible_version.string is version("2.7.8", ">=")
       tags:
         - check
-  run_once: True
+      run_once: True
 
 ### ---------------------------------------------------------------------------
-### DEBUGGING A GENERATED CONFIGURATION
-### ---------------------------------------------------------------------------
-
-# - hosts: leaf1
-#   connection: local
-#   gather_facts: False
-#   tasks:
-#     - name: display multiple file contents
-#       debug: var=item
-#       with_file:
-#         - "{{ completed_config_file }}"
-
-### ---------------------------------------------------------------------------
-### VALIDATE, DIFF, AND APPLY CONFIGURATION TO DEVICES
+### APPLY BOOTSTRAP CONFIGURATION TO DEVICES
 ### ---------------------------------------------------------------------------
 - hosts: all
   connection: local
   gather_facts: False
-  roles:
-    - { role: push_config/diff }
-    - { role: push_config/check }
-    - { role: push_config/apply }
+  become: False
+  roles: 
+    - juniper.junos
+  tasks:
+    - name: "### APPLY BOOTSTRAP CONFIGURATION ON REMOTE DEVICE ###"
+      juniper_junos_config:
+        load: override
+        user: "{{ provider_info.user }}"
+        passwd: "{{ provider_info.passwd }}"
+        # ssh_private_key_file: "{{ provider_info.ssh_private_key_file }}"
+        src: "{{ bootstrap_config_file }}"
+        timeout: 240
+      register: result
+
+    - name: "### PRINT THE RESULT TO CONSOLE ###"
+      debug:
+        var: result.diff_lines
+      when: result.diff_lines is defined

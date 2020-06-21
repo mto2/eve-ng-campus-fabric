@@ -27,6 +27,6 @@
   set_fact:
     device_interfaces: "{{ device_interfaces | cleanup_interfaces }}"
 
-- name: "print device_interfaces variable"
-  debug:
-    msg: "{{ device_interfaces }}"
+# - name: "print device_interfaces variable"
+#   debug:
+#     msg: "{{ device_interfaces }}"

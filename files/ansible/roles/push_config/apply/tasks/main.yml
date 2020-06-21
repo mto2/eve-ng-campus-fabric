@@ -11,7 +11,7 @@
     src: "{{ completed_config_file }}"
     timeout: 240
   register: result
-  # when: is_diff is defined
+  when: is_diff is defined
 
 - name: "### PRINT THE RESULT TO CONSOLE ###"
   debug:

@@ -1,11 +1,25 @@
 ---
+### -------------------------------------------------
+### REMOVE AND RECREATE BACKUP DIRECTORIES
+### -------------------------------------------------
+- name: remove backup config directory
+  file:
+    path: "{{ backup_config_directory }}"
+    state: absent
+
+- name: create new backup configuration directory
+  file:
+    path: "{{ backup_config_directory }}"
+    state: directory
+
+
 ### ---------------------------------------------------------------------------
 ### DIFF THE CONFIGURATION TO SEE IF CHANGES ARE NEEDED
 ### ---------------------------------------------------------------------------
 - name: "### Retrieving the configuration as human readable text"
   juniper_junos_config:
-    # user: "{{ provider_info.user }}"
-    # passwd: "{{ provider_info.passwd }}"
+    user: "{{ provider_info.user }}"
+    passwd: "{{ provider_info.passwd }}"
     # ssh_private_key_file: "{{ provider_info.ssh_private_key_file }}"
     retrieve: "committed"
     format: text
@@ -14,12 +28,14 @@
     commit: false
   register: committed
 
+
 ### ------------------------------------------------------------
 ### SAVING CONFIGURATIONS AS A VARIABLE TO BE USED LATER ON
 ### ------------------------------------------------------------
 - name: "### REACH IN AND GRAB THE .config KEY/VALUE FROM HUMAN CONFIG"
   set_fact:
     committed_config: "{{ committed.config }}"
+
 
 ### ------------------------------------------------------------
 ### WRITING CONFIGURATIONS TO FILES
@@ -28,7 +44,8 @@
   local_action:
     module: copy
     content: "{{ committed_config }}"
-    dest: "backup/{{ inventory_hostname }}/{{ inventory_hostname }}.conf"
+    dest: "{{ backup_file }}"
+
 
 ### ------------------------------------------------------------
 ### STRIP OUT FLUFF FROM BACKED UP CONFIGURATION

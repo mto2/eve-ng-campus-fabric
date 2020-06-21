@@ -1,6 +1,6 @@
 SHELL := /usr/bin/env bash
 .DEFAULT_GOAL := help
-.PHONY: help ansible apply build config shell netbox-get
+.PHONY: help ansible apply backup bootstrap build config shell netbox-get
 
 DOCKER_IMG = packetferret/ansible-vxlan-evpn-for-campus
 DOCKER_TAG = 0.0.2
@@ -21,6 +21,20 @@ apply:
 	-v $(PWD)/files/:/home/tmp/files \
 	-w /home/tmp/files/ansible/ \
 	$(DOCKER_IMG):$(DOCKER_TAG) ansible-playbook pb.configuration.apply.yml 
+
+backup:
+	docker run -it \
+	--rm \
+	-v $(PWD)/files/:/home/tmp/files \
+	-w /home/tmp/files/ansible/ \
+	$(DOCKER_IMG):$(DOCKER_TAG) ansible-playbook pb.configuration.backup.yml 
+
+bootstrap:
+	docker run -it \
+	--rm \
+	-v $(PWD)/files/:/home/tmp/files \
+	-w /home/tmp/files/ansible/ \
+	$(DOCKER_IMG):$(DOCKER_TAG) ansible-playbook pb.configuration.bootstrap.yml 
 
 build:
 	docker build -t $(DOCKER_IMG):$(DOCKER_TAG) files/docker/ansible/

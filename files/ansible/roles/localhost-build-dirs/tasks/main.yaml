@@ -25,13 +25,15 @@
 ### -------------------------------------------------
 - name: remove previous facts directory
   file:
-    path: "{{ facts_directory }}"
+    path: "{{ backup_facts_directory }}"
     state: absent
+  run_once: true
 
 - name: create facts directory
   file:
-    path: "{{ facts_directory }}"
+    path: "{{ backup_facts_directory }}"
     state: directory
+  run_once: true
 
 ### -------------------------------------------------
 ### REMOVE AND RECREATE CONFIG DIRECTORY

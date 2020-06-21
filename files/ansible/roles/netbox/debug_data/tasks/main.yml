@@ -6,14 +6,18 @@
   debug:
     msg: "{{ site_devices }}"
 
-- name: "print site_prefixes"
-  debug:
-    msg: "{{ site_prefixes }}"
+# - name: "print site_prefixes"
+#   debug:
+#     msg: "{{ site_prefixes }}"
 
 - name: "print site_data"
   debug:
     msg: "{{ site_data }}"
 
-- name: "print device_prefixes"
+# - name: "print device_prefixes"
+#   debug:
+#     msg: "{{ device_prefixes }}"
+
+- name: "print device_interfaces variable"
   debug:
-    msg: "{{ device_prefixes }}"
+    msg: "{{ device_interfaces }}"

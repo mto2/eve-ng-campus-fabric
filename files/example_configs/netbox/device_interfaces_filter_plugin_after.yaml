@@ -1,0 +1,1900 @@
+msg:
+- hostname: access-sw1
+  interfaces:
+  - count_ipaddresses: 0
+    description: Connected to employee-pc-1
+    enabled: true
+    mode: access
+    mtu: 9100
+    name: xe-0/0/0
+    untagged_vlan:
+      name: vlan_1
+      vid: 1
+  - count_ipaddresses: 0
+    description: Connected to guest-1
+    enabled: true
+    mode: access
+    mtu: 9100
+    name: xe-0/0/1
+    untagged_vlan:
+      name: vlan_2
+      vid: 2
+  - count_ipaddresses: 0
+    description: Connected to dist-sw1 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/4
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to dist-sw2 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/6
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to dist-sw3 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/8
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to dist-sw4 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/10
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'To-Distribution-1-4 (members: xe-0/0/4 / xe-0/0/6 / xe-0/0/8 / xe-0/0/10)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae3
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 10.6.6.221/24
+      role: undefined
+      tags:
+      - ipv4
+      - oob
+      - mgmt
+    mtu: null
+    name: em0.0
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 169.254.0.2/24
+      role: undefined
+      tags: []
+    mtu: null
+    name: em1.0
+  - count_ipaddresses: 1
+    description: loopback
+    enabled: true
+    ipv4:
+    - address: 192.168.0.21/32
+      role: undefined
+      tags:
+      - ipv4
+      - loopback
+    mtu: null
+    name: lo0.0
+  platform: juniper_junos
+  serial: '65568487830'
+  site: crb-dc
+  tenant: crb
+- hostname: access-sw2
+  interfaces:
+  - count_ipaddresses: 0
+    description: Connected to employee-pc-2
+    enabled: true
+    mode: access
+    mtu: 9100
+    name: xe-0/0/0
+    untagged_vlan:
+      name: vlan_1
+      vid: 1
+  - count_ipaddresses: 0
+    description: Connected to guest-2
+    enabled: true
+    mode: access
+    mtu: 9100
+    name: xe-0/0/1
+    untagged_vlan:
+      name: vlan_2
+      vid: 2
+  - count_ipaddresses: 0
+    description: Connected to dist-sw1 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/5
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to dist-sw2 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/7
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to dist-sw3 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/9
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to dist-sw4 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/11
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'To-Distribution-1-4 (members: xe-0/0/5 / xe-0/0/7 / xe-0/0/9 / xe-0/0/11)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae3
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 10.6.6.222/24
+      role: undefined
+      tags:
+      - ipv4
+      - oob
+      - mgmt
+    mtu: null
+    name: em0.0
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 169.254.0.2/24
+      role: undefined
+      tags:
+      - ipv4
+      - qfx-re-pfe
+    mtu: null
+    name: em1.0
+  - count_ipaddresses: 1
+    description: loopback
+    enabled: true
+    ipv4:
+    - address: 192.168.0.22/32
+      role: undefined
+      tags:
+      - ipv4
+      - loopback
+    mtu: null
+    name: lo0.0
+  platform: juniper_junos
+  serial: '31265135533'
+  site: crb-dc
+  tenant: crb
+- hostname: access-sw3
+  interfaces:
+  - count_ipaddresses: 0
+    description: Connected to employee-pc-3
+    enabled: true
+    mode: access
+    mtu: 9100
+    name: xe-0/0/0
+    untagged_vlan:
+      name: vlan_1
+      vid: 1
+  - count_ipaddresses: 0
+    description: Connected to guest-3
+    enabled: true
+    mode: access
+    mtu: 9100
+    name: xe-0/0/1
+    untagged_vlan:
+      name: vlan_2
+      vid: 2
+  - count_ipaddresses: 0
+    description: Connected to dist-sw4 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/2
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to dist-sw1 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/6
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to dist-sw2 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/8
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to dist-sw3 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/10
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'To-Distribution-1-4 (members: xe-0/0/6 / xe-0/0/8 / xe-0/0/10 / xe-0/0/2)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae3
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 10.6.6.223/24
+      role: undefined
+      tags:
+      - ipv4
+      - oob
+      - mgmt
+    mtu: null
+    name: em0.0
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 169.254.0.2/24
+      role: undefined
+      tags:
+      - ipv4
+      - qfx-re-pfe
+    mtu: null
+    name: em1.0
+  - count_ipaddresses: 1
+    description: loopback
+    enabled: true
+    ipv4:
+    - address: 192.168.0.23/32
+      role: undefined
+      tags:
+      - ipv4
+      - loopback
+    mtu: null
+    name: lo0.0
+  platform: juniper_junos
+  serial: '33627378258'
+  site: crb-dc
+  tenant: crb
+- hostname: access-sw4
+  interfaces:
+  - count_ipaddresses: 0
+    description: Connected to employee-pc-4
+    enabled: true
+    mode: access
+    mtu: 9100
+    name: xe-0/0/0
+    untagged_vlan:
+      name: vlan_1
+      vid: 1
+  - count_ipaddresses: 0
+    description: Connected to guest-4
+    enabled: true
+    mode: access
+    mtu: 9100
+    name: xe-0/0/1
+    untagged_vlan:
+      name: vlan_2
+      vid: 2
+  - count_ipaddresses: 0
+    description: Connected to dist-sw4 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/3
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to dist-sw1 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/7
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to dist-sw2 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/9
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to dist-sw3 (member of ae3)
+    enabled: true
+    lag: ae3
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/11
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'To-Distribution-1-4 (members: xe-0/0/7 / xe-0/0/9 / xe-0/0/11 / xe-0/0/3)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae3
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 10.6.6.224/24
+      role: undefined
+      tags:
+      - ipv4
+      - oob
+      - mgmt
+    mtu: null
+    name: em0.0
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 169.254.0.2/24
+      role: undefined
+      tags:
+      - ipv4
+      - qfx-re-pfe
+    mtu: null
+    name: em1.0
+  - count_ipaddresses: 1
+    description: loopback
+    enabled: true
+    ipv4:
+    - address: 192.168.0.24/32
+      role: undefined
+      tags:
+      - ipv4
+      - loopback
+    mtu: null
+    name: lo0.0
+  platform: juniper_junos
+  serial: '87780188443'
+  site: crb-dc
+  tenant: crb
+- hostname: core-sw1
+  interfaces:
+  - count_ipaddresses: 0
+    description: Connected to dist-sw1 (member of ae11)
+    enabled: true
+    lag: ae11
+    mtu: 9100
+    name: xe-0/0/0
+  - count_ipaddresses: 0
+    description: Connected to dist-sw1 (member of ae11)
+    enabled: true
+    lag: ae11
+    mtu: 9100
+    name: xe-0/0/1
+  - count_ipaddresses: 0
+    description: Connected to dist-sw2 (member of ae12)
+    enabled: true
+    lag: ae12
+    mtu: 9100
+    name: xe-0/0/2
+  - count_ipaddresses: 0
+    description: Connected to dist-sw2 (member of ae12)
+    enabled: true
+    lag: ae12
+    mtu: 9100
+    name: xe-0/0/3
+  - count_ipaddresses: 0
+    description: Connected to dist-sw2 (member of ae13)
+    enabled: true
+    lag: ae13
+    mtu: 9100
+    name: xe-0/0/4
+  - count_ipaddresses: 0
+    description: Connected to dist-sw2 (member of ae13)
+    enabled: true
+    lag: ae13
+    mtu: 9100
+    name: xe-0/0/5
+  - count_ipaddresses: 0
+    description: Connected to dist-sw2 (member of ae14)
+    enabled: true
+    lag: ae14
+    mtu: 9100
+    name: xe-0/0/6
+  - count_ipaddresses: 0
+    description: Connected to dist-sw2 (member of ae14)
+    enabled: true
+    lag: ae14
+    mtu: 9100
+    name: xe-0/0/7
+  - count_ipaddresses: 0
+    description: Connected to campus-fw1 (member of ae15)
+    enabled: true
+    lag: ae15
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/8
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to campus-fw1 (member of ae15)
+    enabled: true
+    lag: ae15
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/9
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to campus-rt1 (member of ae16)
+    enabled: true
+    lag: ae16
+    mtu: 9100
+    name: xe-0/0/10
+  - count_ipaddresses: 0
+    description: Connected to campus-rt1 (member of ae16)
+    enabled: true
+    lag: ae16
+    mtu: 9100
+    name: xe-0/0/11
+  - count_ipaddresses: 1
+    description: 'Connected to dist-sw1 (members: xe-0/0/0 / xe-0/0/1)'
+    enabled: true
+    ipv4:
+    - address: 172.16.1.0/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae11
+  - count_ipaddresses: 1
+    description: 'Connected to dist-sw2 (members: xe-0/0/2 / xe-0/0/3)'
+    enabled: true
+    ipv4:
+    - address: 172.16.1.2/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae12
+  - count_ipaddresses: 1
+    description: 'Connected to dist-sw3 (members: xe-0/0/4 / xe-0/0/5)'
+    enabled: true
+    ipv4:
+    - address: 172.16.1.4/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae13
+  - count_ipaddresses: 1
+    description: 'Connected to dist-sw4 (members: xe-0/0/6 / xe-0/0/7)'
+    enabled: true
+    ipv4:
+    - address: 172.16.1.6/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae14
+  - count_ipaddresses: 0
+    description: 'Connected to campus-fw1 (members: xe-0/0/0 / xe-0/0/1)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae15
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 1
+    description: 'Connected to campus-rt1 (members: xe-0/0/10 / xe-0/0/11)'
+    enabled: true
+    ipv4:
+    - address: 172.16.10.1/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae16
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 10.6.6.201/24
+      role: undefined
+      tags:
+      - ipv4
+      - oob
+      - mgmt
+    mtu: null
+    name: em0.0
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 169.254.0.2/24
+      role: undefined
+      tags:
+      - ipv4
+      - qfx-re-pfe
+    mtu: null
+    name: em1.0
+  - count_ipaddresses: 5
+    description: employee pc vlan
+    enabled: true
+    ipv4:
+    - address: 172.20.1.250
+      role: virtual_gateway_anycast
+      tags:
+      - irb
+      - virtual-gateway-address
+      - iprv4
+    - address: 172.20.1.251/24
+      role: physical_address
+      tags:
+      - ipv4
+      - irb
+      - physical-address
+    ipv6:
+    - address: 2001:db8::172:20:1:250
+      role: virtual_gateway_anycast
+      tags:
+      - irb
+      - ipv6
+      - virtual-gateway-address
+    - address: 2001:db8::172:20:1:251/112
+      role: physical_address
+      tags:
+      - irb
+      - ipv6
+      - physical-address
+    - address: fe80::172:20:1:251/112
+      role: undefined
+      tags:
+      - irb
+      - ipv6
+      - link-local-address
+    mtu: null
+    name: irb.1
+  - count_ipaddresses: 5
+    description: guest vlan
+    enabled: true
+    ipv4:
+    - address: 172.20.2.250
+      role: virtual_gateway_anycast
+      tags:
+      - ipv4
+      - irb
+      - virtual-gateway-address
+    - address: 172.20.2.251/24
+      role: physical_address
+      tags:
+      - ipv4
+      - irb
+      - physical-address
+    ipv6:
+    - address: 2001:db8::172:20:2:250
+      role: virtual_gateway_anycast
+      tags:
+      - irb
+      - ipv6
+      - virtual-gateway-address
+    - address: 2001:db8::172:20:2:251/112
+      role: physical_address
+      tags:
+      - irb
+      - ipv6
+      - physical-address
+    - address: fe80::172:20:2:251/112
+      role: undefined
+      tags:
+      - irb
+      - ipv6
+      - link-local-address
+    mtu: null
+    name: irb.2
+  - count_ipaddresses: 5
+    description: iot vlan
+    enabled: true
+    ipv4:
+    - address: 172.20.3.250
+      role: virtual_gateway_anycast
+      tags:
+      - ipv4
+      - irb
+      - virtual-gateway-address
+    - address: 172.20.3.251/24
+      role: physical_address
+      tags:
+      - ipv4
+      - irb
+      - physical-address
+    ipv6:
+    - address: 2001:db8::172:20:3:250
+      role: virtual_gateway_anycast
+      tags:
+      - irb
+      - ipv6
+      - virtual-gateway-address
+    - address: 2001:db8::172:20:3:251/112
+      role: physical_address
+      tags:
+      - irb
+      - ipv6
+      - physical-address
+    - address: fe80::172:20:3:251/112
+      role: undefined
+      tags:
+      - irb
+      - ipv6
+      - link-local-address
+    mtu: null
+    name: irb.3
+  - count_ipaddresses: 1
+    description: loopback
+    enabled: true
+    ipv4:
+    - address: 192.168.0.1/32
+      role: undefined
+      tags:
+      - ipv4
+      - loopback
+    mtu: null
+    name: lo0.0
+  platform: juniper_junos
+  serial: '68752162440'
+  site: crb-dc
+  tenant: crb
+- hostname: core-sw2
+  interfaces:
+  - count_ipaddresses: 0
+    description: Connected to campus-fw1 (member of ae15)
+    enabled: true
+    lag: ae15
+    mtu: 9100
+    name: xe-0/0/0
+  - count_ipaddresses: 0
+    description: Connected to campus-fw1 (member of ae15)
+    enabled: true
+    lag: ae15
+    mtu: 9100
+    name: xe-0/0/1
+  - count_ipaddresses: 0
+    description: Connected to dist-sw1 (member of ae11)
+    enabled: true
+    lag: ae11
+    mtu: 9100
+    name: xe-0/0/2
+  - count_ipaddresses: 0
+    description: Connected to dist-sw1 (member of ae11)
+    enabled: true
+    lag: ae11
+    mtu: 9100
+    name: xe-0/0/3
+  - count_ipaddresses: 0
+    description: Connected to dist-sw2 (member of ae12)
+    enabled: true
+    lag: ae12
+    mtu: 9100
+    name: xe-0/0/4
+  - count_ipaddresses: 0
+    description: Connected to dist-sw2 (member of ae12)
+    enabled: true
+    lag: ae12
+    mtu: 9100
+    name: xe-0/0/5
+  - count_ipaddresses: 0
+    description: Connected to dist-sw3 (member of ae13)
+    enabled: true
+    lag: ae13
+    mtu: 9100
+    name: xe-0/0/6
+  - count_ipaddresses: 0
+    description: Connected to dist-sw3 (member of ae13)
+    enabled: true
+    lag: ae13
+    mtu: 9100
+    name: xe-0/0/7
+  - count_ipaddresses: 0
+    description: Connected to dist-sw4 (member of ae14)
+    enabled: true
+    lag: ae14
+    mtu: 9100
+    name: xe-0/0/8
+  - count_ipaddresses: 0
+    description: Connected to dist-sw4 (member of ae14)
+    enabled: true
+    lag: ae14
+    mtu: 9100
+    name: xe-0/0/9
+  - count_ipaddresses: 0
+    description: Connected to campus-rt1 (member of ae16)
+    enabled: true
+    lag: ae16
+    mtu: 9100
+    name: xe-0/0/10
+  - count_ipaddresses: 0
+    description: Connected to campus-rt1 (member of ae16)
+    enabled: true
+    lag: ae16
+    mtu: 9100
+    name: xe-0/0/11
+  - count_ipaddresses: 1
+    description: 'Connected to dist-sw1 (members: xe-0/0/2 / xe-0/0/3)'
+    enabled: true
+    ipv4:
+    - address: 172.16.2.0/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae11
+  - count_ipaddresses: 1
+    description: 'Connected to dist-sw2 (members: xe-0/0/4 / xe-0/0/5)'
+    enabled: true
+    ipv4:
+    - address: 172.16.2.2/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae12
+  - count_ipaddresses: 1
+    description: 'Connected to dist-sw3 (members: xe-0/0/6 / xe-0/0/7)'
+    enabled: true
+    ipv4:
+    - address: 172.16.2.4/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae13
+  - count_ipaddresses: 1
+    description: 'Connected to dist-sw4 (members: xe-0/0/8 / xe-0/0/9)'
+    enabled: true
+    ipv4:
+    - address: 172.16.2.6/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae14
+  - count_ipaddresses: 0
+    description: 'Connected to campus-fw1 (members: xe-0/0/0 / xe-0/0/1)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae15
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 1
+    description: 'Connected to campus-rt1 (members: xe-0/0/10 / xe-0/0/11)'
+    enabled: true
+    ipv4:
+    - address: 172.16.20.1/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae16
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 10.6.6.202/24
+      role: undefined
+      tags:
+      - ipv4
+      - oob
+      - mgmt
+    mtu: null
+    name: em0.0
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 169.254.0.2/24
+      role: undefined
+      tags:
+      - ipv4
+      - qfx-re-pfe
+    mtu: null
+    name: em1.0
+  - count_ipaddresses: 5
+    description: employee pc vlan
+    enabled: true
+    ipv4:
+    - address: 172.20.1.250
+      role: virtual_gateway_anycast
+      tags:
+      - ipv4
+      - irb
+      - virtual-gateway-address
+    - address: 172.20.1.252/24
+      role: physical_address
+      tags:
+      - ipv4
+      - irb
+      - physical-address
+    ipv6:
+    - address: 2001:db8::172:20:1:250
+      role: virtual_gateway_anycast
+      tags:
+      - irb
+      - ipv6
+      - virtual-gateway-address
+    - address: 2001:db8::172:20:1:252/112
+      role: physical_address
+      tags:
+      - irb
+      - ipv6
+      - physical-address
+    - address: fe80::172:20:1:252/112
+      role: undefined
+      tags:
+      - irb
+      - ipv6
+      - link-local-address
+    mtu: null
+    name: irb.1
+  - count_ipaddresses: 5
+    description: guest vlan
+    enabled: true
+    ipv4:
+    - address: 172.20.2.250
+      role: virtual_gateway_anycast
+      tags:
+      - ipv4
+      - irb
+      - virtual-gateway-address
+    - address: 172.20.2.252/24
+      role: physical_address
+      tags:
+      - ipv4
+      - irb
+      - physical-address
+    ipv6:
+    - address: 2001:db8::172:20:2:250
+      role: virtual_gateway_anycast
+      tags:
+      - irb
+      - ipv6
+      - virtual-gateway-address
+    - address: 2001:db8::172:20:2:252/112
+      role: physical_address
+      tags:
+      - irb
+      - ipv6
+      - physical-address
+    - address: fe80::172:20:2:252/112
+      role: undefined
+      tags:
+      - irb
+      - ipv6
+      - link-local-address
+    mtu: null
+    name: irb.2
+  - count_ipaddresses: 5
+    description: iot vlan
+    enabled: true
+    ipv4:
+    - address: 172.20.3.250
+      role: virtual_gateway_anycast
+      tags:
+      - ipv4
+      - irb
+      - virtual-gateway-address
+    - address: 172.20.3.252/24
+      role: physical_address
+      tags:
+      - ipv4
+      - irb
+      - physical-address
+    ipv6:
+    - address: 2001:db8::172:20:3:250
+      role: virtual_gateway_anycast
+      tags:
+      - irb
+      - ipv6
+      - virtual-gateway-address
+    - address: 2001:db8::172:20:3:252/112
+      role: physical_address
+      tags:
+      - irb
+      - ipv6
+      - physical-address
+    - address: fe80::172:20:3:252/112
+      role: undefined
+      tags:
+      - irb
+      - ipv6
+      - link-local-address
+    mtu: null
+    name: irb.3
+  - count_ipaddresses: 1
+    description: loopback
+    enabled: true
+    ipv4:
+    - address: 192.168.0.2/32
+      role: undefined
+      tags:
+      - ipv4
+      - loopback
+    mtu: null
+    name: lo0.0
+  platform: juniper_junos
+  serial: '12018440718'
+  site: crb-dc
+  tenant: crb
+- hostname: dist-sw1
+  interfaces:
+  - count_ipaddresses: 0
+    description: Connected to core-sw1 (member of ae11)
+    enabled: true
+    lag: ae11
+    mtu: 9100
+    name: xe-0/0/0
+  - count_ipaddresses: 0
+    description: Connected to core-sw1 (member of ae11)
+    enabled: true
+    lag: ae11
+    mtu: 9100
+    name: xe-0/0/1
+  - count_ipaddresses: 0
+    description: Connected to core-sw2 (member of ae12)
+    enabled: true
+    lag: ae12
+    mtu: 9100
+    name: xe-0/0/2
+  - count_ipaddresses: 0
+    description: Connected to core-sw2 (member of ae12)
+    enabled: true
+    lag: ae12
+    mtu: 9100
+    name: xe-0/0/3
+  - count_ipaddresses: 0
+    description: Connected to access-sw1 (member of ae21)
+    enabled: true
+    lag: ae21
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/4
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to access-sw2 (member of ae22)
+    enabled: true
+    lag: ae22
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/5
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to access-sw3 (member of ae23)
+    enabled: true
+    lag: ae23
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/6
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to access-sw4 (member of ae24)
+    enabled: true
+    lag: ae24
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/7
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 1
+    description: 'Connected to core-sw1 (members: xe-0/0/0 / xe-0/0/1)'
+    enabled: true
+    ipv4:
+    - address: 172.16.1.1/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae11
+  - count_ipaddresses: 1
+    description: 'Connected to core-sw2 (members: xe-0/0/2 / xe-0/0/3)'
+    enabled: true
+    ipv4:
+    - address: 172.16.2.1/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae12
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw1 (members: xe-0/0/4)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae21
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw2 (members: xe-0/0/5)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae22
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw3 (members: xe-0/0/6)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae23
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw4 (members: xe-0/0/7)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae24
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 10.6.6.211/24
+      role: undefined
+      tags:
+      - ipv4
+      - oob
+      - mgmt
+    mtu: null
+    name: em0.0
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 169.254.0.2/24
+      role: undefined
+      tags:
+      - ipv4
+      - qfx-re-pfe
+    mtu: null
+    name: em1.0
+  - count_ipaddresses: 1
+    description: loopback
+    enabled: true
+    ipv4:
+    - address: 192.168.0.11/32
+      role: undefined
+      tags:
+      - ipv4
+      - loopback
+    mtu: null
+    name: lo0.0
+  platform: juniper_junos
+  serial: '36157280758'
+  site: crb-dc
+  tenant: crb
+- hostname: dist-sw2
+  interfaces:
+  - count_ipaddresses: 0
+    description: Connected to core-sw1 (member of ae11)
+    enabled: true
+    lag: ae11
+    mtu: 9100
+    name: xe-0/0/2
+  - count_ipaddresses: 0
+    description: Connected to core-sw1 (member of ae11)
+    enabled: true
+    lag: ae11
+    mtu: 9100
+    name: xe-0/0/3
+  - count_ipaddresses: 0
+    description: Connected to core-sw2 (member of ae12)
+    enabled: true
+    lag: ae12
+    mtu: 9100
+    name: xe-0/0/4
+  - count_ipaddresses: 0
+    description: Connected to core-sw2 (member of ae12)
+    enabled: true
+    lag: ae12
+    mtu: 9100
+    name: xe-0/0/5
+  - count_ipaddresses: 0
+    description: Connected to access-sw1 (member of ae21)
+    enabled: true
+    lag: ae21
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/6
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to access-sw2 (member of ae22)
+    enabled: true
+    lag: ae22
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/7
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to access-sw3 (member of ae23)
+    enabled: true
+    lag: ae23
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/8
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to access-sw4 (member of ae24)
+    enabled: true
+    lag: ae24
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/9
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 1
+    description: 'Connected to core-sw1 (members: xe-0/0/2 / xe-0/0/3)'
+    enabled: true
+    ipv4:
+    - address: 172.16.1.3/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae11
+  - count_ipaddresses: 1
+    description: 'Connected to core-sw2 (members: xe-0/0/4 / xe-0/0/5)'
+    enabled: true
+    ipv4:
+    - address: 172.16.2.3/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae12
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw1 (members: xe-0/0/6)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae21
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw2 (members: xe-0/0/7)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae22
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw3 (members: xe-0/0/8)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae23
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw4 (members: xe-0/0/9)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae24
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 10.6.6.212/24
+      role: undefined
+      tags:
+      - ipv4
+      - oob
+      - mgmt
+    mtu: null
+    name: em0.0
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 169.254.0.2/24
+      role: undefined
+      tags:
+      - ipv4
+      - qfx-re-pfe
+    mtu: null
+    name: em1.0
+  - count_ipaddresses: 1
+    description: loopback
+    enabled: true
+    ipv4:
+    - address: 192.168.0.12/32
+      role: undefined
+      tags:
+      - ipv4
+      - loopback
+    mtu: null
+    name: lo0.0
+  platform: juniper_junos
+  serial: '61471163617'
+  site: crb-dc
+  tenant: crb
+- hostname: dist-sw3
+  interfaces:
+  - count_ipaddresses: 0
+    description: Connected to core-sw1 (member of ae11)
+    enabled: true
+    lag: ae11
+    mtu: 9100
+    name: xe-0/0/4
+  - count_ipaddresses: 0
+    description: Connected to core-sw1 (member of ae11)
+    enabled: true
+    lag: ae11
+    mtu: 9100
+    name: xe-0/0/5
+  - count_ipaddresses: 0
+    description: Connected to core-sw2 (member of ae12)
+    enabled: true
+    lag: ae12
+    mtu: 9100
+    name: xe-0/0/6
+  - count_ipaddresses: 0
+    description: Connected to core-sw2 (member of ae12)
+    enabled: true
+    lag: ae12
+    mtu: 9100
+    name: xe-0/0/7
+  - count_ipaddresses: 0
+    description: Connected to access-sw1 (member of ae21)
+    enabled: true
+    lag: ae21
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/8
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to access-sw2 (member of ae22)
+    enabled: true
+    lag: ae22
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/9
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to access-sw3 (member of ae23)
+    enabled: true
+    lag: ae23
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/10
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to access-sw4 (member of ae24)
+    enabled: true
+    lag: ae24
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/11
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 1
+    description: 'Connected to core-sw1 (members: xe-0/0/4 / xe-0/0/5)'
+    enabled: true
+    ipv4:
+    - address: 172.16.1.5/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae11
+  - count_ipaddresses: 1
+    description: 'Connected to core-sw2 (members: xe-0/0/6 / xe-0/0/7)'
+    enabled: true
+    ipv4:
+    - address: 172.16.2.5/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae12
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw1 (members: xe-0/0/8)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae21
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw2 (members: xe-0/0/9)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae22
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw3 (members: xe-0/0/10)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae23
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw4 (members: xe-0/0/10)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae24
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 10.6.6.213/24
+      role: undefined
+      tags:
+      - ipv4
+      - oob
+      - mgmt
+    mtu: null
+    name: em0.0
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 169.254.0.2/24
+      role: undefined
+      tags:
+      - ipv4
+      - qfx-re-pfe
+    mtu: null
+    name: em1.0
+  - count_ipaddresses: 1
+    description: loopback
+    enabled: true
+    ipv4:
+    - address: 192.168.0.13/32
+      role: undefined
+      tags:
+      - ipv4
+      - loopback
+    mtu: null
+    name: lo0.0
+  platform: juniper_junos
+  serial: '78251566040'
+  site: crb-dc
+  tenant: crb
+- hostname: dist-sw4
+  interfaces:
+  - count_ipaddresses: 0
+    description: Connected to access-sw3 (member of ae23)
+    enabled: true
+    lag: ae23
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/1
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to access-sw4 (member of ae24)
+    enabled: true
+    lag: ae24
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/2
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to core-sw1 (member of ae11)
+    enabled: true
+    lag: ae11
+    mtu: 9100
+    name: xe-0/0/6
+  - count_ipaddresses: 0
+    description: Connected to core-sw1 (member of ae11)
+    enabled: true
+    lag: ae11
+    mtu: 9100
+    name: xe-0/0/7
+  - count_ipaddresses: 0
+    description: Connected to core-sw2 (member of ae12)
+    enabled: true
+    lag: ae12
+    mtu: 9100
+    name: xe-0/0/8
+  - count_ipaddresses: 0
+    description: Connected to core-sw2 (member of ae12)
+    enabled: true
+    lag: ae12
+    mtu: 9100
+    name: xe-0/0/9
+  - count_ipaddresses: 0
+    description: Connected to access-sw1 (member of ae21)
+    enabled: true
+    lag: ae21
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/10
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: Connected to access-sw2 (member of ae22)
+    enabled: true
+    lag: ae22
+    mode: trunk
+    mtu: 9100
+    name: xe-0/0/11
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 1
+    description: 'Connected to core-sw1 (members: xe-0/0/4 / xe-0/0/5)'
+    enabled: true
+    ipv4:
+    - address: 172.16.1.7/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae11
+  - count_ipaddresses: 1
+    description: 'Connected to core-sw2 (members: xe-0/0/6 / xe-0/0/7)'
+    enabled: true
+    ipv4:
+    - address: 172.16.2.7/31
+      role: undefined
+      tags:
+      - ipv4
+      - ospf
+      - p2p
+    mtu: 9100
+    name: ae12
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw1 (members: xe-0/0/8)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae21
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw2 (members: xe-0/0/9)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae22
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw3 (members: xe-0/0/10)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae23
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 0
+    description: 'Connected to access-sw4 (members: xe-0/0/11)'
+    enabled: true
+    mode: trunk
+    mtu: 9100
+    name: ae24
+    tagged_vlans:
+    - name: vlan_1
+      vid: 1
+    - name: vlan_2
+      vid: 2
+    - name: vlan_3
+      vid: 3
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 10.6.6.214/24
+      role: undefined
+      tags:
+      - ipv4
+      - oob
+      - mgmt
+    mtu: null
+    name: em0.0
+  - count_ipaddresses: 1
+    description: ''
+    enabled: true
+    ipv4:
+    - address: 169.254.0.2/24
+      role: undefined
+      tags:
+      - ipv4
+      - qfx-re-pfe
+    mtu: null
+    name: em1.0
+  - count_ipaddresses: 1
+    description: loopback
+    enabled: true
+    ipv4:
+    - address: 192.168.0.14/32
+      role: undefined
+      tags:
+      - ipv4
+      - loopback
+    mtu: null
+    name: lo0.0
+  platform: juniper_junos
+  serial: '76347720437'
+  site: crb-dc
+  tenant: crb
+

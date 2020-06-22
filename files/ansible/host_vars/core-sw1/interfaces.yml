@@ -175,23 +175,6 @@ configuration:
               address:
                 name: "172.16.10.1/31"
 
-      # ### LOOPBACK INTERFACES
-      - name: lo0
-        unit:
-          - name: "0"
-            description: loopback
-            family:
-              inet:
-                address:
-                  name: "{{ device.lo0.ipv4 }}/32"
-
-          - name: "1"
-            description: loopback
-            family:
-              inet:
-                address:
-                  name: "{{ device.lo1.ipv4 }}/32"
-
       # ### IRB interfaces
       - name: irb
         apply_groups:
@@ -258,3 +241,20 @@ configuration:
             inet:
               address:
                 name: "169.254.0.2/24"
+
+      # ### LOOPBACK INTERFACES
+      - name: lo0
+        unit:
+          - name: "0"
+            description: loopback
+            family:
+              inet:
+                address:
+                  name: "{{ device.lo0.ipv4 }}/32"
+
+          - name: "1"
+            description: loopback
+            family:
+              inet:
+                address:
+                  name: "{{ device.lo1.ipv4 }}/32"

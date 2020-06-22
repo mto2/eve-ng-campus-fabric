@@ -439,6 +439,9 @@ system {
         {% endif %}
     }
     {% endif %}
+    {#- ---------------------------------------------------------------------------------- #}
+    {# SYSLOG                                                                              #}
+    {# ---------------------------------------------------------------------------------- -#}
     {% if configuration.system.syslog is defined %}
     syslog {
         {% if configuration.system.syslog.user is defined %}

@@ -481,9 +481,6 @@ system {
         {% if configuration.system.syslog.file is defined %}
         {% for each in configuration.system.syslog.file %}
         file {{ each.name }} {
-            {% if each.match is defined %}
-            match "{{ each.match }}";
-            {% endif %}
             {% if each.contents is iterable and each.contents is not mapping %}
             {% for line in each.contents %}
             {% if line.notice is defined %}
@@ -501,6 +498,9 @@ system {
             {% endif %}
             {% if each.archive is defined %}
             archive files {{ each.archive.files }};
+            {% endif %}
+            {% if each.match is defined %}
+            match "{{ each.match }}";
             {% endif %}
             {% if each.structured_data is defined %}
             structured-data;

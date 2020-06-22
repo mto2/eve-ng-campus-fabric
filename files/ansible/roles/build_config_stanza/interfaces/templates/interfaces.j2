@@ -198,7 +198,7 @@ interfaces {
                 {% if each.family.ethernet_switching.vlan is defined %}
                 {% if each.family.ethernet_switching.vlan.members|length > 1 %}
                 vlan {
-                    members [{{ each.family.ethernet_switching.vlan.members|join(' ') }}];
+                    members [ {{ each.family.ethernet_switching.vlan.members|join(' ') }} ];
                 }
                 {% else %}
                 vlan {

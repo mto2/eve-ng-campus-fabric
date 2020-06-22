@@ -7,6 +7,23 @@ system {
     {% if configuration.system.commit.synchronize is defined %}
     commit synchronize;
     {% endif %}
+    {#- ---------------------------------------------------------------------------------- #}
+    {# host-name                                                                           #}
+    {# ---------------------------------------------------------------------------------- -#}
+    {% if configuration.system.host_name is defined %}
+    host-name {{ configuration.system.host_name }};
+    {% endif %}
+    {#- ---------------------------------------------------------------------------------- #}
+    {# root password                                                                       #}
+    {# ---------------------------------------------------------------------------------- -#}
+    {% if configuration.system.root_authentication is defined %}
+    root-authentication {
+        encrypted-password "{{ configuration.system.root_authentication.encrypted_password }}";
+        {% if configuration.system.root_authentication.ssh_rsa is defined %}
+        ssh-rsa "{{ configuration.system.root_authentication.ssh_rsa.name }}";
+        {% endif %}
+    }
+    {% endif %}
     {% if configuration.system.login is defined %}
     login {
         {% if configuration.system.login.retry_options is defined %}
@@ -96,23 +113,6 @@ system {
         message "{{ configuration.system.login.message }}";
         {% endif %}
     }
-    {% endif %}
-    {#- ---------------------------------------------------------------------------------- #}
-    {# root password                                                                       #}
-    {# ---------------------------------------------------------------------------------- -#}
-    {% if configuration.system.root_authentication is defined %}
-    root-authentication {
-        encrypted-password "{{ configuration.system.root_authentication.encrypted_password }}";
-        {% if configuration.system.root_authentication.ssh_rsa is defined %}
-        ssh-rsa "{{ configuration.system.root_authentication.ssh_rsa.name }}";
-        {% endif %}
-    }
-    {% endif %}
-    {#- ---------------------------------------------------------------------------------- #}
-    {# host-name                                                                           #}
-    {# ---------------------------------------------------------------------------------- -#}
-    {% if configuration.system.host_name is defined %}
-    host-name {{ configuration.system.host_name }};
     {% endif %}
     {#- ---------------------------------------------------------------------------------- #}
     {# snapshot                                                                            #}

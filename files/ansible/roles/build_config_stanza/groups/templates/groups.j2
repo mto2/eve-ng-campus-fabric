@@ -17,6 +17,12 @@ groups {
                 {% endif %}
                 {% if each.interfaces.interface.unit is defined %}
                 unit {{ each.interfaces.interface.unit.name }} {
+                    {% if each.interfaces.interface.unit.proxy_macip_advertisement is defined %}
+                    proxy-macip-advertisement;
+                    {% endif %}
+                    {% if each.interfaces.interface.unit.virtual_gateway_accept_data is defined %}
+                    virtual-gateway-accept-data;
+                    {% endif %}
                     {% if each.interfaces.interface.unit.family.ethernet_switching is defined %}
                     family ethernet-switching {
                         interface-mode {{ each.interfaces.interface.unit.family.ethernet_switching.interface_mode }};
@@ -45,12 +51,6 @@ groups {
                             {% endif %}
                         }
                     }
-                    {% endif %}
-                    {% if each.interfaces.interface.unit.proxy_macip_advertisement is defined %}
-                    proxy-macip-advertisement;
-                    {% endif %}
-                    {% if each.interfaces.interface.unit.virtual_gateway_accept_data is defined %}
-                    virtual-gateway-accept-data;
                     {% endif %}
                     {% if each.interfaces.interface.unit.virtual_gateway_v4_mac is defined %}
                     virtual-gateway-v4-mac {{ each.interfaces.interface.unit.virtual_gateway_v4_mac }};

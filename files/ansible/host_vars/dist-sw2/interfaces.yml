@@ -175,16 +175,6 @@ configuration:
                     - vlan_2 
                     - vlan_3
 
-      # ### LOOPBACK INTERFACES
-      - name: lo0
-        unit:
-          - name: "0"
-            description: loopback
-            family:
-              inet:
-                address:
-                  name: "{{ device.lo0.ipv4 }}/32"
-
       # ### MGMT INTERFACE
       - name: em0
         unit:
@@ -206,3 +196,13 @@ configuration:
             inet:
               address:
                 name: "169.254.0.2/24"
+
+      # ### LOOPBACK INTERFACES
+      - name: lo0
+        unit:
+          - name: "0"
+            description: loopback
+            family:
+              inet:
+                address:
+                  name: "{{ device.lo0.ipv4 }}/32"

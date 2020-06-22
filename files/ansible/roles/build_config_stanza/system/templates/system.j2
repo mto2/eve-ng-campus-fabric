@@ -7,6 +7,26 @@ system {
     {% if configuration.system.commit.synchronize is defined %}
     commit synchronize;
     {% endif %}
+    {#- ---------------------------------------------------------------------------------- #}
+    {# host-name                                                                           #}
+    {# ---------------------------------------------------------------------------------- -#}
+    {% if configuration.system.host_name is defined %}
+    host-name {{ configuration.system.host_name }};
+    {% endif %}
+    {#- ---------------------------------------------------------------------------------- #}
+    {# root password                                                                       #}
+    {# ---------------------------------------------------------------------------------- -#}
+    {% if configuration.system.root_authentication is defined %}
+    root-authentication {
+        encrypted-password "{{ configuration.system.root_authentication.encrypted_password }}";
+        {% if configuration.system.root_authentication.ssh_rsa is defined %}
+        ssh-rsa "{{ configuration.system.root_authentication.ssh_rsa.name }}";
+        {% endif %}
+    }
+    {% endif %}
+    {#- ---------------------------------------------------------------------------------- #}
+    {# SYSTEM LOGINS                                                                      #}
+    {# ---------------------------------------------------------------------------------- -#}
     {% if configuration.system.login is defined %}
     login {
         {% if configuration.system.login.retry_options is defined %}
@@ -96,23 +116,6 @@ system {
         message "{{ configuration.system.login.message }}";
         {% endif %}
     }
-    {% endif %}
-    {#- ---------------------------------------------------------------------------------- #}
-    {# root password                                                                       #}
-    {# ---------------------------------------------------------------------------------- -#}
-    {% if configuration.system.root_authentication is defined %}
-    root-authentication {
-        encrypted-password "{{ configuration.system.root_authentication.encrypted_password }}";
-        {% if configuration.system.root_authentication.ssh_rsa is defined %}
-        ssh-rsa "{{ configuration.system.root_authentication.ssh_rsa.name }}";
-        {% endif %}
-    }
-    {% endif %}
-    {#- ---------------------------------------------------------------------------------- #}
-    {# host-name                                                                           #}
-    {# ---------------------------------------------------------------------------------- -#}
-    {% if configuration.system.host_name is defined %}
-    host-name {{ configuration.system.host_name }};
     {% endif %}
     {#- ---------------------------------------------------------------------------------- #}
     {# snapshot                                                                            #}
@@ -436,6 +439,9 @@ system {
         {% endif %}
     }
     {% endif %}
+    {#- ---------------------------------------------------------------------------------- #}
+    {# SYSLOG                                                                              #}
+    {# ---------------------------------------------------------------------------------- -#}
     {% if configuration.system.syslog is defined %}
     syslog {
         {% if configuration.system.syslog.user is defined %}
@@ -475,9 +481,6 @@ system {
         {% if configuration.system.syslog.file is defined %}
         {% for each in configuration.system.syslog.file %}
         file {{ each.name }} {
-            {% if each.match is defined %}
-            match "{{ each.match }}";
-            {% endif %}
             {% if each.contents is iterable and each.contents is not mapping %}
             {% for line in each.contents %}
             {% if line.notice is defined %}
@@ -495,6 +498,9 @@ system {
             {% endif %}
             {% if each.archive is defined %}
             archive files {{ each.archive.files }};
+            {% endif %}
+            {% if each.match is defined %}
+            match "{{ each.match }}";
             {% endif %}
             {% if each.structured_data is defined %}
             structured-data;

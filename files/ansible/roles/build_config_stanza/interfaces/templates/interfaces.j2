@@ -34,10 +34,32 @@ interfaces {
         {% endif %}
         {% endif %}
         {#- ---------------------------------------------------------------------------------- #}
+        {# description                                                                          #}
+        {# ---------------------------------------------------------------------------------- -#}
+        {% if each.description is defined %}
+        description "{{ each.description }}";
+        {% endif %}
+        {#- ---------------------------------------------------------------------------------- #}
+        {# esi                                                                          #}
+        {# ---------------------------------------------------------------------------------- -#}
+        {% if each.esi is defined %}
+        esi {
+            {% if each.esi.identifier is defined %}
+            {{ each.esi.identifier }};
+            {% endif %}
+            {% if each.esi.all_active is defined %}
+            all-active;
+            {% endif %}
+        }
+        {% endif %}
+        {#- ---------------------------------------------------------------------------------- #}
         {# aggregated ether options                                                                          #}
         {# ---------------------------------------------------------------------------------- -#}
         {% if each.aggregated_ether_options is defined %}
         aggregated-ether-options {
+            {% if each.aggregated_ether_options.minimum_links is defined %}
+            minimum-links {{ each.aggregated_ether_options.minimum_links }};
+            {% endif %}
             {% if each.aggregated_ether_options.lacp is defined %}
             lacp {
                 {% if each.aggregated_ether_options.lacp.system_id is defined %}
@@ -54,9 +76,6 @@ interfaces {
                 {% endif %}
             }
             {% endif %}
-            {% if each.aggregated_ether_options.minimum_links is defined %}
-            minimum-links {{ each.aggregated_ether_options.minimum_links }};
-            {% endif %}
         }
         {% endif %}
         {#- ---------------------------------------------------------------------------------- #}
@@ -70,25 +89,6 @@ interfaces {
         {# ---------------------------------------------------------------------------------- -#}
         {% if each.encapsulation is defined %}
         encapsulation {{ each.encapsulation }};
-        {% endif %}
-        {#- ---------------------------------------------------------------------------------- #}
-        {# esi                                                                          #}
-        {# ---------------------------------------------------------------------------------- -#}
-        {% if each.esi is defined %}
-        esi {
-            {% if each.esi.identifier is defined %}
-            {{ each.esi.identifier }};
-            {% endif %}
-            {% if each.esi.all_active is defined %}
-            all-active;
-            {% endif %}
-        }
-        {% endif %}
-        {#- ---------------------------------------------------------------------------------- #}
-        {# description                                                                          #}
-        {# ---------------------------------------------------------------------------------- -#}
-        {% if each.description is defined %}
-        description "{{ each.description }}";
         {% endif %}
         {#- ---------------------------------------------------------------------------------- #}
         {# ether options                                                                          #}
@@ -198,7 +198,7 @@ interfaces {
                 {% if each.family.ethernet_switching.vlan is defined %}
                 {% if each.family.ethernet_switching.vlan.members|length > 1 %}
                 vlan {
-                    members [{{ each.family.ethernet_switching.vlan.members|join(' ') }}];
+                    members [ {{ each.family.ethernet_switching.vlan.members|join(' ') }} ];
                 }
                 {% else %}
                 vlan {

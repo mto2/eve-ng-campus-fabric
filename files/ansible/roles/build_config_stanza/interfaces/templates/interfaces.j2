@@ -40,6 +40,19 @@ interfaces {
         description "{{ each.description }}";
         {% endif %}
         {#- ---------------------------------------------------------------------------------- #}
+        {# esi                                                                          #}
+        {# ---------------------------------------------------------------------------------- -#}
+        {% if each.esi is defined %}
+        esi {
+            {% if each.esi.identifier is defined %}
+            {{ each.esi.identifier }};
+            {% endif %}
+            {% if each.esi.all_active is defined %}
+            all-active;
+            {% endif %}
+        }
+        {% endif %}
+        {#- ---------------------------------------------------------------------------------- #}
         {# aggregated ether options                                                                          #}
         {# ---------------------------------------------------------------------------------- -#}
         {% if each.aggregated_ether_options is defined %}
@@ -76,19 +89,6 @@ interfaces {
         {# ---------------------------------------------------------------------------------- -#}
         {% if each.encapsulation is defined %}
         encapsulation {{ each.encapsulation }};
-        {% endif %}
-        {#- ---------------------------------------------------------------------------------- #}
-        {# esi                                                                          #}
-        {# ---------------------------------------------------------------------------------- -#}
-        {% if each.esi is defined %}
-        esi {
-            {% if each.esi.identifier is defined %}
-            {{ each.esi.identifier }};
-            {% endif %}
-            {% if each.esi.all_active is defined %}
-            all-active;
-            {% endif %}
-        }
         {% endif %}
         {#- ---------------------------------------------------------------------------------- #}
         {# ether options                                                                          #}

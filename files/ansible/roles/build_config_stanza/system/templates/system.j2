@@ -24,6 +24,9 @@ system {
         {% endif %}
     }
     {% endif %}
+    {#- ---------------------------------------------------------------------------------- #}
+    {# SYSTEM LOGINS                                                                      #}
+    {# ---------------------------------------------------------------------------------- -#}
     {% if configuration.system.login is defined %}
     login {
         {% if configuration.system.login.retry_options is defined %}

@@ -1,10 +1,14 @@
 ---
 - name: check if directory is present
-  file: path={{ configuration_directory }} state=directory
+  file: 
+    path: "{{ configuration_directory }}" 
+    state: directory
   run_once: true
 
 - name: assemble configurations and copy to configuration
-  assemble: src={{ build_directory }} dest={{ completed_config_file }}
+  assemble: 
+    src: "{{ build_directory }}"
+    dest: "{{ playbook_dir }}/{{ completed_config_file }}"
 
 - name: Remove blank lines between matches
   lineinfile:

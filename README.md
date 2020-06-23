@@ -6,7 +6,7 @@
 
 ## Overview
 
-`Ansible-Campus-Fabric-Core-Distribution-CRB` is an easier way to deploy a CRB-based VXLAN / EVPN fabric with Juniper's campus solutions. 
+`Ansible-Campus-Fabric-Core-Distribution-CRB` is an easier way to deploy a CRB-based VXLAN / EVPN fabric with Juniper's campus solutions.
 
 This project is based on *[Infrastructure-As-Code](https://dev.to/fedekau/infrastructure-as-code-a-beginners-perspective-2l8k)* concepts, where all elements of a device's configuration as stored in a format of `key:value` pairs and stored in a source-code management system such as Github or Gitlab. While not required for successful deployments, we at Juniper encourage network devops teams to *[leverage best practicies with git](https://dev.to/bholmesdev/git-github-best-practices-for-teams-opinionated-28h7)*.
 
@@ -18,7 +18,7 @@ The crux of this project is to build the device configurations locally by execut
 
 >1. validate that Ansible is running at least version 2.7.8
 >2. remove and rebuild local directories that hold our generated configurations
->3. build files to host the various stanzas of a Juniper configuration 
+>3. build files to host the various stanzas of a Juniper configuration
 >4. assemble all stanza files into a full device configuration
 >5. push the configuration to the networking device
 
@@ -26,7 +26,7 @@ The crux of this project is to build the device configurations locally by execut
 
 - `Makefile` included to shortcut many of the commands
 - Docker container provided for those that want execute in an isolated environment.
-- EVE-NG lab for importing my toplogy has been added in `files/eve-ng_lab` 
+- EVE-NG lab for importing my toplogy has been added in `files/eve-ng_lab`
 
 ## Topology
 
@@ -35,7 +35,6 @@ Here is a high level perspective of what the playbook will build without any adj
 ### Campus Fabric with Core-Distribution CRB Core Diagram
 
 [![campus collapsed core](files/images/Ansible-Campus-Fabric-Core-Distribution-CRB.png)](files/images/Ansible-Campus-Fabric-Core-Distribution-CRB_small.png)
-
 
 ## Execution
 
@@ -119,7 +118,7 @@ You may not be surprised to learn that you'll need Docker installed on your loca
 
 This requirement is an obvious moot point if you're using Ansible Tower to execute through a GUI.
 
-### Optional:
+### Optional
 
 Protect your `secrets.yml` file by *[using Ansible-Vault to encrypt it with a password](https://docs.ansible.com/ansible/latest/user_guide/vault.html)*.
 

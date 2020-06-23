@@ -34,7 +34,7 @@ Here is a high level perspective of what the playbook will build without any adj
 
 ### Campus Fabric with Core-Distribution CRB Core Diagram
 
-[![campus collapsed core](files/images/Ansible-Campus-Fabric-Core-Distribution-CRB.png)](files/images/Ansible-Campus-Fabric-Core-Distribution-CRB.png)
+[![campus collapsed core](files/images/Ansible-Campus-Fabric-Core-Distribution-CRB.png)](files/images/Ansible-Campus-Fabric-Core-Distribution-CRB_small.png)
 
 
 ## Execution
@@ -53,19 +53,7 @@ This command will build the container image to be used by ansible
 make build
 ```
 
-[![make build](files/images/make_build.gif)](files/images/make_build.gif)
-
 > *note: the `make build` command only needs to be run once; subsequent executions of the command will not hurt anything, but will add a second or two of wasted time*
-
-#### Building the configuration and applying it to the devices
-
-If, instead, you would like to generate the configuraitons *AND* apply them to the live networking devices, run this command.
-
-```sh
-make ansible
-```
-
-[![make ansible](files/images/make_ansible.gif)](files/images/make_ansible.gif)
 
 #### Building the configurations only (no apply)
 
@@ -73,6 +61,14 @@ If you would only like to build the configurations to your local machine, and ho
 
 ```sh
 make config
+```
+
+#### Building the configuration and applying it to the devices
+
+If, instead, you would like to generate the configuraitons *AND* apply them to the live networking devices, run this command.
+
+```sh
+make ansible
 ```
 
 ## Deep Dive on *HOW* this playbook works

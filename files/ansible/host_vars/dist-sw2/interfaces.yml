@@ -38,17 +38,17 @@ configuration:
           ieee_802.3ad:
             bundle: ae22
 
-      - name: xe-0/0/8
-        description: "Connected to access-sw3 (member of ae23)"
-        ether_options:
-          ieee_802.3ad:
-            bundle: ae23
+      # - name: xe-0/0/8
+      #   description: "Connected to access-sw3 (member of ae23)"
+      #   ether_options:
+      #     ieee_802.3ad:
+      #       bundle: ae23
 
-      - name: xe-0/0/9
-        description: "Connected to access-sw4 (member of ae24)"
-        ether_options:
-          ieee_802.3ad:
-            bundle: ae24
+      # - name: xe-0/0/9
+      #   description: "Connected to access-sw4 (member of ae24)"
+      #   ether_options:
+      #     ieee_802.3ad:
+      #       bundle: ae24
 
       # ### AE INTERFACES
       - name: ae11
@@ -129,51 +129,51 @@ configuration:
                     - vlan_2 
                     - vlan_3
 
-      - name: ae23
-        description: "Connected to access-sw3 (members: xe-0/0/8)"
-        apply_groups:
-          - AE_MTU_JUMBO
-          - AE_LACP_BOND
-        aggregated_ether_options:
-          lacp:
-            active: null
-            system_id: 00:40:00:00:00:03
-        esi:
-          all_active: null
-          identifier: 00:11:11:11:11:11:11:11:11:03
-        unit:
-          - name: "0"
-            family:
-              ethernet_switching:
-                interface_mode: trunk
-                vlan:
-                  members:
-                    - vlan_1 
-                    - vlan_2 
-                    - vlan_3
+      # - name: ae23
+      #   description: "Connected to access-sw3 (members: xe-0/0/8)"
+      #   apply_groups:
+      #     - AE_MTU_JUMBO
+      #     - AE_LACP_BOND
+      #   aggregated_ether_options:
+      #     lacp:
+      #       active: null
+      #       system_id: 00:40:00:00:00:03
+      #   esi:
+      #     all_active: null
+      #     identifier: 00:11:11:11:11:11:11:11:11:03
+      #   unit:
+      #     - name: "0"
+      #       family:
+      #         ethernet_switching:
+      #           interface_mode: trunk
+      #           vlan:
+      #             members:
+      #               - vlan_1 
+      #               - vlan_2 
+      #               - vlan_3
 
-      - name: ae24
-        description: "Connected to access-sw4 (members: xe-0/0/9)"
-        apply_groups:
-          - AE_MTU_JUMBO
-          - AE_LACP_BOND
-        aggregated_ether_options:
-          lacp:
-            active: null
-            system_id: 00:40:00:00:00:04
-        esi:
-          all_active: null
-          identifier: 00:11:11:11:11:11:11:11:11:04
-        unit:
-          - name: "0"
-            family:
-              ethernet_switching:
-                interface_mode: trunk
-                vlan:
-                  members:
-                    - vlan_1 
-                    - vlan_2 
-                    - vlan_3
+      # - name: ae24
+      #   description: "Connected to access-sw4 (members: xe-0/0/9)"
+      #   apply_groups:
+      #     - AE_MTU_JUMBO
+      #     - AE_LACP_BOND
+      #   aggregated_ether_options:
+      #     lacp:
+      #       active: null
+      #       system_id: 00:40:00:00:00:04
+      #   esi:
+      #     all_active: null
+      #     identifier: 00:11:11:11:11:11:11:11:11:04
+      #   unit:
+      #     - name: "0"
+      #       family:
+      #         ethernet_switching:
+      #           interface_mode: trunk
+      #           vlan:
+      #             members:
+      #               - vlan_1 
+      #               - vlan_2 
+      #               - vlan_3
 
       # ### MGMT INTERFACE
       - name: em0

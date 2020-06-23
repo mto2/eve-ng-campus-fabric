@@ -21,31 +21,9 @@
     state: directory
 
 ### -------------------------------------------------
-### REMOVE AND RECREATE FACTS DIRECTORY
-### -------------------------------------------------
-- name: remove previous facts directory
-  file:
-    path: "{{ backup_facts_directory }}"
-    state: absent
-  run_once: true
-
-- name: create facts directory
-  file:
-    path: "{{ backup_facts_directory }}"
-    state: directory
-  run_once: true
-
-### -------------------------------------------------
 ### REMOVE AND RECREATE CONFIG DIRECTORY
 ### -------------------------------------------------
-- name: remove any previous config directory
+- name: remove any previous config files
   file:
-    path: "{{ configuration_directory }}"
+    path: "{{ completed_config_file }}"
     state: absent
-  run_once: True
-
-- name: create new temporary directory
-  file:
-    path: "{{ configuration_directory }}"
-    state: directory
-  run_once: True

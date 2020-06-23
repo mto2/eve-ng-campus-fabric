@@ -9,7 +9,7 @@ temporary_directory: "/tmp/ansible/"
 build_directory: "{{ temporary_directory }}/{{ inventory_hostname }}/tmp"
 
 # local director to hold the final configuration product
-configuration_directory: "config"
+configuration_directory: "./config"
 
 # name of the actual configuration file that's pushed to the remote device
 configuration_file: "{{ inventory_hostname }}.conf"

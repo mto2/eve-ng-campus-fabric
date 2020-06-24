@@ -5,7 +5,7 @@
     state: directory
   run_once: true
 
-- name: assemble configurations and copy to configuration
+- name: "assemble configurations and copy to project's config folder for backup purposes"
   assemble: 
     src: "{{ build_directory }}"
     dest: "{{ playbook_dir }}/{{ completed_config_file }}"
@@ -15,3 +15,10 @@
     path: "{{ completed_config_file }}"
     regexp: '(^\s*$)'
     state: absent
+
+- name: "copy completed config file to /tmp/ansible directory for Ansible AWX to apply"
+  copy: 
+    src: "{{ completed_config_file }}"
+    dest: "{{ build_completed_file}} "
+    backup: yes
+    mode: '0600'

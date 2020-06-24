@@ -13,34 +13,11 @@ configuration:
               vlan:
                 members: "vlan_1"
 
-      # - name: xe-0/0/1
-      #   mtu: 9100
-      #   unit:
-      #     name: "0"
-      #     description: "Connected to guest-4"
-      #     family:
-      #       ethernet_switching:
-      #         interface_mode: access
-      #         vlan:
-      #           members: "vlan_2"
-
       - name: xe-0/0/3
         description: "Connected to dist-sw4 (member of ae3)"
         ether_options:
           ieee_802.3ad:
             bundle: ae3
-
-      # - name: xe-0/0/7
-      #   description: "Connected to dist-sw1 (member of ae3)"
-      #   ether_options:
-      #     ieee_802.3ad:
-      #       bundle: ae3
-
-      # - name: xe-0/0/9
-      #   description: "Connected to dist-sw2 (member of ae3)"
-      #   ether_options:
-      #     ieee_802.3ad:
-      #       bundle: ae3
 
       - name: xe-0/0/11
         description: "Connected to dist-sw3 (member of ae3)"

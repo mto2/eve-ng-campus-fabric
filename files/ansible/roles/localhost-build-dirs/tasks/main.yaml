@@ -12,12 +12,12 @@
 ### -------------------------------------------------
 - name: remove previous temporary build directory
   file:
-    path: "{{ build_directory }}"
+    path: "{{ build_directory_temp }}"
     state: absent
 
 - name: create new temporary directory
   file:
-    path: "{{ build_directory }}"
+    path: "{{ build_directory_temp }}"
     state: directory
 
 ### -------------------------------------------------
@@ -27,3 +27,13 @@
   file:
     path: "{{ completed_config_file }}"
     state: absent
+
+- name: remove any previous build directory complete
+  file:
+    path: "{{ build_directory_complete }}"
+    state: absent
+
+- name: create new build_directory_complete
+  file:
+    path: "{{ build_directory_complete }}"
+    state: directory

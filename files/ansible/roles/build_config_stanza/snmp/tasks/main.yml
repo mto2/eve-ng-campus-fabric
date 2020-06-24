@@ -2,4 +2,4 @@
 - name: building snmp configuration
   template:
     src: "snmp.j2"
-    dest: "{{ build_directory }}/08_snmp.part"
+    dest: "{{ build_directory_temp }}/08_snmp.part.conf"

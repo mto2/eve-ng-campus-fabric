@@ -2,4 +2,4 @@
 - name: building vlans configuration
   template:
     src: "vlans.j2"
-    dest: "{{ build_directory }}/19_vlans.part"
+    dest: "{{ build_directory_temp }}/19_vlans.part.conf"

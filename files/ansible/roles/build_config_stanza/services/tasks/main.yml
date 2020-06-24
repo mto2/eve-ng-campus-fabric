@@ -2,4 +2,4 @@
 - name: building services configuration
   template:
     src: "services.j2"
-    dest: "{{ build_directory }}/05_services.part"
+    dest: "{{ build_directory_temp }}/05_services.part.conf"

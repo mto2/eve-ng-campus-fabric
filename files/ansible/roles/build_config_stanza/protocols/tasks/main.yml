@@ -2,4 +2,4 @@
 - name: building protocols configuration
   template:
     src: "protocols.j2"
-    dest: "{{ build_directory }}/11_protocols.part"
+    dest: "{{ build_directory_temp }}/11_protocols.part.conf"

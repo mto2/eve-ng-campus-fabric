@@ -2,4 +2,4 @@
 - name: building virtual-chassis configuration
   template:
     src: "virtual_chassis.j2"
-    dest: "{{ build_directory }}/17_virtual_chassis.part"
+    dest: "{{ build_directory_temp }}/17_virtual_chassis.part.conf"

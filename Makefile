@@ -19,6 +19,7 @@ apply:
 	docker run -it \
 	--rm \
 	-v $(PWD)/files/:/home/tmp/files \
+	-v $(PWD)/files/tmp:/tmp \
 	-w /home/tmp/files/ansible/ \
 	$(DOCKER_IMG):$(DOCKER_TAG) ansible-playbook pb.configuration.apply.yml 
 
@@ -26,6 +27,7 @@ backup:
 	docker run -it \
 	--rm \
 	-v $(PWD)/files/:/home/tmp/files \
+	-v $(PWD)/files/tmp:/tmp \
 	-w /home/tmp/files/ansible/ \
 	$(DOCKER_IMG):$(DOCKER_TAG) ansible-playbook pb.configuration.backup.yml 
 
@@ -33,6 +35,7 @@ bootstrap:
 	docker run -it \
 	--rm \
 	-v $(PWD)/files/:/home/tmp/files \
+	-v $(PWD)/files/tmp:/tmp \
 	-w /home/tmp/files/ansible/ \
 	$(DOCKER_IMG):$(DOCKER_TAG) ansible-playbook pb.configuration.bootstrap.yml 
 
@@ -43,6 +46,7 @@ config:
 	docker run -it \
 	--rm \
 	-v $(PWD)/files/:/home/tmp/files \
+	-v $(PWD)/files/tmp:/tmp \
 	-w /home/tmp/files/ansible/ \
 	$(DOCKER_IMG):$(DOCKER_TAG) ansible-playbook pb.configuration.build.yml
 
@@ -50,6 +54,7 @@ netbox-get:
 	docker run -it \
 	--rm \
 	-v $(PWD)/files/:/home/tmp/files \
+	-v $(PWD)/files/tmp:/tmp \
 	-w /home/tmp/files/ansible/ \
 	$(DOCKER_IMG):$(DOCKER_TAG) ansible-playbook pb.netbox.retrieve.info.yml
 
@@ -57,13 +62,7 @@ shell:
 	docker run -it \
 	--rm \
 	-v $(PWD)/files/:/home/tmp/files \
+	-v $(PWD)/files/tmp:/tmp \
 	-w /home/tmp/files/ansible/ \
 	$(DOCKER_IMG):$(DOCKER_TAG) /bin/sh
 
-# ### side note: simplifying by removing local ansible execution
-# ### until someone declares that they want it.
-# ### will push foward with only docker-based deployments for now
-
-# run:
-# 	cd $(PWD)/files/ansible/; \
-# 	ansible-playbook pb.configuration.network.yml 

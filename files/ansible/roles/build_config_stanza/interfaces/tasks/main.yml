@@ -2,4 +2,4 @@
 - name: building interfaces configuration
   template:
     src: "interfaces.j2"
-    dest: "{{ build_directory }}/07_interfaces.part"
+    dest: "{{ build_directory_temp }}/07_interfaces.part.conf"

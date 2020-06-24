@@ -2,4 +2,4 @@
 - name: building routing_instances configuration
   template:
     src: "routing_instances.j2"
-    dest: "{{ build_directory }}/18_routing_instances.part"
+    dest: "{{ build_directory_temp }}/18_routing_instances.part.conf"

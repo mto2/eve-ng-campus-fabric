@@ -2,4 +2,4 @@
 - name: building groups configuration
   template:
     src: "groups.j2"
-    dest: "{{ build_directory }}/03_groups.part"
+    dest: "{{ build_directory_temp }}/03_groups.part.conf"

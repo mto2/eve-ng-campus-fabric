@@ -2,4 +2,4 @@
 - name: building version configuration
   template:
     src: "version.j2"
-    dest: "{{ build_directory }}/01_version.part"
+    dest: "{{ build_directory_temp }}/01_version.part.conf"

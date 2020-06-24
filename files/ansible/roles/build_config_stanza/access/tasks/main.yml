@@ -2,4 +2,4 @@
 - name: building access configuration
   template:
     src: "access.j2"
-    dest: "{{ build_directory }}/17_access.part"
+    dest: "{{ build_directory_temp }}/17_access.part.conf"

@@ -63,7 +63,7 @@
     state: absent
 
 - name: "### Diff the committed against the local candidate"
-  command: "diff {{ backup_file }} {{ completed_config_file }}"
+  command: "diff {{ backup_file }} {{ build_completed_file }}"
   failed_when: "diff.rc > 1"
   register: diff
 

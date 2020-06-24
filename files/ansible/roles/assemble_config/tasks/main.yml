@@ -19,6 +19,6 @@
 - name: "copy completed config file to /tmp/ansible directory for Ansible AWX to apply"
   copy: 
     src: "{{ completed_config_file }}"
-    dest: "{{ build_completed_file}} "
+    dest: "{{ build_completed_file}}"
     backup: yes
     mode: '0600'

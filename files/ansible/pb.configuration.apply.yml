@@ -37,6 +37,6 @@
   connection: local
   gather_facts: False
   roles:
-    # - { role: push_config/diff }
-    # - { role: push_config/check }
+    - { role: push_config/diff }
+    - { role: push_config/check }
     - { role: push_config/apply }

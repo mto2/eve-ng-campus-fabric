@@ -8,7 +8,7 @@
     user: "{{ provider_info.user }}"
     passwd: "{{ provider_info.passwd }}"
     # ssh_private_key_file: "{{ provider_info.ssh_private_key_file }}"
-    src: "{{ completed_config_file }}"
+    src: "{{ build_completed_file }}"
     timeout: 240
     diff: false
     check: true

@@ -2,4 +2,4 @@
 - name: building policy_options configuration
   template:
     src: "policy_options.j2"
-    dest: "{{ build_directory }}/09_policy_options.part"
+    dest: "{{ build_directory_temp }}/09_policy_options.part.conf"

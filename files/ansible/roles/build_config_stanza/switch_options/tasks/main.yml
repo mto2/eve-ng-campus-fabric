@@ -2,4 +2,4 @@
 - name: building switch_options configuration
   template:
     src: "switch_options.j2"
-    dest: "{{ build_directory }}/15_switch_options.part"
+    dest: "{{ build_directory_temp }}/15_switch_options.part.conf"

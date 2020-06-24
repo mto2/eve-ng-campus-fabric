@@ -2,4 +2,4 @@
 - name: building firewall configuration
   template:
     src: "firewall.j2"
-    dest: "{{ build_directory }}/14_firewall.part"
+    dest: "{{ build_directory_temp }}/14_firewall.part.conf"

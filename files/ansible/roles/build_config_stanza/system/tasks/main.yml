@@ -2,4 +2,4 @@
 - name: building system configuration
   template:
     src: "system.j2"
-    dest: "{{ build_directory }}/04_system.part"
+    dest: "{{ build_directory_temp }}/04_system.part.conf"

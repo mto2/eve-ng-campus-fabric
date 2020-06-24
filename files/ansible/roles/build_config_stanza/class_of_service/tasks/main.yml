@@ -2,4 +2,4 @@
 - name: building class_of_service configuration
   template:
     src: "class_of_service.j2"
-    dest: "{{ build_directory }}/13_class_of_service.part"
+    dest: "{{ build_directory_temp }}/13_class_of_service.part.conf"

@@ -2,4 +2,4 @@
 - name: building event_options configuration
   template:
     src: "event_options.j2"
-    dest: "{{ build_directory }}/13_event_options.part"
+    dest: "{{ build_directory_temp }}/13_event_options.part.conf"

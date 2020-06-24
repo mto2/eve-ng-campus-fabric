@@ -5,19 +5,20 @@
     state: directory
   run_once: true
 
-- name: "assemble configurations and copy to project's config folder for backup purposes"
+
+- name: "assemble configurations to temp completed folder"
   assemble: 
-    src: "{{ build_directory }}"
-    dest: "{{ playbook_dir }}/{{ completed_config_file }}"
+    src: "{{ build_directory_temp }}"
+    dest: "{{ build_completed_file }}"
 
 - name: Remove blank lines between matches
   lineinfile:
-    path: "{{ completed_config_file }}"
+    path: "{{ build_completed_file }}"
     regexp: '(^\s*$)'
     state: absent
 
-- name: "copy completed config file to /tmp/ansible directory for Ansible AWX to apply"
+- name: "copy completed config file to project's config directory backup purposes"
   copy: 
-    src: "{{ completed_config_file }}"
-    dest: "{{ build_completed_file}}"
+    src: "{{ build_completed_file }}"
+    dest: "{{ playbook_dir }}/{{ completed_config_file}}"
     backup: yes

@@ -21,4 +21,3 @@
     src: "{{ completed_config_file }}"
     dest: "{{ build_completed_file}}"
     backup: yes
-    mode: '0600'

@@ -27,8 +27,8 @@
     - name: display multiple file contents
       debug: 
         msg: "{{ hostvars.inventory_hostname }}"
-      with_file:
-        - "{{ completed_config_file }}"
+      # with_file:
+      #   - "{{ completed_config_file }}"
 
 ### ---------------------------------------------------------------------------
 ### VALIDATE, DIFF, AND APPLY CONFIGURATION TO DEVICES

@@ -2,13 +2,13 @@ configuration:
   interfaces:
     interface:
       # ### PHYSICAL INTERFACES
-      - name: xe-0/0/1
+      - name: xe-0/0/2
         description: "Connected to access-sw3 (member of ae23)"
         ether_options:
           ieee_802.3ad:
             bundle: ae23
 
-      - name: xe-0/0/2
+      - name: xe-0/0/3
         description: "Connected to access-sw4 (member of ae24)"
         ether_options:
           ieee_802.3ad:

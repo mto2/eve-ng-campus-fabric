@@ -1,5 +1,0 @@
-configuration:
-  forwarding_options:
-    storm_control_profiles:
-      all: null
-      name: default

@@ -76,7 +76,7 @@ configuration:
 
       # ### AE INTERFACES
       - name: ae11
-        description: "Connected to dist-sw1 (members: xe-0/0/0 / xe-0/0/1)"
+        description: "Connected to dist-sw1 (members: xe-0/0/0-1)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
@@ -92,7 +92,7 @@ configuration:
                 name: "172.16.1.0/31"
 
       - name: ae12
-        description: "Connected to dist-sw2 (members: xe-0/0/2 / xe-0/0/3)"
+        description: "Connected to dist-sw2 (members: xe-0/0/2-3)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
@@ -108,7 +108,7 @@ configuration:
                 name: "172.16.1.2/31"
 
       - name: ae13
-        description: "Connected to dist-sw3 (members: xe-0/0/4 / xe-0/0/5)"
+        description: "Connected to dist-sw3 (members: xe-0/0/4-5)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
@@ -124,7 +124,7 @@ configuration:
                 name: "172.16.1.4/31"
 
       - name: ae14
-        description: "Connected to dist-sw4 (members: xe-0/0/6 / xe-0/0/7)"
+        description: "Connected to dist-sw4 (members: xe-0/0/6-7)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
@@ -140,7 +140,7 @@ configuration:
                 name: "172.16.1.6/31"
 
       - name: ae15
-        description: "Connected to campus-fw1 (members: xe-0/0/0 / xe-0/0/1)"
+        description: "Connected to campus-fw1 (members: xe-0/0/8-9)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
@@ -160,7 +160,7 @@ configuration:
                     - vlan_3
 
       - name: ae16
-        description: "Connected to campus-rt1 (members: xe-0/0/10 / xe-0/0/11)"
+        description: "Connected to campus-rt1 (members: xe-0/0/10-11)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND

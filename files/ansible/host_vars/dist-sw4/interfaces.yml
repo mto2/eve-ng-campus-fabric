@@ -2,13 +2,13 @@ configuration:
   interfaces:
     interface:
       # ### PHYSICAL INTERFACES
-      - name: xe-0/0/2
-        description: "Connected to access-sw3 (member of ae23)"
+      - name: xe-0/0/4
+        description: "Connected to access-sw4 (member of ae24)"
         ether_options:
           ieee_802.3ad:
-            bundle: ae23
+            bundle: ae24
 
-      - name: xe-0/0/3
+      - name: xe-0/0/5
         description: "Connected to access-sw4 (member of ae24)"
         ether_options:
           ieee_802.3ad:
@@ -38,9 +38,21 @@ configuration:
           ieee_802.3ad:
             bundle: ae12
 
+      - name: xe-0/0/10
+        description: "Connected to access-sw3 (member of ae23)"
+        ether_options:
+          ieee_802.3ad:
+            bundle: ae23
+
+      - name: xe-0/0/11
+        description: "Connected to access-sw3 (member of ae23)"
+        ether_options:
+          ieee_802.3ad:
+            bundle: ae23
+
       # ### AE INTERFACES
       - name: ae11
-        description: "Connected to core-sw1 (members: xe-0/0/4 / xe-0/0/5)"
+        description: "Connected to core-sw1 (members: xe-0/0/6-7)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
@@ -56,7 +68,7 @@ configuration:
                 name: "172.16.1.7/31"
 
       - name: ae12
-        description: "Connected to core-sw2 (members: xe-0/0/6 / xe-0/0/7)"
+        description: "Connected to core-sw2 (members: xe-0/0/8-9)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
@@ -72,7 +84,7 @@ configuration:
                 name: "172.16.2.7/31"
 
       - name: ae23
-        description: "Connected to access-sw3 (members: xe-0/0/10)"
+        description: "Connected to access-sw3 (members: xe-0/0/10-11)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND
@@ -95,7 +107,7 @@ configuration:
                     - vlan_3
 
       - name: ae24
-        description: "Connected to access-sw4 (members: xe-0/0/11)"
+        description: "Connected to access-sw4 (members: xe-0/0/4-5)"
         apply_groups:
           - AE_MTU_JUMBO
           - AE_LACP_BOND

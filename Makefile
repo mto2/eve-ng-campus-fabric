@@ -3,7 +3,7 @@ SHELL := /usr/bin/env bash
 .PHONY: help ansible apply backup bootstrap build config shell netbox-get
 
 DOCKER_IMG = packetferret/ansible-vxlan-evpn-for-campus
-DOCKER_TAG = 0.0.2
+DOCKER_TAG = 0.0.3
 
 help:
 	@echo ''
@@ -66,3 +66,10 @@ shell:
 	-w /home/tmp/files/ansible/ \
 	$(DOCKER_IMG):$(DOCKER_TAG) /bin/sh
 
+slack:
+	docker run -it \
+	--rm \
+	-v $(PWD)/files/:/home/tmp/files \
+	-v $(PWD)/files/tmp:/tmp \
+	-w /home/tmp/files/ansible/ \
+	$(DOCKER_IMG):$(DOCKER_TAG) ansible-playbook pb.slack.test.yml

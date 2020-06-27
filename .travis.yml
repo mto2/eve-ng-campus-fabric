@@ -3,7 +3,7 @@ sudo: required
 
 env:
   - distribution: packetferret/ansible-vxlan-evpn-for-campus
-    version: 0.0.2
+    version: 0.0.3
 
 services:
   - docker

@@ -1,0 +1,11 @@
+---
+### -------------------------------------------------
+### DIRECTORIES TO BE USED IN JUNIPER_STANZA ROLES
+### -------------------------------------------------
+
+# directories to hold configuration files as they're generated
+temporary_directory: "/tmp/ansible/"
+build_directory: "{{ temporary_directory }}/{{ inventory_hostname }}"
+build_directory_temp: "{{ build_directory }}/tmp"
+build_directory_complete: "{{ build_directory }}/complete"
+build_completed_file: "{{ build_directory_complete }}/{{ inventory_hostname }}.conf"

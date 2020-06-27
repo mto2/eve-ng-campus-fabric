@@ -1,0 +1,26 @@
+---
+### ---------------------------------------------------------------------------
+### VALIDATE THAT ANSIBLE CONTROL MACHINE IS RUNNING A RECENT ANSIBLE VERSION
+### ---------------------------------------------------------------------------
+- hosts: all
+  connection: local
+  gather_facts: False
+  become: False
+  tasks:
+    - name: "Check ansible version >=2.7.8"
+      assert:
+        msg: "Ansible must be v2.7.8 or higher"
+        that:
+          - ansible_version.string is version("2.7.8", ">=")
+      tags:
+        - check
+  run_once: True
+
+### ---------------------------------------------------------------------------
+### VALIDATE, DIFF, AND APPLY CONFIGURATION TO DEVICES
+### ---------------------------------------------------------------------------
+- hosts: all
+  connection: local
+  gather_facts: False
+  roles:
+    - { role: diff_golden }

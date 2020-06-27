@@ -36,4 +36,4 @@
   connection: local
   gather_facts: False
   roles:
-    - { role: push_config/diff }
+    - { role: diff_golden }

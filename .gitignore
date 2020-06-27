@@ -66,3 +66,4 @@ docs/_build/
 target/
 files/tmp/ansible
 files/tmp/ansible.log
+files/tmp/localhost

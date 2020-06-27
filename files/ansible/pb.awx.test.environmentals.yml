@@ -1,0 +1,15 @@
+---
+### ---------------------------------------------------------------------------
+### VALIDATE THAT ANSIBLE CONTROL MACHINE HAS LOCAL ENVIRONMENTALS SET
+### ---------------------------------------------------------------------------
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  become: False
+  tasks:
+
+  - debug: 
+      msg: "{{ lookup('env','HOME') }} is an environment variable"
+
+  - debug: 
+      msg: "{{ lookup('env','SLACK_WEBHOOK_URL') }} is an environment variable"

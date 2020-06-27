@@ -10,9 +10,9 @@
     # ssh_private_key_file: "{{ provider_info.ssh_private_key_file }}"
     src: "{{ build_completed_file }}"
     timeout: 240
-    diff: false
-    check: true
-    commit: false
+    # diff: false
+    # check: true
+    # commit: false
   register: result
 
 - name: "### PRINT THE RESULT TO CONSOLE ###"

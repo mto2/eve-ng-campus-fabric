@@ -65,11 +65,3 @@ shell:
 	-v $(PWD)/files/tmp:/tmp \
 	-w /home/tmp/files/ansible/ \
 	$(DOCKER_IMG):$(DOCKER_TAG) /bin/sh
-
-slack:
-	docker run -it \
-	--rm \
-	-v $(PWD)/files/:/home/tmp/files \
-	-v $(PWD)/files/tmp:/tmp \
-	-w /home/tmp/files/ansible/ \
-	$(DOCKER_IMG):$(DOCKER_TAG) ansible-playbook pb.slack.test.yml

@@ -68,3 +68,4 @@ files/tmp/ansible
 files/tmp/ansible.log
 files/tmp/localhost
 files/ansible/roles/juniper.junos
+CRB.code-workspace

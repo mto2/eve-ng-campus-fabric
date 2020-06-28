@@ -10,20 +10,20 @@
 
   - name: "print out value of $HOME"
     debug: 
-      msg: "$HOME: {{ lookup('env','HOME') }} "
+      msg: "HOME = {{ lookup('env','HOME') }} "
 
   - name: "print out value of $SLACK_WEBHOOK_URL"
     debug: 
-      msg: "$SLACK_WEBHOOK_URL: {{ lookup('env','SLACK_WEBHOOK_URL') }}"
+      msg: "SLACK_WEBHOOK_URL = {{ lookup('env','SLACK_WEBHOOK_URL') }}"
 
   - name: "print out value of $LOGSTASH_PORT"
     debug: 
-      msg: "$LOGSTASH_PORT: {{ lookup('env','LOGSTASH_PORT') }}"
+      msg: "LOGSTASH_PORT = {{ lookup('env','LOGSTASH_PORT') }}"
 
   - name: "print out value of $LOGSTASH_SERVER"
     debug: 
-      msg: "$LOGSTASH_SERVER: {{ lookup('env','LOGSTASH_SERVER') }}"
+      msg: "LOGSTASH_SERVER = {{ lookup('env','LOGSTASH_SERVER') }}"
 
   - name: "print out value of $LOGSTASH_TYPE"
     debug: 
-      msg: "$LOGSTASH_TYPE: {{ lookup('env','LOGSTASH_TYPE') }}"
+      msg: "LOGSTASH_TYPE = {{ lookup('env','LOGSTASH_TYPE') }}"

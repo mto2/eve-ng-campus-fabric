@@ -6,7 +6,7 @@ configuration:
         mtu: 9100
         unit:
           name: "0"
-          description: "Connected to guest-pc-2"
+          description: "Connected to guest-pc-1"
           family:
             ethernet_switching:
               interface_mode: access

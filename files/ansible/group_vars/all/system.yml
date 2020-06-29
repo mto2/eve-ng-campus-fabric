@@ -24,6 +24,7 @@ configuration:
         root_login: allow
     syslog:
       file:
+
         # ### SYSLOG MESSAGES FILE "show log messages"
         - name: messages
           contents:
@@ -31,11 +32,13 @@ configuration:
               notice: null
             - name: authorization
               info: null
+
         # ### SYSLOG COMMAND HISTORY FILE "show log interactive-commands"
         - name: interactive-commands
           contents:
             any: null
             name: interactive-commands
+
         # ### SYSLOG LOG DEFAULT MESSAGES (structured data format) "show log default-log-messages"
         - name: default-log-messages
           match: "(requested 'commit' operation)|(requested 'commit synchronize' operation)|(copying configuration to juniper.save)|(commit complete)|ifAdminStatus|(FRU power)|(FRU removal)|(FRU insertion)|(link UP)|transitioned|Transferred|transfer-file|(license add)|(license delete)|(package -X update)|(package -X delete)|(FRU Online)|(FRU Offline)|(plugged in)|(unplugged)|GRES"
@@ -43,9 +46,10 @@ configuration:
             info: null
             name: any
           structured_data: null
+
       # ### SYSLOG SERVERS
       host:
-        - name: 10.255.127.15
+        - name: 10.6.6.101
           contents:
             any: null
             name: any

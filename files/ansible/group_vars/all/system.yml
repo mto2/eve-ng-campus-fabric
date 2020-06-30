@@ -55,6 +55,7 @@ configuration:
             name: any
           port: 5514
           source_address: "{{ ansible_host }}"
+          structured_data: null
 
       user:
         contents:

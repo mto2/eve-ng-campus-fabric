@@ -82,7 +82,7 @@ configuration:
 
       # ### SYSLOG SERVERS
       host:
-        - name: 10.6.6.101
+        - name: 10.6.5.101
           contents:
             any: null
             name: any

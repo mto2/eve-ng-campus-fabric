@@ -92,7 +92,7 @@ msg:
     description: ''
     enabled: true
     ipv4:
-    - address: 10.6.6.221/24
+    - address: 10.6.5.207/24
       role: undefined
       tags:
       - ipv4
@@ -217,7 +217,7 @@ msg:
     description: ''
     enabled: true
     ipv4:
-    - address: 10.6.6.222/24
+    - address: 10.6.5.208/24
       role: undefined
       tags:
       - ipv4
@@ -344,7 +344,7 @@ msg:
     description: ''
     enabled: true
     ipv4:
-    - address: 10.6.6.223/24
+    - address: 10.6.5.209/24
       role: undefined
       tags:
       - ipv4
@@ -471,7 +471,7 @@ msg:
     description: ''
     enabled: true
     ipv4:
-    - address: 10.6.6.224/24
+    - address: 10.6.5.210/24
       role: undefined
       tags:
       - ipv4
@@ -672,7 +672,7 @@ msg:
     description: ''
     enabled: true
     ipv4:
-    - address: 10.6.6.201/24
+    - address: 10.6.5.201/24
       role: undefined
       tags:
       - ipv4
@@ -968,7 +968,7 @@ msg:
     description: ''
     enabled: true
     ipv4:
-    - address: 10.6.6.202/24
+    - address: 10.6.5.202/24
       role: undefined
       tags:
       - ipv4
@@ -1275,7 +1275,7 @@ msg:
     description: ''
     enabled: true
     ipv4:
-    - address: 10.6.6.211/24
+    - address: 10.6.5.203/24
       role: undefined
       tags:
       - ipv4
@@ -1471,7 +1471,7 @@ msg:
     description: ''
     enabled: true
     ipv4:
-    - address: 10.6.6.212/24
+    - address: 10.6.5.204/24
       role: undefined
       tags:
       - ipv4
@@ -1667,7 +1667,7 @@ msg:
     description: ''
     enabled: true
     ipv4:
-    - address: 10.6.6.213/24
+    - address: 10.6.5.205/24
       role: undefined
       tags:
       - ipv4
@@ -1863,7 +1863,7 @@ msg:
     description: ''
     enabled: true
     ipv4:
-    - address: 10.6.6.214/24
+    - address: 10.6.5.206/24
       role: undefined
       tags:
       - ipv4

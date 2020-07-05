@@ -67,7 +67,7 @@ configuration:
               address:
                 name: "{{ ansible_host }}/24"
                 arp:
-                  - name: "10.6.6.1"
+                  - name: "10.6.5.1"
                     mac: "f4:a7:39:1b:d4:9b"
 
       # ### vQFX PFE INTERFACE

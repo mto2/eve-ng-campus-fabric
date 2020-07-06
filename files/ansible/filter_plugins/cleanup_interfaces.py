@@ -12,7 +12,7 @@ class FilterModule(object):
         # ### Netbox information (to be used for IPAM lookups later)
         # ########################################################## 
         api_token = "ad34740e10bde714f96960addf42b36db6c28c0e"
-        baseurl = "https://10.255.127.46/api/ipam/ip-addresses/"
+        baseurl = "https://netbox.server.home/api/ipam/ip-addresses/"
 
         # ##########################################################
         # ### all devices

@@ -42,8 +42,8 @@ configuration:
           uid: "3006"
 
     name_server:
-      - name: 10.255.127.250
-      - name: 10.255.127.251
+      - name: 10.6.6.20
+      - name: 10.6.6.21
     root_authentication:
       encrypted_password: $6$eG4FXiQW$J4/a.5GZlXlrKcvJTpbaMl.qIelPqjR5lFk.POmxo5O3Vp5OdjHFFJ97PMqvABuZZOGXrdvSE6YF3f33wilgO.
     services:

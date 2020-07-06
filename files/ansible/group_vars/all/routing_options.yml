@@ -6,3 +6,7 @@ configuration:
           next_hop:
             - 10.6.5.1
           no_readvertise: null
+        - name: 10.6.6.0/24
+          next_hop:
+            - 10.6.5.1
+          no_readvertise: null

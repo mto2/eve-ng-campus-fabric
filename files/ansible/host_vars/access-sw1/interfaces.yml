@@ -19,7 +19,7 @@ configuration:
           ieee_802.3ad:
             bundle: ae3
 
-      - name: xe-0/0/4
+      - name: xe-0/0/5
         description: "Connected to dist-sw1 (member of ae3)"
         ether_options:
           ieee_802.3ad:

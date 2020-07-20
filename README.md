@@ -2,11 +2,11 @@
 
 [![N|Solid](https://upload.wikimedia.org/wikipedia/commons/3/31/Juniper_Networks_logo.svg)](https://www.juniper.net/documentation/solutions/en_US/campus)
 
-[![Build Status](https://travis-ci.org/packetferret/Ansible-Campus-Fabric-Core-Distribution-CRB.svg?branch=master)](https://travis-ci.org/packetferret/Ansible-Campus-Fabric-Core-Distribution-CRB)
+[![Build Status](https://travis-ci.org/packetferret/Ansible-VXLAN-EVPN-Campus-Fabric-EVE-NG.svg?branch=master)](https://travis-ci.org/packetferret/Ansible-VXLAN-EVPN-Campus-Fabric-EVE-NG)
 
 ## Overview
 
-`Ansible-Campus-Fabric-Core-Distribution-CRB` is an easier way to deploy a CRB-based VXLAN / EVPN fabric with Juniper's campus solutions.
+`Ansible-VXLAN-EVPN-Campus-Fabric-EVE-NG` is my personal EVE-NG lab version of the official repo `Ansible-Campus-Fabric-Core-Distribution-CRB`.
 
 This project is based on *[Infrastructure-As-Code](https://dev.to/fedekau/infrastructure-as-code-a-beginners-perspective-2l8k)* concepts, where all elements of a device's configuration as stored in a format of `key:value` pairs and stored in a source-code management system such as Github or Gitlab. While not required for successful deployments, we at Juniper encourage network devops teams to *[leverage best practicies with git](https://dev.to/bholmesdev/git-github-best-practices-for-teams-opinionated-28h7)*.
 
@@ -34,7 +34,7 @@ Here is a high level perspective of what the playbook will build without any adj
 
 ### Campus Fabric with Core-Distribution CRB Core Diagram
 
-[![campus collapsed core](files/images/Ansible-Campus-Fabric-Core-Distribution-CRB.png)](files/images/Ansible-Campus-Fabric-Core-Distribution-CRB_small.png)
+[![campus collapsed core](files/images/Ansible-VXLAN-EVPN-Campus-Fabric-EVE-NG.png)](files/images/Ansible-VXLAN-EVPN-Campus-Fabric-EVE-NG_small.png)
 
 ## Execution
 
